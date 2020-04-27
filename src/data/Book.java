@@ -9,7 +9,6 @@ public class Book implements Comparable<Book> {
 	private String code = "";
 	private String authorName;
 	private ArrayList<String> genres;
-	private String direction;
 	private BufferedImage picture;
 	
 	public Book(String name, String code, String authorName, ArrayList<String> genres, String direction,
@@ -19,7 +18,6 @@ public class Book implements Comparable<Book> {
 		this.code = code;
 		this.authorName = authorName;
 		this.genres = genres;
-		this.direction = direction;
 		this.picture = picture;
 	}
 	
@@ -52,14 +50,7 @@ public class Book implements Comparable<Book> {
 	public void setGenres(ArrayList<String> genres) {
 		this.genres = genres;
 	}
-	
-	public String getDirection() {
-		return direction;
-	}
-	public void setDirection(String direction) {
-		this.direction = direction;
-	}
-	
+
 	public BufferedImage getPicture() {
 		return picture;
 	}
