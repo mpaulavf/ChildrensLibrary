@@ -2,8 +2,11 @@ package businessLogic;
 
 import java.awt.*;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.*;
 
+import basicData.SinglyLinkedList;
 import data.*;
 import ui.*;
 
@@ -97,5 +100,33 @@ public class Core {
 		
 	}
 
-	publi
+	public static SinglyLinkedList<Book> createBookList (String filePath){
+		SinglyLinkedList<Book> books = new SinglyLinkedList<>();
+
+		try(BufferedReader br = new BufferedReader(filePath, StandardCharsets.UTF_8)){
+			String line = br.readLine();
+
+			while (line != null) {
+				String [] attributes = line.split(",");
+
+				Book book = createBook (attributes);
+
+				books.insertNodeAtTail(books.head, book);
+
+				line = br.readLine();
+			}
+
+
+		}catch (IOException ioe){
+			ioe.printStackTrace();
+		}
+		return  books;
+	}
+
+	private static Book createBook(String[] metadata){
+		String name = metadata[0];
+		int code = metadata[1];
+		String authorName = metadata[2];
+		String genre = metadata [3];
+	}
 }

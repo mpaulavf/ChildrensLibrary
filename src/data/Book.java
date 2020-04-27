@@ -9,16 +9,25 @@ public class Book implements Comparable<Book> {
 	private String code = "";
 	private String authorName;
 	private ArrayList<String> genres;
-	private BufferedImage picture;
+	private String picturePath;
 	
-	public Book(String name, String code, String authorName, ArrayList<String> genres, String direction,
-			BufferedImage picture) {
+	public Book(String name, String code, String authorName, ArrayList<String> genres,
+			String picturePath) {
 		super();
 		this.name = name;
 		this.code = code;
 		this.authorName = authorName;
 		this.genres = genres;
-		this.picture = picture;
+		this.picturePath = picturePath;
+	}
+
+	public Book(String name, String code, String authorName, ArrayList<String> genres) {
+		super();
+		this.name = name;
+		this.code = code;
+		this.authorName = authorName;
+		this.genres = genres;
+		picturePath = "Resources/BookImgs/default.png";
 	}
 	
 	public String getName() {
@@ -51,11 +60,11 @@ public class Book implements Comparable<Book> {
 		this.genres = genres;
 	}
 
-	public BufferedImage getPicture() {
-		return picture;
+	public String getPicturePath() {
+		return picturePath;
 	}
-	public void setPicture(BufferedImage picture) {
-		this.picture = picture;
+	public void setPicturePath(String picturePath) {
+		this.picturePath = picturePath;
 	}
 
 	@Override
