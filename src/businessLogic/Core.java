@@ -1,14 +1,9 @@
-package bussinesLogic;
+package businessLogic;
 
 import java.awt.*;
 import java.io.*;
 import java.util.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
 
-import basicData.*;
 import data.*;
 import ui.*;
 
@@ -88,9 +83,9 @@ public class Core {
 	public static void setGenres() {
 		genres = new TreeMap<String,TreeSet<Book>>();
 		genres.put("Cuento", new TreeSet<Book>());
-		genres.put("Fábula", new TreeSet<Book>());
+		genres.put("Fï¿½bula", new TreeSet<Book>());
 		genres.put("Mitos y leyendas", new TreeSet<Book>());
-		genres.put("Acción", new TreeSet<Book>());
+		genres.put("Acciï¿½n", new TreeSet<Book>());
 		genres.put("Aventura", new TreeSet<Book>());
 		genres.put("Disney", new TreeSet<Book>());
 		

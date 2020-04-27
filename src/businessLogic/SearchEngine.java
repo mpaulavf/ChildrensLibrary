@@ -1,4 +1,4 @@
-package bussinesLogic;
+package businessLogic;
 
 import java.util.*;
 
@@ -99,7 +99,7 @@ public class SearchEngine {
 					}
 				}
 				catch (NullPointerException e) {
-					System.out.println("Error en la búsqueda de géneros");
+					System.out.println("Error en la bï¿½squeda de gï¿½neros");
 				}
 			}
 		}
