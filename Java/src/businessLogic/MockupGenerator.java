@@ -22,9 +22,9 @@ public class MockupGenerator {
         String code =  String.format("%03d",ran.nextInt(100)) + "." + String.format("%03d",ran.nextInt(100));
         String genre = generos[ran.nextInt(generos.length)];
 
-        
+        Book libro = new Book(name, code, author, genre);
 
-        return Book(name, code, author, genre);
+        return libro;
     }
 
 
