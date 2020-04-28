@@ -13,11 +13,10 @@ public class SearchEngine {
 	public TreeSet<Book> booksByGenres = new TreeSet<Book>();
 	
 	public SearchEngine(Search search) {
-		genres = Core.getGenres();
 		everyBook = Core.getBooks();
 		SearchByAuthor(search);
 		SearchByName(search);
-		SearchByGenres(search);
+//		SearchByGenres(search);
 	}
 	
 	private void SearchByAuthor(Search search) {
@@ -74,6 +73,7 @@ public class SearchEngine {
 		
 	}
 
+	/*
 	private void SearchByGenres(Search search) {
 		//Core.setGenres();
 		if (search.getWholeSearch().equals("")) {
@@ -104,6 +104,7 @@ public class SearchEngine {
 			}
 		}
 	}
+	*/
 
 	public TreeSet<Book> getBooksByAuthor() {
 		return booksByAuthor;

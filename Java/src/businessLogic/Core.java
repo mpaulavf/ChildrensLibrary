@@ -15,21 +15,13 @@ public class Core {
 	private static TreeMap<String,TreeSet<Book>> genres;
 	
 	public static void main(String[] args) {
-
-		ArrayList<String> g1 = new ArrayList<String>();
-		g1.add("Cuento");
-
-		/*
-		Book book = new Book("Libro 0 Fabula", "123", "Pepito", g1, "", null);
-		Book book1 = new Book("Libro 1 Fabula", "123", "Pepito", g1, "", null);
-		Book book2 = new Book("Libro 2 Fabula", "123", "Pepito", g1, "", null);
-
-
-		books.add(book);
-		books.add(book1);
-		books.add(book2);
-		*/
-
+		
+		MockupGenerator mockup1 = new MockupGenerator();
+		
+		SinglyLinkedList <Book> libros = new SinglyLinkedList(); 
+		
+		mockup1.generateBooks(1000, libros);
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -43,9 +35,6 @@ public class Core {
 
 	}
 	
-	public static TreeMap<String,TreeSet<Book>> getGenres(){
-		return genres;
-	}
 	public static TreeSet<Book> getBooks(){
 		loadBooks();
 		return books;
@@ -54,6 +43,7 @@ public class Core {
 		books.add(book);
 		saveBooks();
 	}
+	
 	public static void saveBooks() {
 		try {
 			FileOutputStream fileOut = new FileOutputStream("Resources/SerializedObjects/Books");
@@ -84,26 +74,8 @@ public class Core {
 			e.printStackTrace();
 		}
 	}
-
+	
 	/*
-	public static void setGenres() {
-		genres = new TreeMap<String,TreeSet<Book>>();
-		genres.put("Cuento", new TreeSet<Book>());
-		genres.put("F�bula", new TreeSet<Book>());
-		genres.put("Mitos y leyendas", new TreeSet<Book>());
-		genres.put("Acci�n", new TreeSet<Book>());
-		genres.put("Aventura", new TreeSet<Book>());
-		genres.put("Disney", new TreeSet<Book>());
-		
-		for (Book book: books) {
-			for (String genre : book.getGenre()) {
-				genres.get(genre).add(book);
-			}
-		}
-		
-	}
-
-
 	public static SinglyLinkedList<Book> createBookList (String filePath){
 		SinglyLinkedList<Book> books = new SinglyLinkedList<>();
 
