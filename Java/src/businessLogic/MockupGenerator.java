@@ -20,8 +20,6 @@ public class MockupGenerator {
 
     SinglyLinkedList generateBookList(int n, SinglyLinkedList <Book> libros){
 
-    SinglyLinkedList <Book> generateBooks (int n, SinglyLinkedList <Book> libros){
-
         String author, name, code, genre;
 
         for (int i=0; i<n; i++) {
