@@ -1,6 +1,6 @@
 package com.example.childrenslibrayapp.mockdata;
 
-//creditos a un compa de los andes por las listas
+//creditos a un compa de los andes por las listas.
 
 import com.example.childrenslibrayapp.objects.*;
 import com.example.childrenslibrayapp.structures.*;
