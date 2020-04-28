@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
         SinglyLinkedList <Book> libros = new SinglyLinkedList<Book>();
         gen.generateBookList(10000, libros);
-        
+
     }
 
 
