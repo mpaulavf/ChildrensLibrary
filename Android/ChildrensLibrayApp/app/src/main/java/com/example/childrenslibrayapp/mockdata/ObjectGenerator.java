@@ -23,21 +23,20 @@ public class ObjectGenerator {
 
     Random ran = new Random();
 
-    public SinglyLinkedList generateBooks(int n){
-        SinglyLinkedList <Book> libros = new SinglyLinkedList<Book>();
+    public void generateBookList(int n, SinglyLinkedList <Book> libros){
+
         String author, name, code, genre;
 
         for (int i=0; i<n; i++) {
             author = nombres[ran.nextInt(nombres.length)] + apellidos[ran.nextInt(apellidos.length)];
             name = titulos[ran.nextInt(titulos.length)];
-            code = String.format("%03d", i);
+            code = String.format("%06d", i);
             genre = generos[ran.nextInt(generos.length)];
 
             Book libro = new Book(name, code, author, genre);
 
             libros.insertNodeAtTail(libros.head, libro);
         }
-        return libros;
     }
 
 

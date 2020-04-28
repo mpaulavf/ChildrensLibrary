@@ -81,9 +81,10 @@ public class MainActivity extends AppCompatActivity {
         ObjectGenerator gen = new ObjectGenerator();
 
         SinglyLinkedList <Book> libros = new SinglyLinkedList<Book>();
-        libros = gen.generateBooks(10000);
+        gen.generateBookList(10000, libros);
+        
     }
 
-    
+
 
 }
