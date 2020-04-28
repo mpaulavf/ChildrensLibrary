@@ -6,15 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".Autor">
 
-    <TextView
-        android:id="@+id/tv_autor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="171dp"
-        android:layout_marginLeft="171dp"
-        android:layout_marginTop="60dp"
-        android:hint="@string/autor2"
-        android:textSize="36sp"
+    <EditText
+        android:id="@+id/txt_authorSearch"
+        android:layout_width="288dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="120dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Búsqueda por autor"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_authorSearch"
+        android:layout_width="88dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Buscar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

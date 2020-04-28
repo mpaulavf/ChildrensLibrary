@@ -18,7 +18,7 @@ public class Inicio extends AppCompatActivity {
         btn_worker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
             }
         });
 
