@@ -2,36 +2,36 @@ package com.example.childrenslibrayapp.objects;
 
 public class Book implements Comparable<Book> {
 
-    private String name;
+    private String title;
     private String code = "";
     private String authorName;
     private String genre;
     private String picturePath;
 
-    public Book(String name, String code, String authorName, String genre,
+    public Book(String title, String code, String authorName, String genre,
                 String picturePath) {
         super();
-        this.name = name;
+        this.title = title;
         this.code = code;
         this.authorName = authorName;
         this.genre = genre;
         this.picturePath = picturePath;
     }
 
-    public Book(String name, String code, String authorName, String genre) {
+    public Book(String title, String code, String authorName, String genre) {
         super();
-        this.name = name;
+        this.title = title;
         this.code = code;
         this.authorName = authorName;
         this.genre = genre;
         picturePath = "drawable-v24/libro_no_disponible.png";
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getCode() {
