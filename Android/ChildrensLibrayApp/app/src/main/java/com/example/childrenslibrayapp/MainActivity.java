@@ -77,16 +77,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    Button button = findViewById(R.id.but_generateData);
+    public void GenerateData () {
+        ObjectGenerator gen = new ObjectGenerator();
 
-    button.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void GenerateData () {
-            ObjectGenerator gen = new ObjectGenerator();
+        SinglyLinkedList <Book> libros = new SinglyLinkedList<Book>();
+        libros = gen.generateBooks(10000);
+    }
 
-            SinglyLinkedList <Book> libros = new SinglyLinkedList<Book>();
-            libros = gen.generateBooks(10000);
-        }
-    });
 
 }
