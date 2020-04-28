@@ -1,7 +1,5 @@
 package data;
 
-import java.util.*;
-
 public class Book implements Comparable<Book> {
 	
 	private String name;

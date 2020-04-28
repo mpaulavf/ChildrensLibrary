@@ -287,7 +287,7 @@ public class UI extends JFrame{
 			JPanel tempPanel = new JPanel();
 			tempPanel.setLayout(new BoxLayout(tempPanel, BoxLayout.X_AXIS));
 			JLabel tempLabel = new JLabel();
-			tempLabel.setIcon(new ImageIcon(book.getPicture()));
+			//tempLabel.setIcon(new ImageIcon(book.getPicturePath()));
 			tempLabel.setText("<html>T�tulo: "+book.getName()+"<BR>"
 							+"Escrito por: "+book.getAuthorName()+"<BR>"
 							+"G�nero(s): "+genresString+"</html>");
@@ -296,17 +296,21 @@ public class UI extends JFrame{
 			tempPanel.add(tempButton);
 			tempButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					/*
 					JOptionPane showBook = new JOptionPane("<html>T�tulo: "+book.getName()+"<BR>"
 															+"Escrito por: "+book.getAuthorName()+"<BR>"
 															+"G�nero(s): "+genresString+"<BR>"
-															+"Ubicaci�n: "+book.getDirection()
 															+"</html>",
 															JOptionPane.INFORMATION_MESSAGE,
 															JOptionPane.DEFAULT_OPTION,											
-															new ImageIcon(book.getPicture()));
-					JOptionPane.showMessageDialog(searchPanel, showBook.getMessage(), book.getName(), showBook.getMessageType(), showBook.getIcon());
+															//new ImageIcon(book.getPicture()));
+					JOptionPane.showMessageDialog(searchPanel, showBook.getMessage(), book.getName(), showBook.getMessageType(), showBook.getIcon()));
+					
+					 */
 				}
 			});
+
+
 			list.add(tempPanel);
 			
 			JButton btnSelec = new JButton("Seleccionar este libro");
@@ -526,8 +530,8 @@ public class UI extends JFrame{
 					Book book = wrkrsCmd.infoBook(bookFile);
 					System.out.println(book.getAuthorName());
 					System.out.println(txtDirection.getText());
-					wrkrsCmd.addDirections(book, txtDirection.getText());		
-					wrkrsCmd.addPicture(book, pic);
+					//wrkrsCmd.addDirections(book, txtDirection.getText());
+					//wrkrsCmd.addPicture(book, pic);
 					Core.addBook(book);
 				} catch (Exception e1) {
 					txtCode.setText("");
@@ -650,6 +654,7 @@ public class UI extends JFrame{
 						ImageIcon tempPic = new ImageIcon(lblPic.getText());
 		            	pic = new BufferedImage(tempPic.getIconWidth(), tempPic.getIconHeight(), BufferedImage.TYPE_INT_RGB);
 					}
+					/*
 					Scanner aux = new Scanner(txtGenre.getText());
 					aux.useDelimiter(",");
 					while(aux.hasNext()) {
@@ -657,9 +662,10 @@ public class UI extends JFrame{
 						genres.add(genre);
 					}
 					aux.close();
-					Book b = new Book(txtName.getText(), txtCode.getText(), txtAuthorName.getText(), genres,
-							txtDirection.getText(), pic);
-					books.everyBook.add(b);
+
+					 */
+					//Book b = new Book(txtName.getText(), txtCode.getText(), txtAuthorName.getText());
+					//books.everyBook.add(b);
 				} catch (Exception e1) {
 					txtName.setText("");
 					txtCode.setText("");

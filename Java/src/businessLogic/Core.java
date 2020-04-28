@@ -29,6 +29,7 @@ public class Core {
 		books.add(book1);
 		books.add(book2);
 		*/
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

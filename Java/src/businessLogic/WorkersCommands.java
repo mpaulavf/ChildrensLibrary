@@ -69,7 +69,7 @@ public class WorkersCommands {
 		String name = "";
 		String code;
 		String authorName = "";
-		ArrayList<String> genres = new ArrayList<String>();
+		String genre = "";
 		String direction = "";
 		BufferedImage picture = null;
 		// nombre del libro
@@ -83,26 +83,16 @@ public class WorkersCommands {
 		authorName = temp;
 		// genero del libro
 		temp = aux.next().trim();
-		int amountOfGenres = Integer.parseInt(temp);
-		for (int i = 0; i<amountOfGenres; i++) {
-			temp = aux.next().trim();
-			genres.add(temp);
-		}
-		Book b = new Book(name, code, authorName, genres, direction, picture);
+
+		Book b = new Book(name, code, authorName, genre);
 		aux.close();
 		return b;
 		
 	}
 
-	public Book addPicture(Book book, BufferedImage bI) {
-		book.setPicture(bI);
+	public Book addPicture(Book book, String pPath) {
+		book.setPicturePath(pPath);
 		return book;
 	}
-	
-	
-	public Book addDirections(Book book, String s) {
-		book.setDirection(s);
-		return book;
-	}
-	
+
 }
