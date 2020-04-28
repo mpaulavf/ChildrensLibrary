@@ -22,5 +22,6 @@
     <string name="autor2">Autor</string>
     <string name="titulo2">Titulo</string>
     <string name="codigo">Codigo</string>
+    <string name="Bot_generateData" />
 
 </resources>
