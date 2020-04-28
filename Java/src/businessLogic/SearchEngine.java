@@ -75,7 +75,7 @@ public class SearchEngine {
 	}
 
 	private void SearchByGenres(Search search) {
-		Core.setGenres();
+		//Core.setGenres();
 		if (search.getWholeSearch().equals("")) {
 			for (String genreInSearch: search.getGenres()) {
 				if (this.genres.containsKey(genreInSearch)) {

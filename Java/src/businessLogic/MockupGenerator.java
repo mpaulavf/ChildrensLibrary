@@ -2,6 +2,7 @@ package businessLogic;
 
 //creditos a un compa de los andes por las listas
 
+import basicData.SinglyLinkedList;
 import data.Book;
 import java.util.Random;
 
@@ -16,15 +17,21 @@ public class MockupGenerator {
 
     Random ran = new Random();
 
-    Book generateBook (){
-        String author = nombres[ran.nextInt(nombres.length)] + apellidos[ran.nextInt(apellidos.length)];
-        String name = titulos[ran.nextInt(titulos.length)];
-        String code =  String.format("%03d",ran.nextInt(100)) + "." + String.format("%03d",ran.nextInt(100));
-        String genre = generos[ran.nextInt(generos.length)];
+    SinglyLinkedList generateBooks (int n){
+        SinglyLinkedList <Book> libros = new SinglyLinkedList<Book>();
+        String author, name, code, genre;
 
-        Book libro = new Book(name, code, author, genre);
+        for (int i=0; i<n; i++) {
+            author = nombres[ran.nextInt(nombres.length)] + apellidos[ran.nextInt(apellidos.length)];
+            name = titulos[ran.nextInt(titulos.length)];
+            code = String.format("%03d", i);
+            genre = generos[ran.nextInt(generos.length)];
 
-        return libro;
+            Book libro = new Book(name, code, author, genre);
+
+            libros.insertNodeAtTail(libros.head, libro);
+        }
+        return libros;
     }
 
 

@@ -73,7 +73,7 @@ public class Core {
 			ObjectInputStream objectIn = new ObjectInputStream(fileIn);
 			books = (TreeSet<Book>) objectIn.readObject();
 			System.out.println(books.size() + " libros recuperados");
-			setGenres();
+			//setGenres();
 			objectIn.close();
 		}
 		catch (IOException e) {
@@ -84,6 +84,7 @@ public class Core {
 		}
 	}
 
+	/*
 	public static void setGenres() {
 		genres = new TreeMap<String,TreeSet<Book>>();
 		genres.put("Cuento", new TreeSet<Book>());
@@ -100,6 +101,7 @@ public class Core {
 		}
 		
 	}
+
 
 	public static SinglyLinkedList<Book> createBookList (String filePath){
 		SinglyLinkedList<Book> books = new SinglyLinkedList<>();
@@ -130,6 +132,9 @@ public class Core {
 		String authorName = metadata[2];
 		String genre = metadata [3];
 		return Book (name, code, authorName, genre);
+
+
 	}
+	*/
 }
 
