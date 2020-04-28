@@ -11,7 +11,7 @@ public class SinglyLinkedList<T> {
     }
     
     
-    Node<T> insertNodeAtHead(Node<T> list, T data) {
+    public Node<T> insertNodeAtHead(Node<T> list, T data) {
         Node<T> first = new Node<T>(data);
         if(list == null) return first;
         Node<T> temp = list;
@@ -21,7 +21,7 @@ public class SinglyLinkedList<T> {
     }
     
     
-    Node<T> insertNodeAtPosition(Node<T> head, T data, int position) {
+    public Node<T> insertNodeAtPosition(Node<T> head, T data, int position) {
         Node<T> node0 = new Node<T>(data);
         node0.next = null;
         if(head == null || position == 0){
@@ -39,7 +39,7 @@ public class SinglyLinkedList<T> {
         }
     }
     
-    Node<T> insertNodeAtTail(Node<T> head, T data) {
+    public Node<T> insertNodeAtTail(Node<T> head, T data) {
         Node<T> temp = new Node<T>(data);
         temp.next = null;
         if (head == null){
@@ -54,7 +54,7 @@ public class SinglyLinkedList<T> {
         return head;
     }
 
-    Node<T> deleteNode(Node<T> head, int position) {    
+    public Node<T> deleteNode(Node<T> head, int position) {
         if(position == 0) head=head.next;
         else{
             Node<T> temp = head;
@@ -66,7 +66,7 @@ public class SinglyLinkedList<T> {
         return head;
     }
     
-    Node<T> removeDuplicates(Node<T> head) {
+    public Node<T> removeDuplicates(Node<T> head) {
     	if(head == null && head.next == null) return null;
         Node<T> node = head;
         while(head.next != null){
@@ -76,7 +76,7 @@ public class SinglyLinkedList<T> {
         return node;
     }
     
-    void printLinkedList(Node<T> head) {
+    public void printLinkedList(Node<T> head) {
         if (head == null) return;
         while(true){
             System.out.println(head.data);
@@ -85,7 +85,7 @@ public class SinglyLinkedList<T> {
         }
     }
     
-    void reversePrint(Node<T> head) {
+    public void reversePrint(Node<T> head) {
         if(head == null) return;
         reversePrint(head.next);
         System.out.println(head.data);

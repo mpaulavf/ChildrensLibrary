@@ -20,7 +20,7 @@ public class Book implements Comparable<Book> {
 		this.picturePath = picturePath;
 	}
 
-	public Book(String name, String code, String authorName, ArrayList<String> genre) {
+	public Book(String name, String code, String authorName, String genre) {
 		super();
 		this.name = name;
 		this.code = code;
