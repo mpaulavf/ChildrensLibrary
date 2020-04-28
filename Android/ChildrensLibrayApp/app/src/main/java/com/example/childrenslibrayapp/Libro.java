@@ -12,3 +12,5 @@ public class Libro extends AppCompatActivity {
         setContentView(R.layout.activity_libro);
     }
 }
+
+//ELIMINAR
