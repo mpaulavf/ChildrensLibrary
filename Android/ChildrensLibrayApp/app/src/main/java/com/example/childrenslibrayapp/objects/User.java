@@ -10,7 +10,4 @@ public class User {
     User (){
         isWorker = false;
     }
-
-    //quien para pola?
-    //yo
 }
