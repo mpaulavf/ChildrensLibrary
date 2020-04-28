@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent busquedalibro = new Intent(view.getContext(), Busqueda.class);
+                startActivity(busquedalibro);
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -71,4 +71,5 @@ public class MainActivity extends AppCompatActivity {
         Intent infolibro = new Intent(this, Libro.class);
         startActivity(infolibro);
     }
+
 }
