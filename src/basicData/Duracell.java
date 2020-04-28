@@ -8,13 +8,13 @@ public class Duracell<T> {
     public Duracell(int size){
         this.size = size;
         top = 0;
-        ar = new T [size];
+        ar = (T[]) new Object [size];
     }
 
     public Duracell(){
         size = 10;
         top = 0;
-        ar = new T[size];
+        ar = (T[]) new Object [size];
     }
 
     public boolean isFull (){
