@@ -17,7 +17,7 @@ public class MockupGenerator {
 
     Random ran = new Random();
 
-    SinglyLinkedList generateBooks (int n, SinglyLinkedList <Book> libros){
+    SinglyLinkedList generateBookList(int n, SinglyLinkedList <Book> libros){
         String author, name, code, genre;
 
         for (int i=0; i<n; i++) {
