@@ -3,4 +3,10 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="confe">#FFC107</color>
+    <color name="otros">#F8FF00D5</color>
+    <color name="letra">#FCFCFD</color>
+    <color name="colorBoton1">#F8FF5722</color>
+    <color name="crearActi">#F80049FF</color>
+    <color name="estudio">#F824E001</color>
 </resources>
