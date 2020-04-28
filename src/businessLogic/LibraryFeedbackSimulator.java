@@ -1,4 +1,4 @@
-package bussinesLogic;
+package businessLogic;
 
 import java.io.File;
 

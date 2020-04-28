@@ -16,7 +16,7 @@ public class User {
 		
 		LocalDate twoWeeks = today.plusWeeks(2);
 		return "La fecha de hoy es: " + today + "\n"
-			 + "Debes devolver el libro antes del día: " + twoWeeks;
+			 + "Debes devolver el libro antes del dia: " + twoWeeks;
 		
 	}
 	

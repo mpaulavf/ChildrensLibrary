@@ -1,4 +1,4 @@
-package bussinesLogic;
+package businessLogic;
 
 import java.awt.image.*;
 import java.io.*;
@@ -15,7 +15,7 @@ public class WorkersCommands {
 	}
 	
 	public void loadWorkers() {
-		System.out.println("cargando la información de los trabajadores");
+		System.out.println("cargando la informaciï¿½n de los trabajadores");
 		try {
 			final FileInputStream fileIn =
 					new FileInputStream("Resources/SerializedObjects/ValidWorkers");

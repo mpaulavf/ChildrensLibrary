@@ -1,14 +1,12 @@
-package bussinesLogic;
+package businessLogic;
 
 import java.awt.*;
 import java.io.*;
-import java.util.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.*;
 
-import basicData.*;
+import basicData.SinglyLinkedList;
 import data.*;
 import ui.*;
 
@@ -88,9 +86,9 @@ public class Core {
 	public static void setGenres() {
 		genres = new TreeMap<String,TreeSet<Book>>();
 		genres.put("Cuento", new TreeSet<Book>());
-		genres.put("Fábula", new TreeSet<Book>());
+		genres.put("Fï¿½bula", new TreeSet<Book>());
 		genres.put("Mitos y leyendas", new TreeSet<Book>());
-		genres.put("Acción", new TreeSet<Book>());
+		genres.put("Acciï¿½n", new TreeSet<Book>());
 		genres.put("Aventura", new TreeSet<Book>());
 		genres.put("Disney", new TreeSet<Book>());
 		
@@ -100,5 +98,35 @@ public class Core {
 			}
 		}
 		
+	}
+
+	public static SinglyLinkedList<Book> createBookList (String filePath){
+		SinglyLinkedList<Book> books = new SinglyLinkedList<>();
+
+		try(BufferedReader br = new BufferedReader(filePath, StandardCharsets.UTF_8)){
+			String line = br.readLine();
+
+			while (line != null) {
+				String [] attributes = line.split(",");
+
+				Book book = createBook (attributes);
+
+				books.insertNodeAtTail(books.head, book);
+
+				line = br.readLine();
+			}
+
+
+		}catch (IOException ioe){
+			ioe.printStackTrace();
+		}
+		return  books;
+	}
+
+	private static Book createBook(String[] metadata){
+		String name = metadata[0];
+		int code = metadata[1];
+		String authorName = metadata[2];
+		String genre = metadata [3];
 	}
 }

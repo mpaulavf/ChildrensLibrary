@@ -12,7 +12,7 @@ import java.io.*;
 import java.time.*;
 import java.util.*;
 
-import bussinesLogic.*;
+import businessLogic.*;
 import data.*;
 
 
@@ -144,7 +144,7 @@ public class UI extends JFrame{
 		});
 		
 		JTextField textField = new JTextField();
-		textField.setText("Ingresa aquí el nombre del libro o autor");
+		textField.setText("Ingresa aquï¿½ el nombre del libro o autor");
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		textField.setColumns(30);
 		childrensPanel.add(textField, BorderLayout.NORTH);
@@ -173,7 +173,7 @@ public class UI extends JFrame{
 		gbc_chckbxAv.gridy = 0;
 		chckBxPanel.add(chckbxAventura, gbc_chckbxAv);
 		
-		JCheckBox chckbxAccin = new JCheckBox("Acción");
+		JCheckBox chckbxAccin = new JCheckBox("Acciï¿½n");
 		chckbxAccin.setBackground(new Color(200, 229, 227));
 		GridBagConstraints gbc_chckbxAc = new GridBagConstraints();
 		gbc_chckbxAc.insets = new Insets(0, 0, 5, 5);
@@ -205,7 +205,7 @@ public class UI extends JFrame{
 		gbc_chckbxMyl.gridy = 2;
 		chckBxPanel.add(chckbxMitosYLeyendas, gbc_chckbxMyl);
 		
-		JCheckBox chckbxFbula = new JCheckBox("Fábula");
+		JCheckBox chckbxFbula = new JCheckBox("Fï¿½bula");
 		chckbxFbula.setBackground(new Color(200, 229, 227));
 		GridBagConstraints gbc_chckbxF = new GridBagConstraints();
 		gbc_chckbxF.insets = new Insets(0, 0, 5, 5);
@@ -288,18 +288,18 @@ public class UI extends JFrame{
 			tempPanel.setLayout(new BoxLayout(tempPanel, BoxLayout.X_AXIS));
 			JLabel tempLabel = new JLabel();
 			tempLabel.setIcon(new ImageIcon(book.getPicture()));
-			tempLabel.setText("<html>Título: "+book.getName()+"<BR>"
+			tempLabel.setText("<html>Tï¿½tulo: "+book.getName()+"<BR>"
 							+"Escrito por: "+book.getAuthorName()+"<BR>"
-							+"Género(s): "+genresString+"</html>");
+							+"Gï¿½nero(s): "+genresString+"</html>");
 			tempPanel.add(tempLabel);
 			JButton tempButton = new JButton("Mira este libro");
 			tempPanel.add(tempButton);
 			tempButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					JOptionPane showBook = new JOptionPane("<html>Título: "+book.getName()+"<BR>"
+					JOptionPane showBook = new JOptionPane("<html>Tï¿½tulo: "+book.getName()+"<BR>"
 															+"Escrito por: "+book.getAuthorName()+"<BR>"
-															+"Género(s): "+genresString+"<BR>"
-															+"Ubicación: "+book.getDirection()
+															+"Gï¿½nero(s): "+genresString+"<BR>"
+															+"Ubicaciï¿½n: "+book.getDirection()
 															+"</html>",
 															JOptionPane.INFORMATION_MESSAGE,
 															JOptionPane.DEFAULT_OPTION,											
@@ -364,7 +364,7 @@ public class UI extends JFrame{
 		txtId.setColumns(25);
 		this.workersPanel.add(txtId);
 
-		JLabel lblContrasena = new JLabel("Contraseña");
+		JLabel lblContrasena = new JLabel("Contraseï¿½a");
 		lblContrasena.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		this.workersPanel.add(lblContrasena);
 		final JPasswordField jpf = new JPasswordField(20);
@@ -393,7 +393,7 @@ public class UI extends JFrame{
 				} catch (Exception e1) {
 					txtId.setText("");
 					jpf.setText("");
-					JOptionPane.showMessageDialog(null, "Su usuario o contraseña no corresponden al sistema", "Aviso trabajador", JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Su usuario o contraseï¿½a no corresponden al sistema", "Aviso trabajador", JOptionPane.WARNING_MESSAGE);
 				}
 			}
 		});
@@ -420,7 +420,7 @@ public class UI extends JFrame{
 		optionsWorkersPanel.setBackground(new Color(246, 245, 245));
 		optionsWorkersPanel.setLayout(new GridLayout(5, 1));
 		
-		JButton btnAddInfo = new JButton("Agregar un libro con código");
+		JButton btnAddInfo = new JButton("Agregar un libro con cï¿½digo");
 		btnAddInfo.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnAddInfo.setBackground(new Color(163, 213, 209));
 		btnAddInfo.setVerticalAlignment(SwingConstants.CENTER);
@@ -447,7 +447,7 @@ public class UI extends JFrame{
 			}
 		});
 		
-		JButton btnEnd = new JButton("Cerrar Sesión");
+		JButton btnEnd = new JButton("Cerrar Sesiï¿½n");
 		btnEnd.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnEnd.setBackground(new Color(239, 147, 146));
 		btnEnd.setVerticalAlignment(SwingConstants.CENTER);
