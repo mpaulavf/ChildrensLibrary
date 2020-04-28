@@ -15,6 +15,6 @@
         <activity android:name=".Autor" />
         <activity android:name=".Genero" />
         <activity android:name=".Busqueda" />
- 
 
+    </application>
 </manifest>
