@@ -3,6 +3,9 @@ package com.example.childrenslibrayapp;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.childrenslibrayapp.mockdata.ObjectGenerator;
+import com.example.childrenslibrayapp.objects.Book;
+import com.example.childrenslibrayapp.structures.SinglyLinkedList;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -21,6 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -71,5 +75,18 @@ public class MainActivity extends AppCompatActivity {
         Intent infolibro = new Intent(this, Libro.class);
         startActivity(infolibro);
     }
+
+
+    Button button = findViewById(R.id.but_generateData);
+
+    button.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void GenerateData () {
+            ObjectGenerator gen = new ObjectGenerator();
+
+            SinglyLinkedList <Book> libros = new SinglyLinkedList<Book>();
+            libros = gen.generateBooks(10000);
+        }
+    });
 
 }

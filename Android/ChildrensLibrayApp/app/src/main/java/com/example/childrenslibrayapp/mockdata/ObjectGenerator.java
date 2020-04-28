@@ -17,9 +17,13 @@ public class ObjectGenerator {
     final static String[] nombres = {"Maxwell","Flexwell","Kingwell","Armando","Mateo","Jahteo","Jahseh","Gekyume","Fermín","Ferbín","Fermán","Ferbán","Fermón","Ferbón","Fernando","Fermando","Big","Bic","Binc","Tomas","Tomías","Tobías","Golías","Alfredo","Jan","Jank","Jang","Fals","Montías","Nicolas","Edgar","Andres","Brendan","Brandon","Byron","Bruce","Birley","Broydon","Brayan","Birón","Anderßon","Felipe","Vincente","Joel","Jairo","Eduardo","Efraín","Mario","Luigi","Wario","Waluigi","Iván","Germán","David","Boris","Kolya","Anatoli","Vadym","Mishail","Vladimir","Pyotr","Igor","Sergey","Sergei","Anton","Alexei","Pietro","Biebro","Victor","ßictor","Steve","Sbeve","Peter","Beter","Fermeme","Pepe","Jerome","Gerome","Da'Quan","DeShawn","Dennis","DeAndre","Marquis","Terrel","Darnell","Tyrone","Malik","Trevon","Omar","Demar","Dominique","Demetrius","Reginald","Jamal","Maurice","Mauricio","Jalen","Darius","Xavier","Javier","Damian","Terrance","Terrence","Andre","Darryl","Jesse","LeBron","Shaquille","Shaq","Kobe","Jonathan","Joseph","Jotaro","Josuke","Giorno","Giovanni","DIO","Dio","William","Robert","Smokey","Caesar","César","Wamuu","Esidisi","Kars","Santvento","Wilhelm","Muhammed","Mohammed","Ricardo","Jean Pierre","Jürgen","Pier Luigi","Hol","Dan","Daniel","Okuyasu","Koichi","Yoshikage","Tony","Danny","Iggy","Risotto","Bruno","Leone","Narancia","Panacotta","Guido","Irina","Erina","Elizabeth","Susie Q.","Holly","Enyaba","Claudia","Nena","Trish","Peach","Daisy","Zelda","Shiek","Samus","Rosalina","Palutena","Corrin","Lucina","Robin","Isabelle","Canela","Hana","Hannah","Mei","Angela","Ashe","Brigitte","Amelie","Ana","Lena","Nami","Morgana","Claudia","Claudia","Daniela","María","Camila","Rubby","Alicia","Beatriz","Elsa","Laura","Marta","Martina","Sofía","Valentina","Antonia","Rafaela","Antonella","Emilia","Catalina","Fernanda","Lucía","Paula","Paola","Sara","Carla","Karla","Julia","Juliana","Isabela","Abigail","Aurora","Olivia","Liliana","Tatiana","Diana","Adriana","Eliana","Natalia","Andrea","Ana María","Constanza","Marysol","Marisol","Pilar","Maria del Pilar","Maria Nelsy","Trinidad","Maria Trinidad","Margarita","Olga","Diana","Patricia","Mónica","Lorena","Alexandra","Ximena","Kelley","Carolina","Marcela","Franci","Gloria","Ingrid","Esperanza","Consuelo","Lina","Yolanda","Teresa","Nancy","Greta","Fabiola","Clemencia","Bernarda","Gladys","Briceida","Blanca","Mercedes","Rosa","Veronica","Gabriela","Luisa","Mariana","Susana","Isabela","Manuela","Yvonne","Ivana","Soledad","Gertrudis"};
     final static String[] generos = {"Cuento", "Ilsutrado", "Ficción", "Romántico", "Comedia", "Fábula", "Educación", "Comic"};
 
+    public ObjectGenerator(){
+
+    }
+
     Random ran = new Random();
 
-    SinglyLinkedList generateBooks (int n){
+    public SinglyLinkedList generateBooks(int n){
         SinglyLinkedList <Book> libros = new SinglyLinkedList<Book>();
         String author, name, code, genre;
 

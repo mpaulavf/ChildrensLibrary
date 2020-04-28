@@ -22,8 +22,8 @@
         android:id="@+id/ScrollPrincipal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-203dp"
-        tools:layout_editor_absoluteY="45dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
