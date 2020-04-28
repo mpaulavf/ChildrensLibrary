@@ -1,6 +1,5 @@
 package data;
 
-import java.awt.image.*;
 import java.util.*;
 
 public class Book implements Comparable<Book> {
@@ -8,25 +7,25 @@ public class Book implements Comparable<Book> {
 	private String name;
 	private String code = "";
 	private String authorName;
-	private ArrayList<String> genres;
+	private String genre;
 	private String picturePath;
 	
-	public Book(String name, String code, String authorName, ArrayList<String> genres,
+	public Book(String name, String code, String authorName, String genre,
 			String picturePath) {
 		super();
 		this.name = name;
 		this.code = code;
 		this.authorName = authorName;
-		this.genres = genres;
+		this.genre = genre;
 		this.picturePath = picturePath;
 	}
 
-	public Book(String name, String code, String authorName, ArrayList<String> genres) {
+	public Book(String name, String code, String authorName, ArrayList<String> genre) {
 		super();
 		this.name = name;
 		this.code = code;
 		this.authorName = authorName;
-		this.genres = genres;
+		this.genre = genre;
 		picturePath = "Resources/BookImgs/default.png";
 	}
 	
@@ -53,11 +52,11 @@ public class Book implements Comparable<Book> {
 		this.authorName = authorName;
 	}
 	
-	public ArrayList<String> getGenres() {
-		return genres;
+	public String getGenre() {
+		return genre;
 	}
-	public void setGenres(ArrayList<String> genres) {
-		this.genres = genres;
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
 
 	public String getPicturePath() {

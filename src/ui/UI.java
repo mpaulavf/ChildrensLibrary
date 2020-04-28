@@ -275,7 +275,7 @@ public class UI extends JFrame{
 		System.out.println(srchEn.getBooksByGenres().size());
 		
 		for(Book book: Core.getBooks()) {
-			System.out.println(book.getGenres());
+			System.out.println(book.getGenre());
 		}
 		JList<JPanel> list = new JList<JPanel>();
 		for (Book book: srchEn.getBooksByGenres()) {

@@ -3,7 +3,6 @@ package businessLogic;
 import java.awt.*;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.util.*;
 
 import basicData.SinglyLinkedList;
@@ -16,14 +15,20 @@ public class Core {
 	private static TreeMap<String,TreeSet<Book>> genres;
 	
 	public static void main(String[] args) {
-		
+		Random ran = new Random();
+
 		ArrayList<String> g1 = new ArrayList<String>();
 		g1.add("Cuento");
 		
 		Book book = new Book("Libro 0 Fabula", "123", "Pepito", g1, "", null);
 		Book book1 = new Book("Libro 1 Fabula", "123", "Pepito", g1, "", null);
 		Book book2 = new Book("Libro 2 Fabula", "123", "Pepito", g1, "", null);
-		
+
+		String code =  ran.nextInt(1000) + "." + ran.nextInt(1000);
+		String code1 = ("0."+code);
+
+		System.out.println(code1);
+
 		books.add(book);
 		books.add(book1);
 		books.add(book2);
@@ -93,7 +98,7 @@ public class Core {
 		genres.put("Disney", new TreeSet<Book>());
 		
 		for (Book book: books) {
-			for (String genre : book.getGenres()) {
+			for (String genre : book.getGenre()) {
 				genres.get(genre).add(book);
 			}
 		}
@@ -128,5 +133,7 @@ public class Core {
 		int code = metadata[1];
 		String authorName = metadata[2];
 		String genre = metadata [3];
+		return Book (name, code, authorName, genre);
 	}
 }
+

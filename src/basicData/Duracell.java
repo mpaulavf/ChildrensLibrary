@@ -8,7 +8,7 @@ public class Duracell<T> {
     public Duracell(int size){
         this.size = size;
         top = 0;
-        ar = new T[size];
+        ar = new T [size];
     }
 
     public Duracell(){
