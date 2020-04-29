@@ -1,21 +1,23 @@
 package com.example.childrenslibrayapp.objects;
 
+import com.example.childrenslibrayapp.R;
+
 public class Book implements Comparable<Book> {
 
     private String title;
     private String code = "";
     private String authorName;
     private String genre;
-    private String picturePath;
+    private int imgLibro;
 
     public Book(String title, String code, String authorName, String genre,
-                String picturePath) {
+                int imgLibro) {
         super();
         this.title = title;
         this.code = code;
         this.authorName = authorName;
         this.genre = genre;
-        this.picturePath = picturePath;
+        this.imgLibro = imgLibro;
     }
 
     public Book(String title, String code, String authorName, String genre) {
@@ -24,7 +26,7 @@ public class Book implements Comparable<Book> {
         this.code = code;
         this.authorName = authorName;
         this.genre = genre;
-        picturePath = "drawable-v24/libro_no_disponible.png";
+        this.imgLibro = R.drawable.libro_no_disponible;
     }
 
     @Override
@@ -43,7 +45,7 @@ public class Book implements Comparable<Book> {
         this.code = "";
         this.authorName = "";
         this.genre = "";
-        picturePath = "drawable-v24/libro_no_disponible.png";
+        imgLibro = R.drawable.libro_no_disponible;
     }
 
     public String getTitle() {
@@ -76,11 +78,11 @@ public class Book implements Comparable<Book> {
         this.genre = genre;
     }
 
-    public String getPicturePath() {
-        return picturePath;
+    public int getImgLibro() {
+        return imgLibro;
     }
-    public void setPicturePath(String picturePath) {
-        this.picturePath = picturePath;
+    public void setImgLibro(int imgLibro) {
+        this.imgLibro = imgLibro;
     }
 
     @Override

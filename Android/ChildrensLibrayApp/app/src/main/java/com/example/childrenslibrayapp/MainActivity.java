@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(infolibro);
     }
 
+    /*
     public void generateData(){
         ObjectReader oG = new ObjectReader(this);
 
@@ -88,4 +89,6 @@ public class MainActivity extends AppCompatActivity {
         oG.readUsers();
     }
 
+
+     */
 }

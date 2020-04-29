@@ -52,11 +52,11 @@ public class User {
                 User userTemp = (User) temp.data;
                 if (userTemp.getIsWorker()==true) {
                     Worker workerTemp = (Worker) userTemp;
-                    worker.insertNodeAtTail(aux, workerTemp);
+                    worker.insertNodeAtTail(workerTemp);
                 }
                 else {
                     Client clientTemp = (Client) userTemp;
-                    client.insertNodeAtTail(aux, clientTemp);
+                    client.insertNodeAtTail(clientTemp);
                 }
                 temp = temp.next;
             }
