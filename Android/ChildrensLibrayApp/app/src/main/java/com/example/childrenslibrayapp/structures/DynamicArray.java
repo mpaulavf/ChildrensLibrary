@@ -39,8 +39,8 @@ public class DynamicArray<T> {
         }
 
         Log.d("ObjectGenerator", arr.length + "," + size);
-        //System.out.println(arr.length + "," + size);
-        arr[size] = val; //!! Generando OutOfBounds
+
+        arr[size] = val;
         size++;
     }
 
