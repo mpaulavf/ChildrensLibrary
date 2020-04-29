@@ -7,13 +7,29 @@
     tools:context=".Busqueda">
 
 
+    <Button
+        android:id="@+id/but_verListado"
+        android:layout_width="238dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="112dp"
+        android:backgroundTint="@color/confe"
+        android:hint="@string/codigo"
+        android:onClick="Listado"
+        android:text="Listado"
+        android:textColorHint="@color/letra"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/butitle" />
+
     <TextView
         android:id="@+id/tv_busqueda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
         android:hint="@string/busqueda"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,9 +84,9 @@
         android:id="@+id/butcodigo"
         android:layout_width="238dp"
         android:layout_height="69dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/confe"
         android:hint="@string/codigo"
         android:onClick="Codigo"

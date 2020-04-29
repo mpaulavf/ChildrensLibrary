@@ -22,11 +22,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -56,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        GenerateData();
     }
 
     @Override
@@ -81,9 +87,12 @@ public class MainActivity extends AppCompatActivity {
         ObjectGenerator gen = new ObjectGenerator();
 
         SinglyLinkedList <Book> libros = new SinglyLinkedList<Book>();
-        libros = gen.generateBooks(10000);
+        gen.generateBookList(10000, libros);
+
+        Toast.makeText(getApplicationContext(), "Libros generados", Toast.LENGTH_SHORT).show();
+
     }
 
-    
+
 
 }
