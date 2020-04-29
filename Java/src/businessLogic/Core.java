@@ -19,7 +19,6 @@ public class Core {
 		MockupGenerator mockup1 = new MockupGenerator();
 		
 		SinglyLinkedList <Book> libros = new SinglyLinkedList(); 
-		
 		mockup1.generateBooks(1000, libros);
 		
 		EventQueue.invokeLater(new Runnable() {
