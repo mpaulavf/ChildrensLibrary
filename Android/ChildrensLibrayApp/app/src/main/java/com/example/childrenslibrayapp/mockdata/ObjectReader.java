@@ -20,17 +20,17 @@ import java.util.List;
 import java.lang.*;
 
 
-public class ObjectGenerator {
+public class ObjectReader {
     private Context context;
     private DynamicArray<Book> libros = new DynamicArray<Book>();
     private DynamicArray<User> users = new DynamicArray<User>();
 
-    public  ObjectGenerator(Context current){
+    public ObjectReader(Context current){
         this.context = current;
     }
 
 
-    public void generateBooks() {
+    public void readBooks() {
         //Basado en info dada en https://www.youtube.com/watch?v=i-TqNzUryn8
         InputStream is = context.getResources().openRawResource(R.raw.libros_x10000);
 
@@ -56,7 +56,7 @@ public class ObjectGenerator {
         }
     }
 
-    public void generateUsers(){
+    public void readUsers(){
 
         //Basado en info dada en https://www.youtube.com/watch?v=i-TqNzUryn8
         InputStream is = context.getResources().openRawResource(R.raw.usuarios_x10000);

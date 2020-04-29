@@ -3,12 +3,11 @@ package com.example.childrenslibrayapp;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.childrenslibrayapp.mockdata.ObjectGenerator;
+import com.example.childrenslibrayapp.mockdata.ObjectReader;
 import com.example.childrenslibrayapp.objects.Book;
 import com.example.childrenslibrayapp.objects.User;
 import com.example.childrenslibrayapp.structures.SinglyLinkedList;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import android.view.View;
 
@@ -23,11 +22,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
-import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -64,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         SinglyLinkedList <Book> libros = new SinglyLinkedList<Book>();
         SinglyLinkedList <User> users = new SinglyLinkedList<User>();
-        generateData();
+        //generateData();
     }
 
     @Override
@@ -86,10 +82,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void generateData(){
-        ObjectGenerator oG = new ObjectGenerator(this);
+        ObjectReader oG = new ObjectReader(this);
 
-        oG.generateBooks();
-        oG.generateUsers();
+        oG.readBooks();
+        oG.readUsers();
     }
 
 }
