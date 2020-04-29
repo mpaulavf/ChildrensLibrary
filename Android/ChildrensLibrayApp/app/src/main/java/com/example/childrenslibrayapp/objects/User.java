@@ -44,7 +44,6 @@ public class User {
     public void filtrarUsuarios(SinglyLinkedList <User> users) {
         Node temp = users.head;
         if (temp == null) return;
-        Node aux = users.head;
         SinglyLinkedList <Client> client = new SinglyLinkedList <Client>();
         SinglyLinkedList <Worker> worker = new SinglyLinkedList <Worker>();
         while(true){
@@ -52,11 +51,11 @@ public class User {
                 User userTemp = (User) temp.data;
                 if (userTemp.getIsWorker()==true) {
                     Worker workerTemp = (Worker) userTemp;
-                    worker.insertNodeAtTail(aux, workerTemp);
+                    worker.insertNodeAtTail(workerTemp);
                 }
                 else {
                     Client clientTemp = (Client) userTemp;
-                    client.insertNodeAtTail(aux, clientTemp);
+                    client.insertNodeAtTail(clientTemp);
                 }
                 temp = temp.next;
             }
