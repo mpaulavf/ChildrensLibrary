@@ -19,6 +19,7 @@ public class ObjectGenerator {
 
     public SinglyLinkedList<Book> generateBookList(int n, SinglyLinkedList <Book> libros){
 
+
         String author, name, code, genre;
 
         for (int i=0; i<n; i++) {
@@ -31,6 +32,7 @@ public class ObjectGenerator {
 
             libros.insertNodeAtTail(libros.head, libro);
         }
+
         return libros;
     }
 
