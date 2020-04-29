@@ -46,11 +46,15 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.caratula
+        holder.titulo.setText(libroEnListas.get(position).getTitulo());
+        holder.autor.setText(libroEnListas.get(position).getAutor());
+        holder.genero.setText(libroEnListas.get(position).getGenero());
+        holder.codigo.setText(libroEnListas.get(position).getCodigo());
+        holder.caratula.setImageResource(libroEnListas.get(position).getImgLibro());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return libroEnListas.size();
     }
 }
