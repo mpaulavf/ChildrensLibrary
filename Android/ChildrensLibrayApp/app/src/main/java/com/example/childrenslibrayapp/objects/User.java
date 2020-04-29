@@ -10,9 +10,9 @@ public class User {
     private String password;
     private Boolean isWorker;
 
-    public User(String name, String lastname, String nickname, String password, Boolean isWorker) {
+    public User(String name, String surname, String nickname, String password, Boolean isWorker) {
         this.name = name;
-        this.surname = lastname;
+        this.surname = surname;
         this.nickname = nickname;
         this.password = password;
         this.isWorker = isWorker;
@@ -22,7 +22,7 @@ public class User {
     public void setName(String name) { this.name = name; }
 
     public String getSurname() { return surname; }
-    public void setSurname(String lastname) { this.surname = lastname; }
+    public void setSurname(String surname) { this.surname = surname; }
 
     public String getNickname() { return nickname; }
     public void setNickname(String nickname) { this.nickname = nickname; }
@@ -32,6 +32,5 @@ public class User {
 
     public Boolean getIsWorker() { return isWorker; }
     public void setIsWorker(Boolean isWorker) { this.isWorker = isWorker; }
-
 
 }
