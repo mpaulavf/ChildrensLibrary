@@ -1,6 +1,8 @@
 package com.example.childrenslibrayapp.objects;
 
 import com.example.childrenslibrayapp.mockdata.ObjectGenerator;
+import com.example.childrenslibrayapp.structures.Node;
+import com.example.childrenslibrayapp.structures.SinglyLinkedList;
 
 public class User {
 
@@ -33,8 +35,27 @@ public class User {
     public Boolean getIsWorker() { return isWorker; }
     public void setIsWorker(Boolean isWorker) { this.isWorker = isWorker; }
 
-    public void filtrarUsuarios() {
-
+    public void filtrarUsuarios(SinglyLinkedList <User> users) {
+        Node temp = users.head;
+        Node aux = users.head;
+        if (temp == null) return;
+        SinglyLinkedList <Client> client = new SinglyLinkedList <Client>();
+        SinglyLinkedList <Worker> worker = new SinglyLinkedList <Worker>();
+        while(true){
+            if (temp.next != null) {
+                User userTemp = (User) temp.data;
+                if (userTemp.getIsWorker()==true) {
+                    Worker workerTemp = (Worker) userTemp;
+                    worker.insertNodeAtTail(aux, workerTemp);
+                }
+                else {
+                    Client clientTemp = (Client) userTemp;
+                    client.insertNodeAtTail(aux, clientTemp);
+                }
+                temp = temp.next;
+            }
+            else break;
+        }
     }
 
 }
