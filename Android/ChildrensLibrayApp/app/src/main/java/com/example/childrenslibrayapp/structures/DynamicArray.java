@@ -25,16 +25,16 @@ public class DynamicArray<T> {
         arr[i] = val;
     }
 
-    public void PushBack(T val){
+    public void pushBack(T val){
         if (size == capacity){
             T[] newArr = (T[]) new Object[2*capacity];
             for (int i=0; i<size; i++){
                 newArr [i] = arr[i];
             }
-            arr[capacity] = newArr[2*capacity];
+            arr = newArr;
         }
 
-        arr[size] = val;
+        arr[size] = val; //!! Generando OutOfBounds 
         size++;
     }
 

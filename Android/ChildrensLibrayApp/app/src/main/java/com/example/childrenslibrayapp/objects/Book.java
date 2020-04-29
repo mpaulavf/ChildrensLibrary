@@ -27,6 +27,25 @@ public class Book implements Comparable<Book> {
         picturePath = "drawable-v24/libro_no_disponible.png";
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", code='" + code + '\'' +
+                ", authorName='" + authorName + '\'' +
+                ", genre='" + genre + '\'' +
+                '}';
+    }
+
+    public Book() {
+        super();
+        this.title = "";
+        this.code = "";
+        this.authorName = "";
+        this.genre = "";
+        picturePath = "drawable-v24/libro_no_disponible.png";
+    }
+
     public String getTitle() {
         return title;
     }

@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         SinglyLinkedList <Book> libros = new SinglyLinkedList<Book>();
         SinglyLinkedList <User> users = new SinglyLinkedList<User>();
-        //GenerateData(libros, users);
+        generateData();
     }
 
     @Override
@@ -85,13 +85,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(infolibro);
     }
 
-    public void GenerateData (SinglyLinkedList <Book> libros, SinglyLinkedList <User> users) {
-        ObjectGenerator gen = new ObjectGenerator();
+    public void generateData(){
+        ObjectGenerator oG = new ObjectGenerator(this);
 
-        gen.generateBookList(10000, libros);
-        gen.generateUsers(10000, users);
-
-        Toast.makeText(getApplicationContext(), "Datos generados", Toast.LENGTH_SHORT).show();
+        oG.generateBooks();
+        oG.generateUsers();
     }
 
 }

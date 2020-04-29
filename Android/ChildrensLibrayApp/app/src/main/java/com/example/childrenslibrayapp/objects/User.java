@@ -19,6 +19,14 @@ public class User {
         this.isWorker = isWorker;
     }
 
+    public User() {
+        this.name = "";
+        this.surname = "";
+        this.nickname = "";
+        this.password = "";
+        this.isWorker = false;
+    }
+
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
