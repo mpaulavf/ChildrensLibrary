@@ -29,4 +29,9 @@ public class Busqueda extends AppCompatActivity {
         Intent codigo = new Intent(this, Codigo.class);
         startActivity(codigo);
     }
+    public void Listado(View view) {
+        Intent listado = new Intent(this, Listado.class);
+        startActivity(listado);
+    }
+
 }

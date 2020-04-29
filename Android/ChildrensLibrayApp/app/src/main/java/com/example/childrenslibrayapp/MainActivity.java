@@ -25,6 +25,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -84,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
 
         SinglyLinkedList <Book> libros = new SinglyLinkedList<Book>();
         gen.generateBookList(10000, libros);
+
+        Toast.makeText(getApplicationContext(), "Libros generados", Toast.LENGTH_SHORT).show();
 
     }
 

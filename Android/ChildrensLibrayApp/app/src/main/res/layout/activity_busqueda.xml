@@ -7,6 +7,22 @@
     tools:context=".Busqueda">
 
 
+    <Button
+        android:id="@+id/but_verListado"
+        android:layout_width="238dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="112dp"
+        android:backgroundTint="@color/confe"
+        android:hint="@string/codigo"
+        android:onClick="Listado"
+        android:text="Listado"
+        android:textColorHint="@color/letra"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/butitle" />
+
     <TextView
         android:id="@+id/tv_busqueda"
         android:layout_width="wrap_content"
