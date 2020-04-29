@@ -2,7 +2,6 @@ package businessLogic;
 
 import java.awt.*;
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 import basicData.SinglyLinkedList;
@@ -19,7 +18,12 @@ public class Core {
 		MockupGenerator mockup1 = new MockupGenerator();
 		
 		SinglyLinkedList <Book> libros = new SinglyLinkedList(); 
+<<<<<<< HEAD
 		mockup1.generateBooks(1000, libros);
+=======
+		
+		mockup1.generateBookList(1000, libros);
+>>>>>>> d8198314c396b9af84c7ec2b64b8c025f7423ddd
 		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {

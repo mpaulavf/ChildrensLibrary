@@ -3,9 +3,9 @@ package com.example.childrenslibrayapp.mockdata;
 //creditos a un compa de los andes por las listas para generar los libros.
 
 import com.example.childrenslibrayapp.objects.*;
-import com.example.childrenslibrayapp.structures.*;
-
-import java.util.Random;
+import com.example.childrenslibrayapp.structures.SinglyLinkedList;
+import java.lang.*;
+import java.util.*;
 
 public class ObjectGenerator {
     final static String[] titulos = {"Las Acacias","Los Robles","Los Abedules","Los Arbustos","Los Lirios","Los Helechos","Los Pinos","Los Manglares","Las Yucas","La Estrella","El Grande","El Gozo","Los Gozos","La Melodía","Harmonía","La Alegría","Perseverancia","Las Aguas","Las Nueces","La Nuez Dulce","El Loco","El Mago","La Sacerdotisa","La Emperatriz","El Emperador","El Hierofante","Los Enamorados","El Carro","Justicia","El Ermitaño","La Rueda de la Fortuna","Fuerza","El Ahorcado","Muerte","Templanza","El Diablo","La Torre","La Estrella","La Luna","El Sol","El Juicio","EL MUNDO","El Sabueso","El Loro","El Canario","Las Flores","Banderas","Banderines","Bloques","La Perseverancia","Holzbau","The Deliverance","La Entreganza","The March","La Marcha","The Stand","The Black Knight","Los Aldeanos","Los Sapos","La Golosa","El Goloso","El Coloso","The Colossus","The Titan","The Vagrant","T-Pose Wario","The Bulwark","La máquina","The Machine","El Dragón","The Dragon","The Wyrm","The Drake","The Wyvern","The Imp","El Diablito","El Milenio","Truth","La Verdad","El Dulce","Las Eugenias","El Bonsai","Las Venus","The Piranhas","The Warriors","Amón","Ra","Thoth","Mut","Isis","Osiris","Horus","Bastet","Nejbet","Ra","Obelisco","La Aventura","Los Pastores","El Valle","Los Zagalillos","El Tamborilero","El Saxofón","La Rana","El Sapito","El Sapote","El Esférico","El Bloque","El Asociado","El Negocio"};
@@ -17,14 +17,14 @@ public class ObjectGenerator {
 
     Random ran = new Random();
 
-    public SinglyLinkedList generateBooks(int n, SinglyLinkedList <Book> libros){
+    public SinglyLinkedList<Book> generateBookList(int n, SinglyLinkedList <Book> libros){
 
         String author, name, code, genre;
 
         for (int i=0; i<n; i++) {
             author = nombres[ran.nextInt(nombres.length)] + apellidos[ran.nextInt(apellidos.length)];
             name = titulos[ran.nextInt(titulos.length)];
-            code = String.format("%03d", i);
+            code = String.format("%06d", i);
             genre = generos[ran.nextInt(generos.length)];
 
             Book libro = new Book(name, code, author, genre);
@@ -32,7 +32,6 @@ public class ObjectGenerator {
             libros.insertNodeAtTail(libros.head, libro);
         }
         return libros;
-
     }
 
     final static String[] userNombres = {"Maria","Carmen","Josefa","Isabel","Francisca","Antonia","Ana","Pilar","Lucia",
@@ -56,7 +55,7 @@ public class ObjectGenerator {
             surname = userApellidos[ran.nextInt(apellidos.length)];
             nickname = generateNickname(name, surname);
             password = generatePassword();
-            isWorker = true;
+            isWorker = generateBoolean(ran.nextInt(1));
 
             User user = new User(name, surname, nickname, password, isWorker);
 
@@ -75,13 +74,16 @@ public class ObjectGenerator {
 
     public String generatePassword(){
         String password="";
-
         for(int i=0; i<8; i++) {
             Integer temp = ((int)Math.floor(Math.random()*5+1));
             password+=temp.toString();
         }
-        return  password;
+        return password;
+    }
 
+    public Boolean generateBoolean(int n){
+        if (n==0) { return true; }
+        else return false;
     }
 
 }
