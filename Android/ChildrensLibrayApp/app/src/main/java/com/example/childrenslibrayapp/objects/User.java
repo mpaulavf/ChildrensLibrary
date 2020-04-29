@@ -1,13 +1,37 @@
 package com.example.childrenslibrayapp.objects;
 
-public class User {
-    Boolean isWorker;
+import com.example.childrenslibrayapp.mockdata.ObjectGenerator;
 
-    User (Boolean isWorker){
+public class User {
+
+    private String name;
+    private String surname;
+    private String nickname;
+    private String password;
+    private Boolean isWorker;
+
+    public User(String name, String lastname, String nickname, String password, Boolean isWorker) {
+        this.name = name;
+        this.surname = lastname;
+        this.nickname = nickname;
+        this.password = password;
         this.isWorker = isWorker;
     }
 
-    User (){
-        isWorker = false;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getSurname() { return surname; }
+    public void setSurname(String lastname) { this.surname = lastname; }
+
+    public String getNickname() { return nickname; }
+    public void setNickname(String nickname) { this.nickname = nickname; }
+
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+
+    public Boolean getIsWorker() { return isWorker; }
+    public void setIsWorker(Boolean isWorker) { this.isWorker = isWorker; }
+
+
 }

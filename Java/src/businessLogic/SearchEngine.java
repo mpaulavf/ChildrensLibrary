@@ -10,7 +10,7 @@ public class SearchEngine {
 	public TreeSet<Book> everyBook;
 	public TreeSet<Book> booksByAuthor = new TreeSet<Book>();
 	public TreeSet<Book> booksByName = new TreeSet<Book>();
-	public TreeSet<Book> booksByGenres = new TreeSet<Book>();
+	public TreeSet<Book> booksByGenre = new TreeSet<Book>();
 	
 	public SearchEngine(Search search) {
 		everyBook = Core.getBooks();
@@ -114,8 +114,8 @@ public class SearchEngine {
 		return booksByName;
 	}
 
-	public TreeSet<Book> getBooksByGenres() {
-		return booksByGenres;
+	public TreeSet<Book> getBooksByGenre() {
+		return booksByGenre;
 	}
 
 	
