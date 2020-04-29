@@ -31,7 +31,7 @@ public class ObjectGenerator {
         return false;
     }
 
-    public SinglyLinkedList generateBooks(int n, SinglyLinkedList <Book> libros){
+    public SinglyLinkedList generateBookList(int n, SinglyLinkedList <Book> libros){
 
         String title, author, code, genre;
 

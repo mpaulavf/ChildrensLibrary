@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.example.childrenslibrayapp.mockdata.ObjectGenerator;
 import com.example.childrenslibrayapp.objects.Book;
+import com.example.childrenslibrayapp.objects.User;
 import com.example.childrenslibrayapp.structures.SinglyLinkedList;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -61,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        GenerateData();
+        SinglyLinkedList <Book> libros = new SinglyLinkedList<Book>();
+        SinglyLinkedList <User> users = new SinglyLinkedList<User>();
+        GenerateData(libros, users);
     }
 
     @Override
@@ -82,17 +85,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(infolibro);
     }
 
-
-    public void GenerateData () {
+    public void GenerateData (SinglyLinkedList <Book> libros, SinglyLinkedList <User> users) {
         ObjectGenerator gen = new ObjectGenerator();
 
-        SinglyLinkedList <Book> libros = new SinglyLinkedList<Book>();
         gen.generateBookList(10000, libros);
+        gen.generateUsers(10000, users);
 
-        Toast.makeText(getApplicationContext(), "Libros generados", Toast.LENGTH_SHORT).show();
-
+        Toast.makeText(getApplicationContext(), "Datos generados", Toast.LENGTH_SHORT).show();
     }
-
-
 
 }

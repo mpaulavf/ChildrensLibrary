@@ -33,4 +33,8 @@ public class User {
     public Boolean getIsWorker() { return isWorker; }
     public void setIsWorker(Boolean isWorker) { this.isWorker = isWorker; }
 
+    public void filtrarUsuarios() {
+
+    }
+
 }
