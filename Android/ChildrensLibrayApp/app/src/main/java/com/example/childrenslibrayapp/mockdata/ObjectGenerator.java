@@ -2,10 +2,14 @@ package com.example.childrenslibrayapp.mockdata;
 
 //creditos a un compa de los andes por las listas.
 
+import android.os.Environment;
+
 import com.example.childrenslibrayapp.objects.*;
 import com.example.childrenslibrayapp.structures.*;
 
 
+import java.io.File;
+import java.io.PrintWriter;
 import java.util.Random;
 
 
@@ -23,19 +27,45 @@ public class ObjectGenerator {
 
     Random ran = new Random();
 
+    public boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        return false;
+    }
+
+
+
+
+
     public void generateBookList(int n, SinglyLinkedList <Book> libros){
 
-        String author, name, code, genre;
+        String title, author, code, genre;
 
-        for (int i=0; i<n; i++) {
-            author = nombres[ran.nextInt(nombres.length)] + apellidos[ran.nextInt(apellidos.length)];
-            name = titulos[ran.nextInt(titulos.length)];
-            code = String.format("%06d", i);
-            genre = generos[ran.nextInt(generos.length)];
+        File biblioteca = new File ("/biblioteca.csv");
 
-            Book libro = new Book(name, code, author, genre);
+        try{
+            PrintWriter peewee = new PrintWriter(biblioteca);
 
-            libros.insertNodeAtTail(libros.head, libro);
+            for (int i=0; i<n; i++) {
+                title = titulos[ran.nextInt(titulos.length)];
+                author = nombres[ran.nextInt(nombres.length)] + apellidos[ran.nextInt(apellidos.length)];
+                code = String.format("%06d", i);
+                genre = generos[ran.nextInt(generos.length)];
+
+                peewee.println(title + "," + author + "," + code + "," + genre);
+
+                Book libro = new Book(title, code, author, genre);
+
+                libros.insertNodeAtTail(libros.head, libro);
+
+            }
+
+            peewee.close();
+        }catch (Exception e){
+            //colocar toast con el error
+
         }
     }
 
