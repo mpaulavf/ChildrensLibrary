@@ -1,8 +1,7 @@
 package com.example.childrenslibrayapp.objects;
 
 import com.example.childrenslibrayapp.mockdata.ObjectGenerator;
-import com.example.childrenslibrayapp.structures.Node;
-import com.example.childrenslibrayapp.structures.SinglyLinkedList;
+import com.example.childrenslibrayapp.structures.*;
 
 public class User {
 

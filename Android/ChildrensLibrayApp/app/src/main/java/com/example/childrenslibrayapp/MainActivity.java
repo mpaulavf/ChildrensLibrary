@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         SinglyLinkedList <Book> libros = new SinglyLinkedList<Book>();
         SinglyLinkedList <User> users = new SinglyLinkedList<User>();
-        GenerateData(libros, users);
+        //GenerateData(libros, users);
     }
 
     @Override

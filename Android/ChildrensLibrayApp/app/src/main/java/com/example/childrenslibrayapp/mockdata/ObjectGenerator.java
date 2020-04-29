@@ -2,16 +2,13 @@ package com.example.childrenslibrayapp.mockdata;
 
 //creditos a un compa de los andes por las listas para generar los libros.
 
-import android.os.Environment;
 
 import com.example.childrenslibrayapp.objects.*;
 import com.example.childrenslibrayapp.structures.*;
-import java.io.File;
-import java.io.PrintWriter;
+
 import java.util.Random;
-import com.example.childrenslibrayapp.structures.SinglyLinkedList;
 import java.lang.*;
-import java.util.*;
+
 
 public class ObjectGenerator {
     final static String[] titulos = {"Las Acacias","Los Robles","Los Abedules","Los Arbustos","Los Lirios","Los Helechos","Los Pinos","Los Manglares","Las Yucas","La Estrella","El Grande","El Gozo","Los Gozos","La Melodía","Harmonía","La Alegría","Perseverancia","Las Aguas","Las Nueces","La Nuez Dulce","El Loco","El Mago","La Sacerdotisa","La Emperatriz","El Emperador","El Hierofante","Los Enamorados","El Carro","Justicia","El Ermitaño","La Rueda de la Fortuna","Fuerza","El Ahorcado","Muerte","Templanza","El Diablo","La Torre","La Estrella","La Luna","El Sol","El Juicio","EL MUNDO","El Sabueso","El Loro","El Canario","Las Flores","Banderas","Banderines","Bloques","La Perseverancia","Holzbau","The Deliverance","La Entreganza","The March","La Marcha","The Stand","The Black Knight","Los Aldeanos","Los Sapos","La Golosa","El Goloso","El Coloso","The Colossus","The Titan","The Vagrant","T-Pose Wario","The Bulwark","La máquina","The Machine","El Dragón","The Dragon","The Wyrm","The Drake","The Wyvern","The Imp","El Diablito","El Milenio","Truth","La Verdad","El Dulce","Las Eugenias","El Bonsai","Las Venus","The Piranhas","The Warriors","Amón","Ra","Thoth","Mut","Isis","Osiris","Horus","Bastet","Nejbet","Ra","Obelisco","La Aventura","Los Pastores","El Valle","Los Zagalillos","El Tamborilero","El Saxofón","La Rana","El Sapito","El Sapote","El Esférico","El Bloque","El Asociado","El Negocio"};
@@ -23,22 +20,10 @@ public class ObjectGenerator {
 
     Random ran = new Random();
 
-    public boolean isExternalStorageWritable() {
-        String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-            return true;
-        }
-        return false;
-    }
 
     public SinglyLinkedList generateBookList(int n, SinglyLinkedList <Book> libros){
 
         String title, author, code, genre;
-
-        File biblioteca = new File ("/biblioteca.csv");
-
-        try{
-            PrintWriter peewee = new PrintWriter(biblioteca);
 
             for (int i=0; i<n; i++) {
                 title = titulos[ran.nextInt(titulos.length)];
@@ -46,22 +31,17 @@ public class ObjectGenerator {
                 code = String.format("%06d", i);
                 genre = generos[ran.nextInt(generos.length)];
 
-                peewee.println(title + "," + author + "," + code + "," + genre);
-
                 Book libro = new Book(title, code, author, genre);
 
                 libros.insertNodeAtTail(libros.head, libro);
 
             }
 
-            peewee.close();
-        }catch (Exception e){
-            //colocar toast con el error
-
+            return libros;
         }
 
-        return libros;
-    }
+
+
 
     final static String[] userNombres = {"Maria","Carmen","Josefa","Isabel","Francisca","Antonia","Ana","Pilar","Lucia",
             "Cristina","Laura","Juana","Elena","Marta","Manuela","Raquel","Angeles","Mercedes","Irene","Teresa","Beatriz",
