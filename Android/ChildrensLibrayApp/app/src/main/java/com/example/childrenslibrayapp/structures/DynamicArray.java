@@ -1,5 +1,7 @@
 package com.example.childrenslibrayapp.structures;
 
+import android.util.Log;
+
 public class DynamicArray<T> {
     private int capacity;
     private int size;
@@ -26,15 +28,19 @@ public class DynamicArray<T> {
     }
 
     public void pushBack(T val){
-        if (size == capacity){
-            T[] newArr = (T[]) new Object[2*capacity];
+        if (size == capacity-1){
+            capacity = 2* capacity;
+            T[] newArr = (T[]) new Object[capacity];
+
             for (int i=0; i<size; i++){
                 newArr [i] = arr[i];
             }
             arr = newArr;
         }
 
-        arr[size] = val; //!! Generando OutOfBounds 
+        Log.d("ObjectGenerator", arr.length + "," + size);
+        //System.out.println(arr.length + "," + size);
+        arr[size] = val; //!! Generando OutOfBounds
         size++;
     }
 
