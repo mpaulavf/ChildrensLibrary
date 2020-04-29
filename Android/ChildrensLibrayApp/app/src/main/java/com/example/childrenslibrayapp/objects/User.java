@@ -37,8 +37,8 @@ public class User {
 
     public void filtrarUsuarios(SinglyLinkedList <User> users) {
         Node temp = users.head;
-        Node aux = users.head;
         if (temp == null) return;
+        Node aux = users.head;
         SinglyLinkedList <Client> client = new SinglyLinkedList <Client>();
         SinglyLinkedList <Worker> worker = new SinglyLinkedList <Worker>();
         while(true){
