@@ -1,5 +1,6 @@
 package com.example.childrenslibrayapp.mockdata;
 
+import android.content.Context;
 import android.hardware.usb.UsbInterface;
 import android.widget.Toast;
 
@@ -14,21 +15,30 @@ import java.util.Scanner;
 
 public class SearchEngine {
 
+    Context context;
+
+    public SearchEngine(Context context) {
+        this.context = context;
+    }
+
     public SinglyLinkedList <Book> allBooks = new SinglyLinkedList <Book> ();
     public SinglyLinkedList <Book> booksByAuthor = new SinglyLinkedList <Book>();
     public SinglyLinkedList <Book> booksByTitle = new SinglyLinkedList <Book>();
     public SinglyLinkedList <Book> booksByGenre = new SinglyLinkedList <Book>();
     public SinglyLinkedList <Book> booksByCode = new SinglyLinkedList <Book>();
 
+
     public SearchEngine(Search search, String genero) {
         searchBy(search, genero);
     }
 
     public SinglyLinkedList <Book> getAllBooks() { return allBooks; }
-    public void setAllBooks(SinglyLinkedList <Book> allBooks) { this.allBooks = allBooks; }
-    static ObjectReader tempBooks = new ObjectReader(this);
-    public SinglyLinkedList <Book> searchBy(Search search, String genero) {
 
+
+    public void setAllBooks(SinglyLinkedList <Book> allBooks) { this.allBooks = allBooks; }
+
+    public SinglyLinkedList <Book> searchBy(Search search, String genero) {
+        ObjectReader tempBooks = new ObjectReader(context);
         tempBooks.readBooks(allBooks);
         String tempSearch = search.getTempSearch();
         String category = search.getCategory();

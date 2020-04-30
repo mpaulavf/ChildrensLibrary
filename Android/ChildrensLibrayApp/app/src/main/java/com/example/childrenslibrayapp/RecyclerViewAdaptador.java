@@ -9,6 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.childrenslibrayapp.objects.*;
+import com.example.childrenslibrayapp.structures.*;
+
 import java.util.List;
 
 public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdaptador.ViewHolder>{
@@ -29,9 +32,9 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
 
     }
 
-    public List <LibroEnLista> libroEnListas;
+    public DynamicArray<Book> libroEnListas;
 
-    public RecyclerViewAdaptador(List<LibroEnLista> libroEnListas) {
+    public RecyclerViewAdaptador(DynamicArray<Book> libroEnListas) {
         this.libroEnListas = libroEnListas;
     }
 
@@ -46,15 +49,21 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.titulo.setText(libroEnListas.get(position).getTitulo());
-        holder.autor.setText(libroEnListas.get(position).getAutor());
-        holder.genero.setText(libroEnListas.get(position).getGenero());
-        holder.codigo.setText(libroEnListas.get(position).getCodigo());
-        holder.caratula.setImageResource(libroEnListas.get(position).getImgLibro());
+
+        try {
+            holder.titulo.setText(libroEnListas.getVal(position).getTitle());
+            holder.autor.setText(libroEnListas.getVal(position).getAuthorName());
+            holder.genero.setText(libroEnListas.getVal(position).getGenre());
+            holder.codigo.setText(libroEnListas.getVal(position).getCode());
+            holder.caratula.setImageResource(libroEnListas.getVal(position).getImgLibro());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
     public int getItemCount() {
-        return libroEnListas.size();
+        return libroEnListas.getSize();
     }
 }
