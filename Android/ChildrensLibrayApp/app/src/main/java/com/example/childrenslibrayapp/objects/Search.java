@@ -7,17 +7,13 @@ import java.util.Scanner;
 
 public class Search {
 
+    public String category;
     private String tempSearch;
-    private SinglyLinkedList <String> wordsInSearch;
     private SinglyLinkedList <String> history;
 
-    public Search (String tempSearch) {
+    public Search (String tempSearch, String category) {
         this.tempSearch = tempSearch;
-    }
-
-    public Search (String tempSearch, SinglyLinkedList <String> history) {
-        this.tempSearch = tempSearch;
-        this.history = history;
+        this.category = category;
     }
 
     public String getTempSearch() { return tempSearch; }
@@ -26,22 +22,13 @@ public class Search {
         this.tempSearch = tempSearch;
     }
 
-    public SinglyLinkedList <String> getWords() {
-        Scanner sc = new Scanner(tempSearch);
-        this.wordsInSearch = new SinglyLinkedList <String>();
-        while (sc.hasNext()) {
-            String temp = sc.next().trim();
-            this.wordsInSearch.insertNodeAtTail(temp);
-        }
-        sc.close();
-        return this.wordsInSearch;
-    }
-    public void setWords(SinglyLinkedList <String> words) { this.wordsInSearch = wordsInSearch; }
-
-    public SinglyLinkedList <String> getHistory() { return history; }
+    public SinglyLinkedList <String> showHistory() { return history; }
     public void addToHistory(String tempSearch) {
         history.insertNodeAtTail(tempSearch);
     }
+
+    public String getCategory() { return category; }
+    public void setCategory() { this.category = category; }
 
 }
 
