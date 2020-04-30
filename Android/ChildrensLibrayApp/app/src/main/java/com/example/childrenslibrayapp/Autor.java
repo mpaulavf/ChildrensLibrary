@@ -7,9 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.childrenslibrayapp.mockdata.SearchEngine;
+
 public class Autor extends AppCompatActivity {
     String searchTerm;
     EditText txt;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
