@@ -23,8 +23,8 @@ import java.lang.*;
 public class ObjectReader {
     private Context context;
 
-    public ObjectReader(SearchEngine current){
-        this.context = current;
+    public ObjectReader(Context context){
+        this.context = context;
     }
 
 

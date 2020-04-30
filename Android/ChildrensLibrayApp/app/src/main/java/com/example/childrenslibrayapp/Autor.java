@@ -17,11 +17,11 @@ public class Autor extends AppCompatActivity {
         setContentView(R.layout.activity_autor);
 
 
-        txt = (EditText) findViewById(R.id.txt_authorSearch);
+        txt = (EditText) findViewById(R.id.et_busaut);
 
         searchTerm = txt.getText().toString();
 
-        Button btn = (Button) findViewById(R.id.btn_authorSearch);
+        Button btn = (Button) findViewById(R.id.bt_busaut);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

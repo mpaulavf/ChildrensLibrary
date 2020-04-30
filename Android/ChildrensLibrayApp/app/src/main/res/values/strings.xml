@@ -22,6 +22,11 @@
     <string name="autor2">Autor</string>
     <string name="titulo2">Titulo</string>
     <string name="codigo">Codigo</string>
+    <string name="Buscar">Buscar</string>
+    <string name="Buscadorcodigo">Ingrese el codigo</string>
+    <string name="Buscadorgenero">Seleccione el genero</string>
+    <string name="Buscadorautor">Ingrese el autor</string>
+    <string name="Buscadortitulo">Ingrese el titulo</string>
     <string name="Bot_generateData" />
 
 </resources>

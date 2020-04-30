@@ -7,6 +7,7 @@ import com.example.childrenslibrayapp.mockdata.ObjectReader;
 import com.example.childrenslibrayapp.objects.Book;
 import com.example.childrenslibrayapp.objects.Client;
 import com.example.childrenslibrayapp.objects.User;
+
 import com.example.childrenslibrayapp.objects.Worker;
 import com.example.childrenslibrayapp.structures.DynamicArray;
 import com.example.childrenslibrayapp.structures.SinglyLinkedList;
@@ -83,5 +84,14 @@ public class MainActivity extends AppCompatActivity {
         Intent infolibro = new Intent(this, Libro.class);
         startActivity(infolibro);
     }
+/*
+    public void generateData(){
+        ObjectReader oG = new ObjectReader(this);
+        DynamicArray<Book> books = new DynamicArray<Book>();
+        DynamicArray<User> user = new DynamicArray<User>();
 
+        oG.readBooks(books);
+        oG.readUsers(user);
+    }
+*/
 }

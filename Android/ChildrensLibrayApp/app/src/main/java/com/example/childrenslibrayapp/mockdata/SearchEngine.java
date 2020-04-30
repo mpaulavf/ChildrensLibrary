@@ -26,9 +26,9 @@ public class SearchEngine {
 
     public SinglyLinkedList <Book> getAllBooks() { return allBooks; }
     public void setAllBooks(SinglyLinkedList <Book> allBooks) { this.allBooks = allBooks; }
-
+    static ObjectReader tempBooks = new ObjectReader(this);
     public SinglyLinkedList <Book> searchBy(Search search, String genero) {
-        ObjectReader tempBooks = new ObjectReader(this);
+
         tempBooks.readBooks(allBooks);
         String tempSearch = search.getTempSearch();
         String category = search.getCategory();
