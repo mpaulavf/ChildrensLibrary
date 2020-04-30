@@ -1,0 +1,79 @@
+package com.example.childrenslibrayapp.mockdata;
+
+import android.hardware.usb.UsbInterface;
+import android.widget.Toast;
+
+import com.example.childrenslibrayapp.objects.Book;
+import com.example.childrenslibrayapp.objects.Search;
+import com.example.childrenslibrayapp.structures.DynamicArray;
+import com.example.childrenslibrayapp.structures.Node;
+import com.example.childrenslibrayapp.structures.SinglyLinkedList;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SearchEngine {
+
+    public SinglyLinkedList <Book> allBooks = new SinglyLinkedList <Book> ();
+    public SinglyLinkedList <Book> booksByAuthor = new SinglyLinkedList <Book>();
+    public SinglyLinkedList <Book> booksByTitle = new SinglyLinkedList <Book>();
+    public SinglyLinkedList <Book> booksByGenre = new SinglyLinkedList <Book>();
+    public SinglyLinkedList <Book> booksByCode = new SinglyLinkedList <Book>();
+
+    public SearchEngine(Search search, String genero) {
+        searchBy(search, genero);
+    }
+
+    public SinglyLinkedList <Book> getAllBooks() { return allBooks; }
+    public void setAllBooks(SinglyLinkedList <Book> allBooks) { this.allBooks = allBooks; }
+
+    public SinglyLinkedList <Book> searchBy(Search search, String genero) {
+        ObjectReader tempBooks = new ObjectReader(this);
+        tempBooks.readBooks(allBooks);
+        String tempSearch = search.getTempSearch();
+        String category = search.getCategory();
+        if (allBooks.head == null) return null;
+        Node temp = allBooks.head;
+        Book aux = (Book) temp.data;
+        while(true) {
+            if (temp.next != null) {
+                switch (category) {
+                    case "Autor":
+                        String authorName = aux.getAuthorName();
+                        if (tempSearch == authorName.toLowerCase() || tempSearch == authorName) booksByAuthor.insertNodeAtTail(aux);
+                        break;
+                    case "Titulo":
+                        String title = aux.getTitle();
+                        if (tempSearch == title.toLowerCase() || tempSearch == title) booksByTitle.insertNodeAtTail(aux);
+                        break;
+                    case "Genero":
+                        String genre = aux.getGenre();
+                        if (tempSearch == genre.toLowerCase() || tempSearch == genre) booksByGenre.insertNodeAtTail(aux);
+                        break;
+                    case "Codigo":
+                        String code = aux.getCode();
+                        if (tempSearch == code.toLowerCase() || tempSearch == code) booksByCode.insertNodeAtTail(aux);
+                        break;
+                    default:
+                        break;
+                }
+                temp = temp.next;
+            } else {
+                switch (category) {
+                    case "Author":
+                        return booksByAuthor;
+                    case "Name":
+                        return booksByTitle;
+                    case "Genero":
+                        return booksByGenre;
+                    case "Code":
+                        return booksByCode;
+                    default:
+                        return null;
+                }
+            }
+            return null;
+        }
+    }
+
+}
