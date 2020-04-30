@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.example.childrenslibrayapp.mockdata.ObjectReader;
 import com.example.childrenslibrayapp.objects.Book;
 import com.example.childrenslibrayapp.objects.User;
+import com.example.childrenslibrayapp.structures.DynamicArray;
 import com.example.childrenslibrayapp.structures.SinglyLinkedList;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -83,9 +84,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void generateData(){
         ObjectReader oG = new ObjectReader(this);
+        DynamicArray<Book> books = new DynamicArray<Book>();
+        DynamicArray<User> user = new DynamicArray<User>();
 
-        oG.readBooks();
-        oG.readUsers();
+        oG.readBooks(books);
+        oG.readUsers(user);
     }
 
 }
