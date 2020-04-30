@@ -48,15 +48,5 @@ public class NodeQueue<T> {
         } else return null;
     }
 
-    public void parar() {
-        if (!isEmpty()) {
-            Node<T> node1 = front;
-            while (node1!=null) {
-                System.out.print(node1.data+" | ");
-                node1=node1.next;
-            }
-            System.out.println();
-        }
-    }
 
 }

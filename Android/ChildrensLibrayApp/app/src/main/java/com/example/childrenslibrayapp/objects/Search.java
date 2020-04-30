@@ -28,7 +28,7 @@ public class Search {
     }
 
     public String getCategory() { return category; }
-    public void setCategory() { this.category = category; }
+    public void setCategory(String category) { this.category = category; }
 
 }
 

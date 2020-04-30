@@ -9,12 +9,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.childrenslibrayapp.mockdata.SearchEngine;
+import com.example.childrenslibrayapp.objects.Search;
 
 public class Codigo extends AppCompatActivity {
 
-    SearchEngine search;
+    SearchEngine search = new SearchEngine(this);
     Button bt_cod;
     EditText codigo;
+    Search dc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +30,13 @@ public class Codigo extends AppCompatActivity {
         bt_cod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!codigo.getText().toString().isEmpty()){
-                    search.searchBy(,null)
-                    Toast.makeText(getApplicationContext(), "Se acciona el metodo buscar", Toast.LENGTH_SHORT).show();
+                String cod = codigo.getText().toString();
+                if(!cod.isEmpty()){
+                    dc.setTempSearch(cod);
+                    Toast.makeText(getApplicationContext(), cod, Toast.LENGTH_SHORT).show();
+                    dc.setCategory("Codigo");
+                    search.searchBy(dc,"");
+                    //Toast.makeText(getApplicationContext(), "Se acciona el metodo buscar", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(getApplicationContext(), "Por favor introduzca su actividad", Toast.LENGTH_SHORT).show();
                 }
