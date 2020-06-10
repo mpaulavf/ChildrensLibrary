@@ -13,11 +13,11 @@
 
         </activity>
         <activity android:name=".Inicio" />
-        <activity android:name=".Codigo" />
-        <activity android:name=".Titulo" />
-        <activity android:name=".Autor" />
-        <activity android:name=".Genero" />
-        <activity android:name=".Busqueda" />
+        <activity android:name=".searches.Codigo" />
+        <activity android:name=".searches.Titulo" />
+        <activity android:name=".searches.Autor" />
+        <activity android:name=".searches.Genero" />
+        <activity android:name=".searches.Busqueda" />
         <activity android:name=".Libro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,5 +33,5 @@
 
         </activity>
     </application>
-4
+
 </manifest>

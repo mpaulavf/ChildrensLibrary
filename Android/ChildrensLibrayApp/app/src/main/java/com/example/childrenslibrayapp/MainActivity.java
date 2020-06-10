@@ -3,13 +3,10 @@ package com.example.childrenslibrayapp;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.childrenslibrayapp.mockdata.ObjectReader;
 import com.example.childrenslibrayapp.objects.Book;
-import com.example.childrenslibrayapp.objects.Client;
 import com.example.childrenslibrayapp.objects.User;
 
-import com.example.childrenslibrayapp.objects.Worker;
-import com.example.childrenslibrayapp.structures.DynamicArray;
+import com.example.childrenslibrayapp.searches.Busqueda;
 import com.example.childrenslibrayapp.structures.SinglyLinkedList;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

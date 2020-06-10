@@ -1,10 +1,13 @@
-package com.example.childrenslibrayapp;
+package com.example.childrenslibrayapp.searches;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.childrenslibrayapp.Listado;
+import com.example.childrenslibrayapp.R;
 
 public class Busqueda extends AppCompatActivity {
 

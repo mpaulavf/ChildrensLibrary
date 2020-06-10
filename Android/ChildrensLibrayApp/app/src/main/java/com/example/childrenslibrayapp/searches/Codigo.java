@@ -1,4 +1,4 @@
-package com.example.childrenslibrayapp;
+package com.example.childrenslibrayapp.searches;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.childrenslibrayapp.R;
 import com.example.childrenslibrayapp.mockdata.SearchEngine;
 import com.example.childrenslibrayapp.objects.Search;
 

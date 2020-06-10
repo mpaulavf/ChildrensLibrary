@@ -1,4 +1,4 @@
-package com.example.childrenslibrayapp;
+package com.example.childrenslibrayapp.searches;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.childrenslibrayapp.mockdata.SearchEngine;
+import com.example.childrenslibrayapp.R;
 
 public class Autor extends AppCompatActivity {
     String searchTerm;
