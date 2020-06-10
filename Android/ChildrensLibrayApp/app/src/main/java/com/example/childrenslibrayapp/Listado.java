@@ -29,6 +29,8 @@ public class Listado extends AppCompatActivity {
         adaptadorlibro = new RecyclerViewAdaptador(obtenerlibro()); //acá deberíamos obtener un dynamic array de los resultados de busqueda y pasarlo como parámetro del RecyclerView
         // Hace falta también inicializar el listado de libros de manera global en alguna otra parte del app
         // Una vez hecho esto ya es cuestión de que funcionela búsqueda retornando un DynamicArray con los resultados y listo
+        // para tener a la mano los resultados de busqueda habría que exportarlos a un archivo csv como resultados
+        // DEBE haber algo más fácil, jaja :c
         recyclerViewlibro.setAdapter(adaptadorlibro);
 
     }
