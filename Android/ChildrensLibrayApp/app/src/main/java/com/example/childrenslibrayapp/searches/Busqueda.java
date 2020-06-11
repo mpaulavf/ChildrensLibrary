@@ -20,14 +20,19 @@ public class Busqueda extends AppCompatActivity {
         Intent genero = new Intent(this, Genero.class);
         startActivity(genero);
     }
+
+    //casilla de busqueda solamente deja ingresar numeros --> en autor
     public void Autor(View view) {
         Intent autor = new Intent(this, Autor.class);
         startActivity(autor);
     }
+
+    //casilla de busqueda solamente deja ingresar numeros --> en titulo
     public void Titulo(View view) {
         Intent titulo = new Intent(this, Titulo.class);
         startActivity(titulo);
     }
+    //genera un crash
     public void Codigo(View view) {
         Intent codigo = new Intent(this, Codigo.class);
         startActivity(codigo);

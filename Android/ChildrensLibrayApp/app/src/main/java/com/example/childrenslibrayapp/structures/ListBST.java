@@ -68,7 +68,7 @@ public class ListBST { //implementado para enteros
             //reemplazar N con X, promover X.right;
         }
     }
-
+/*
     private void rotateRight (ListBSTNode x){
         ListBSTNode p = x.parent;
         ListBSTNode y = x.left;
@@ -95,7 +95,7 @@ public class ListBST { //implementado para enteros
             rebalance(p);
         }
     }
-
+*/
     private void adjustHeight(ListBSTNode n) {
         n.height = 1 + Math.max(n.left.height, n.right.height);
     }

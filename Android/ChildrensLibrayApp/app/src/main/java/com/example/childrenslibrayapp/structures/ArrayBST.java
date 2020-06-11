@@ -10,7 +10,7 @@ public class ArrayBST  {
     }
 
     //Metodos añadir, eliminar, buscar
-
+/*
     public int find (int query, ArrayBST arBst){
         if(arBst.root == data){
             return root;
@@ -27,7 +27,7 @@ public class ArrayBST  {
         }
         return root;
     }
-
+*/
 
 
 
