@@ -27,9 +27,10 @@
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="@string/Buscadortitulo"
-        android:inputType="number"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_titulo" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/bt_buscod"

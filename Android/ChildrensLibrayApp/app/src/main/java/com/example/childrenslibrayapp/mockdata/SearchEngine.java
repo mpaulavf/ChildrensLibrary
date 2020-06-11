@@ -1,17 +1,11 @@
 package com.example.childrenslibrayapp.mockdata;
 
 import android.content.Context;
-import android.hardware.usb.UsbInterface;
-import android.widget.Toast;
 
 import com.example.childrenslibrayapp.objects.Book;
 import com.example.childrenslibrayapp.objects.Search;
-import com.example.childrenslibrayapp.structures.DynamicArray;
 import com.example.childrenslibrayapp.structures.Node;
 import com.example.childrenslibrayapp.structures.SinglyLinkedList;
-
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class SearchEngine {
 
@@ -28,8 +22,8 @@ public class SearchEngine {
     public SinglyLinkedList <Book> booksByCode = new SinglyLinkedList <Book>();
 
 
-    public SearchEngine(Search search, String genero) {
-        searchBy(search, genero);
+    public SearchEngine(Search search) {
+        searchBy(search);
     }
 
     public SinglyLinkedList <Book> getAllBooks() { return allBooks; }
@@ -37,7 +31,7 @@ public class SearchEngine {
 
     public void setAllBooks(SinglyLinkedList <Book> allBooks) { this.allBooks = allBooks; }
 
-    public SinglyLinkedList <Book> searchBy(Search search, String genero) {
+    public SinglyLinkedList <Book> searchBy(Search search) {
         ObjectReader tempBooks = new ObjectReader(context);
         tempBooks.readBooks(allBooks);
         String tempSearch = search.getTempSearch();
