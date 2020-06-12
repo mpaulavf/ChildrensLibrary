@@ -38,7 +38,7 @@ public class Codigo extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), cod, Toast.LENGTH_SHORT).show();
                     dc.setCategory("Codigo");
                     try {
-                        search.searchBy(dc);
+                        search.arraySearchBy(dc);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

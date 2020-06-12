@@ -31,7 +31,7 @@ import android.view.Menu;
 
 
 public class MainActivity extends AppCompatActivity {
-    static Datos datos;
+    static Datos datos = Datos.getInstance();
 
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         DynamicArray<Book> allBooksArray = new DynamicArray<>();
         DynamicArray<User> allUsersArray = new DynamicArray<>();
 
-        datos = new Datos (allBooksList, allBooksArray, allUsersList, allUsersArray);
+
 
         //generateData();
 

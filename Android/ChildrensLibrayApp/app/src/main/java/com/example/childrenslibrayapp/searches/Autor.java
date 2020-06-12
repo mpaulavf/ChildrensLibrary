@@ -38,7 +38,7 @@ public class Autor extends AppCompatActivity {
                     au.setTempSearch(searchTerm); // Generando Null pointer que crashea el app
                     //Toast.makeText(getApplicationContext(), searchTerm, Toast.LENGTH_SHORT).show();
                     try {
-                        search.searchBy(au);
+                        search.arraySearchBy(au);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
