@@ -43,7 +43,7 @@ public class Listado extends AppCompatActivity {
         oR.readBooks(libros);
         /*
         List<LibroEnLista> libro= new ArrayList<>();
-        libro.add(new LibroEnLista("Un monstru viene a verme", "Patrick Ness","Accion", "0958458",R.drawable.libro1));
+        libro.add(new LibroEnLista("Un monstruo viene a verme", "Patrick Ness","Accion", "0958458",R.drawable.libro1));
         libro.add(new LibroEnLista("El principito", "Antoine de Saint-Exupéry","Accion", "0958457",R.drawable.libro2));
         libro.add(new LibroEnLista("El maravilloso mago de Oz", "L. Frank Baum","Accion", "0958456",R.drawable.libro3));
         libro.add(new LibroEnLista("Las aventuras de Pinocho", "Carlo Collodi","Accion", "0958455",R.drawable.libro4));
