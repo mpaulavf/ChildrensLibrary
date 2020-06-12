@@ -1,8 +1,10 @@
-package com.example.childrenslibrayapp.mockdata;
+package com.example.childrenslibrayapp.searches;
 
 import android.content.Context;
 
 import com.example.childrenslibrayapp.R;
+import com.example.childrenslibrayapp.mockdata.ObjectReader;
+import com.example.childrenslibrayapp.mockdata.ObjectWriter;
 import com.example.childrenslibrayapp.objects.Book;
 import com.example.childrenslibrayapp.objects.Search;
 import com.example.childrenslibrayapp.structures.DynamicArray;
