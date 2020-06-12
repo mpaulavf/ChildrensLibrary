@@ -126,34 +126,6 @@ public class ListBST { //implementado para enteros
 
     }
 
-    /*
-    private void rotateRight (ListBSTNode x){
-        ListBSTNode p = x.parent;
-        ListBSTNode y = x.left;
-        ListBSTNode b = y.right;
-        y.parent = p;
-        p.correctChild() = y;
-        x.parent = y;
-        y.right = x;
-        b.parent = x;
-        x.left = b;
-    }
-
-    private void rebalance (ListBSTNode n){
-        ListBSTNode p = n.parent;
-        if (n.left.height > n.right.height+1){
-            rebalanceRight(n);
-        }
-        if (n.right.height > n.left.height+1){
-            rebalanceLeft(n);
-        }
-
-        adjustHeight(n);
-        if (p!=null){
-            rebalance(p);
-        }
-    }
-*/
     private void adjustHeight(ListBSTNode n) {
         n.height = 1 + Math.max(n.left.height, n.right.height);
     }

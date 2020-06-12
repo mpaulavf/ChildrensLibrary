@@ -38,7 +38,11 @@ public class Codigo extends AppCompatActivity {
                     dc.setTempSearch(cod);
                     Toast.makeText(getApplicationContext(), cod, Toast.LENGTH_SHORT).show();
                     dc.setCategory("Codigo");
-                    search.searchBy(dc);
+                    try {
+                        search.searchBy(dc);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     //Toast.makeText(getApplicationContext(), "Se acciona el metodo buscar", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(getApplicationContext(), "Por favor introduzca su actividad", Toast.LENGTH_SHORT).show();

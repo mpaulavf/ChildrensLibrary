@@ -16,7 +16,7 @@ public class Autor extends AppCompatActivity {
     SearchEngine search = new SearchEngine(this);
     String searchTerm;
     EditText txt;
-    Search au;
+    Search au = new Search("", "Autor");
 
 
     @Override
@@ -38,8 +38,11 @@ public class Autor extends AppCompatActivity {
                 if(!searchTerm.isEmpty()){
                     au.setTempSearch(searchTerm); // Generando Null pointer que crashea el app
                     //Toast.makeText(getApplicationContext(), searchTerm, Toast.LENGTH_SHORT).show();
-                    au.setCategory("Autor");
-                    search.searchBy(au);
+                    try {
+                        search.searchBy(au);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
 
 
                     Toast.makeText(getApplicationContext(), "Se acciona el metodo buscar", Toast.LENGTH_SHORT).show();

@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.example.childrenslibrayapp.objects.Book;
 import com.example.childrenslibrayapp.objects.Search;
+import com.example.childrenslibrayapp.structures.DynamicArray;
 import com.example.childrenslibrayapp.structures.Node;
 import com.example.childrenslibrayapp.structures.SinglyLinkedList;
 
@@ -15,30 +16,79 @@ public class SearchEngine {
         this.context = context;
     }
 
-    public SinglyLinkedList <Book> allBooks = new SinglyLinkedList <Book> ();
-    public SinglyLinkedList <Book> booksByAuthor = new SinglyLinkedList <Book>();
-    public SinglyLinkedList <Book> booksByTitle = new SinglyLinkedList <Book>();
-    public SinglyLinkedList <Book> booksByGenre = new SinglyLinkedList <Book>();
-    public SinglyLinkedList <Book> booksByCode = new SinglyLinkedList <Book>();
+    public DynamicArray <Book> allBooks = new DynamicArray <Book> ();
+    public DynamicArray <Book> booksByAuthor = new DynamicArray <Book>();
+    public DynamicArray <Book> booksByTitle = new DynamicArray <Book>();
+    public DynamicArray <Book> booksByGenre = new DynamicArray <Book>();
+    public DynamicArray <Book> booksByCode = new DynamicArray <Book>();
 
 
     public SearchEngine(Search search) {
-        searchBy(search);
+        try {
+            searchBy(search);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public SinglyLinkedList <Book> getAllBooks() { return allBooks; }
+    public DynamicArray <Book> getAllBooks() { return allBooks; }
 
 
-    public void setAllBooks(SinglyLinkedList <Book> allBooks) { this.allBooks = allBooks; }
+    public void setAllBooks(DynamicArray <Book> allBooks) { this.allBooks = allBooks; }
 
-    public SinglyLinkedList <Book> searchBy(Search search) {
+    public DynamicArray <Book> searchBy(Search search) throws Exception {
         ObjectReader tempBooks = new ObjectReader(context);
+        ObjectWriter ow = new ObjectWriter(context);
         tempBooks.readBooks(allBooks);
         String tempSearch = search.getTempSearch();
         String category = search.getCategory();
-        if (allBooks.head == null) return null;
-        Node temp = allBooks.head;
-        Book aux = (Book) temp.data;
+        if (allBooks.getSize() == 0) return null;
+        //Node temp = allBooks.head;
+        //Book aux = (Book) temp.data;
+
+        for (int i=0; i<allBooks.getSize(); i++){
+            if (allBooks.getVal(i+1) != null) {
+                switch (category) {
+                    case "Autor":
+                        String authorName = allBooks.getVal(i).getAuthorName();
+                        if (tempSearch == authorName.toLowerCase() || tempSearch == authorName) booksByAuthor.pushBack(allBooks.getVal(i));
+                        break;
+                    case "Titulo":
+                        String title = allBooks.getVal(i).getTitle();
+                        if (tempSearch == title.toLowerCase() || tempSearch == title) booksByTitle.pushBack(allBooks.getVal(i));
+                        break;
+                    case "Genero":
+                        String genre = allBooks.getVal(i).getGenre();
+                        if (tempSearch == genre.toLowerCase() || tempSearch == genre) booksByGenre.pushBack(allBooks.getVal(i));
+                        break;
+                    case "Codigo":
+                        String code = allBooks.getVal(i).getCode();
+                        if (tempSearch == code.toLowerCase() || tempSearch == code) booksByCode.pushBack(allBooks.getVal(i));
+                        break;
+                    default:
+                        break;
+                }
+            } else {
+                switch (category) {
+                    case "Autor":
+                        ow.exportBooks(booksByAuthor);
+                        return booksByAuthor;
+                    case "Titulo":
+                        ow.exportBooks(booksByTitle);
+                        return booksByTitle;
+                    case "Genero":
+                        ow.exportBooks(booksByGenre);
+                        return booksByGenre;
+                    case "Codigo":
+                        ow.exportBooks(booksByCode);
+                        return booksByCode;
+                    default:
+                        return null;
+                }
+            }
+        }
+
+        /*
         while(true) {
             if (temp.next != null) {
                 switch (category) {
@@ -77,7 +127,10 @@ public class SearchEngine {
                 }
             }
             return null;
-        }
+        }*/
+        return null;
     }
+
+
 
 }
