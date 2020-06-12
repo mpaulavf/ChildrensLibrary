@@ -21,10 +21,10 @@ public class ObjectWriter {
     File exportBooks = new File(String.valueOf(context.getResources().openRawResource(R.raw.libros_x10000)));
     File exportUsers = new File(String.valueOf(context.getResources().openRawResource(R.raw.usuarios_x10000)));
 
-    public void exportBooks(DynamicArray <Book> books){
+    public void exportBooks(DynamicArray <Book> books, File destination){
         Book book = new Book();
         try {
-            PrintWriter peewee = new PrintWriter(exportBooks);
+            PrintWriter peewee = new PrintWriter(destination);
             for (int i=0; i<books.getSize();i++){
 
                 book = books.getVal(i);

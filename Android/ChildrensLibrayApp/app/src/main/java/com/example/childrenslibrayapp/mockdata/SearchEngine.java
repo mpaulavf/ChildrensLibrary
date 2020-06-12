@@ -2,11 +2,12 @@ package com.example.childrenslibrayapp.mockdata;
 
 import android.content.Context;
 
+import com.example.childrenslibrayapp.R;
 import com.example.childrenslibrayapp.objects.Book;
 import com.example.childrenslibrayapp.objects.Search;
 import com.example.childrenslibrayapp.structures.DynamicArray;
-import com.example.childrenslibrayapp.structures.Node;
-import com.example.childrenslibrayapp.structures.SinglyLinkedList;
+
+import java.io.File;
 
 public class SearchEngine {
 
@@ -17,10 +18,19 @@ public class SearchEngine {
     }
 
     public DynamicArray <Book> allBooks = new DynamicArray <Book> ();
+
     public DynamicArray <Book> booksByAuthor = new DynamicArray <Book>();
+    File autores = new File(String.valueOf(context.getResources().openRawResource(R.raw.autores)));
+
     public DynamicArray <Book> booksByTitle = new DynamicArray <Book>();
+    File titulos = new File(String.valueOf(context.getResources().openRawResource(R.raw.titulos)));
+
     public DynamicArray <Book> booksByGenre = new DynamicArray <Book>();
+    File generos = new File(String.valueOf(context.getResources().openRawResource(R.raw.generos)));
+
     public DynamicArray <Book> booksByCode = new DynamicArray <Book>();
+    File codigos = new File(String.valueOf(context.getResources().openRawResource(R.raw.codigos)));
+
 
 
     public SearchEngine(Search search) {
@@ -71,16 +81,16 @@ public class SearchEngine {
             } else {
                 switch (category) {
                     case "Autor":
-                        ow.exportBooks(booksByAuthor);
+                        ow.exportBooks(booksByAuthor,autores);
                         return booksByAuthor;
                     case "Titulo":
-                        ow.exportBooks(booksByTitle);
+                        ow.exportBooks(booksByTitle, titulos);
                         return booksByTitle;
                     case "Genero":
-                        ow.exportBooks(booksByGenre);
+                        ow.exportBooks(booksByGenre, generos);
                         return booksByGenre;
                     case "Codigo":
-                        ow.exportBooks(booksByCode);
+                        ow.exportBooks(booksByCode, codigos);
                         return booksByCode;
                     default:
                         return null;
