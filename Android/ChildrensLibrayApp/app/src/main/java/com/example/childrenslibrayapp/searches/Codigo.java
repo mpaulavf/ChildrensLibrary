@@ -18,8 +18,8 @@ import com.example.childrenslibrayapp.objects.Search;
 public class Codigo extends AppCompatActivity {
 
     SearchEngine search = new SearchEngine(this);
-    Button bt_cod;
-    EditText codigo;
+    Button bt_codExacto, bt_codRango;
+    EditText codigoExacto, codigoRango1, codigoRango2;
     Search dc;
 
     @Override
@@ -27,14 +27,18 @@ public class Codigo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_codigo);
 
-        bt_cod = (Button)findViewById(R.id.bt_busCodExacto);
-        codigo = (EditText)findViewById(R.id.et_buscod);
+        bt_codExacto = (Button)findViewById(R.id.bt_busCodExacto);
+        bt_codRango = (Button)findViewById(R.id.bt_busCodRango);
+        codigoExacto = (EditText)findViewById(R.id.et_busCodExacto);
+        codigoRango1 = (EditText)findViewById(R.id.et_busCodRan1);
+        codigoRango2 = (EditText)findViewById(R.id.et_busCodRan2);
 
 
-        bt_cod.setOnClickListener(new View.OnClickListener() {
+
+        bt_codExacto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String cod = codigo.getText().toString();
+                String cod = codigoExacto.getText().toString();
                 dc = new Search(cod, "Codigo");
                 if(!cod.isEmpty()){
                     //dc.setTempSearch(cod);
@@ -52,6 +56,31 @@ public class Codigo extends AppCompatActivity {
                 }
             }
         });
+
+        bt_codRango.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String ran1 = codigoRango1.getText().toString();
+                String ran2 = codigoRango2.getText().toString();
+                dc = new Search(ran1, "Codigo"); //volverRangeSearch
+                if(!ran1.isEmpty()&&!ran2.isEmpty()){
+                    //dc.setTempSearch(cod);
+                    Toast.makeText(getApplicationContext(), "de" + ran1 + "a" + ran2, Toast.LENGTH_SHORT).show();
+                    //dc.setCategory("Codigo");
+                    try {
+                        search.arraySearchBy(dc);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    //Toast.makeText(getApplicationContext(), "Se acciona el metodo buscar", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Codigo.this, Listado.class));//Falta modificar a que Listado cargue los resultados de la busqueda. Tania, aiuda que tu sabes de esto, jaja
+                }else{
+                    Toast.makeText(getApplicationContext(), "Por favor introduzca su actividad", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
 
     }
 }

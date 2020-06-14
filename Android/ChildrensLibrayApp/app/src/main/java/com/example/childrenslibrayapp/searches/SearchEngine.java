@@ -142,55 +142,55 @@ public class SearchEngine {
         }*/
     }
 
-        public void listSearchBy(Search search){
-            String tempSearch = search.getTempSearch();
-            String category = search.getCategory();
+    public void listSearchBy(Search search){
+        String tempSearch = search.getTempSearch();
+        String category = search.getCategory();
 
-            //if (allBooksArray.getSize() == 0) return null;
-            Node temp = allBooksList.head;
-            Book aux = (Book) temp.data;
+        //if (allBooksArray.getSize() == 0) return null;
+        Node temp = allBooksList.head;
+        Book aux = (Book) temp.data;
 
 
-            while(true) {
-                if (temp.next != null) {
-                    switch (category) {
-                        case "Autor":
-                            String authorName = aux.getAuthorName();
-                            if (tempSearch == authorName.toLowerCase() || tempSearch == authorName) booksByAuthorList.insertNodeAtTail(aux);
-                            break;
-                        case "Titulo":
-                            String title = aux.getTitle();
-                            if (tempSearch == title.toLowerCase() || tempSearch == title) booksByTitleList.insertNodeAtTail(aux);
-                            break;
-                        case "Genero":
-                            String genre = aux.getGenre();
-                            if (tempSearch == genre.toLowerCase() || tempSearch == genre) booksByGenreList.insertNodeAtTail(aux);
-                            break;
-                        case "Codigo":
-                            String code = aux.getCode();
-                            if (tempSearch == code.toLowerCase() || tempSearch == code) booksByCodeList.insertNodeAtTail(aux);
-                            break;
-                        default:
-                            break;
-                    }
-                    temp = temp.next;
-                } else {
-                    switch (category) {
-                        case "Author":
-                            //return booksByAuthor;
-                        case "Name":
-                            //return booksByTitle;
-                        case "Genero":
-                            //return booksByGenre;
-                        case "Code":
-                            //return booksByCode;
-                        default:
-                            //return null;
-                    }
+        while(true) {
+            if (temp.next != null) {
+                switch (category) {
+                    case "Autor":
+                        String authorName = aux.getAuthorName();
+                        if (tempSearch == authorName.toLowerCase() || tempSearch == authorName) booksByAuthorList.insertNodeAtTail(aux);
+                        break;
+                    case "Titulo":
+                        String title = aux.getTitle();
+                        if (tempSearch == title.toLowerCase() || tempSearch == title) booksByTitleList.insertNodeAtTail(aux);
+                        break;
+                    case "Genero":
+                        String genre = aux.getGenre();
+                        if (tempSearch == genre.toLowerCase() || tempSearch == genre) booksByGenreList.insertNodeAtTail(aux);
+                        break;
+                    case "Codigo":
+                        String code = aux.getCode();
+                        if (tempSearch == code.toLowerCase() || tempSearch == code) booksByCodeList.insertNodeAtTail(aux);
+                        break;
+                    default:
+                        break;
                 }
-                //return null;
+                temp = temp.next;
+            } else {
+                switch (category) {
+                    case "Author":
+                        //return booksByAuthor;
+                    case "Name":
+                        //return booksByTitle;
+                    case "Genero":
+                        //return booksByGenre;
+                    case "Code":
+                        //return booksByCode;
+                    default:
+                        //return null;
+                }
             }
+            //return null;
         }
+    }
 
 
 
