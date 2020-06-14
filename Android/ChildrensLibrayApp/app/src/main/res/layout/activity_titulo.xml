@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Titulo">
+    tools:context=".searches.Titulo">
 
     <TextView
         android:id="@+id/tv_titulo"
@@ -27,12 +27,13 @@
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="@string/Buscadortitulo"
-        android:inputType="number"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_titulo" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo"
+        android:importantForAutofill="no" />
 
     <Button
-        android:id="@+id/bt_buscod"
+        android:id="@+id/bt_busCodExacto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

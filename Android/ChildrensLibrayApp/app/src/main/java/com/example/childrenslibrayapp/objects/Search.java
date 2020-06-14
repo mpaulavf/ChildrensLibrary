@@ -18,7 +18,7 @@ public class Search {
 
     public String getTempSearch() { return tempSearch; }
     public void setTempSearch(String tempSearch) {
-        addToHistory(tempSearch);
+        //addToHistory(tempSearch); //esto es lo que genera el null pointer!!! Toca arreglarlo
         this.tempSearch = tempSearch;
     }
 

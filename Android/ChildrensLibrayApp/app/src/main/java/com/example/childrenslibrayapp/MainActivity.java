@@ -3,12 +3,12 @@ package com.example.childrenslibrayapp;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.childrenslibrayapp.mockdata.Datos;
 import com.example.childrenslibrayapp.mockdata.ObjectReader;
 import com.example.childrenslibrayapp.objects.Book;
-import com.example.childrenslibrayapp.objects.Client;
 import com.example.childrenslibrayapp.objects.User;
 
-import com.example.childrenslibrayapp.objects.Worker;
+import com.example.childrenslibrayapp.searches.Busqueda;
 import com.example.childrenslibrayapp.structures.DynamicArray;
 import com.example.childrenslibrayapp.structures.SinglyLinkedList;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,8 +29,9 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 
-public class MainActivity extends AppCompatActivity {
 
+public class MainActivity extends AppCompatActivity {
+    static Datos datos = Datos.getInstance();
 
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -62,9 +63,18 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        SinglyLinkedList <Book> libros = new SinglyLinkedList<Book>();
-        SinglyLinkedList <User> users = new SinglyLinkedList<User>();
+
+;
+        SinglyLinkedList <Book> allBooksList = new SinglyLinkedList<Book>();
+        SinglyLinkedList <User> allUsersList = new SinglyLinkedList<User>();
+
+        DynamicArray<Book> allBooksArray = new DynamicArray<>();
+        DynamicArray<User> allUsersArray = new DynamicArray<>();
+
+
+
         //generateData();
+
     }
 
     @Override
@@ -84,14 +94,16 @@ public class MainActivity extends AppCompatActivity {
         Intent infolibro = new Intent(this, Libro.class);
         startActivity(infolibro);
     }
-/*
+
     public void generateData(){
         ObjectReader oG = new ObjectReader(this);
-        DynamicArray<Book> books = new DynamicArray<Book>();
-        DynamicArray<User> user = new DynamicArray<User>();
+        //DynamicArray<Book> books = new DynamicArray<Book>();
+        //DynamicArray<User> user = new DynamicArray<User>();
 
-        oG.readBooks(books);
-        oG.readUsers(user);
+        oG.readBooks(datos.getAllBooksArray());
+        oG.readBooks(datos.getAllBooksList());
+        oG.readUsers(datos.getAllUsersArray());
+        oG.readUsers(datos.getAllUsersList());
     }
-*/
+
 }

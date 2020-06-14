@@ -29,7 +29,7 @@
     <string name="genero">Genero</string>
     <string name="autor2">Autor</string>
     <string name="titulo2">Titulo</string>
-    <string name="codigo">Codigo</string>
+    <string name="codigo">Código</string>
     <string name="Buscar">Buscar</string>
     <string name="Buscadorcodigo">Ingrese el codigo</string>
     <string name="Buscadorgenero">Seleccione el genero</string>
@@ -46,5 +46,9 @@
 
 
     <string name="Bot_generateData" />
+    <string name="buscodExacta">Búsqueda exacta</string>
+    <string name="b_squeda_por_rango">Búsqueda por rango</string>
+    <string name="desde">desde</string>
+    <string name="hasta">hasta</string>
 
 </resources>

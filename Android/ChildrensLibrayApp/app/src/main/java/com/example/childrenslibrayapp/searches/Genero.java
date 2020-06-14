@@ -1,4 +1,4 @@
-package com.example.childrenslibrayapp;
+package com.example.childrenslibrayapp.searches;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.childrenslibrayapp.R;
 
 public class Genero extends AppCompatActivity {
 
