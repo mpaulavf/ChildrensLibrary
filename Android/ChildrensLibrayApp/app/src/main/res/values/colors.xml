@@ -6,7 +6,9 @@
     <color name="confe">#FFC107</color>
     <color name="otros">#F8FF00D5</color>
     <color name="letra">#FCFCFD</color>
-    <color name="colorBoton1">#F8FF5722</color>
+    <color name="colorBoton1">#F8D43A09</color>
     <color name="crearActi">#F80049FF</color>
+    <color name="login">#1C2970</color>
     <color name="estudio">#F824E001</color>
+
 </resources>

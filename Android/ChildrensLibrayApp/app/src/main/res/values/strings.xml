@@ -16,6 +16,14 @@
     <string name="info">Donde viven los monstruos es un libro infantil escrito e ilustrado por el autor estadounidense Maurice Sendak. Fue publicado en 1963 y al año siguiente el autor recibió la medalla Caldecott en su autoría. También ganó el Boston Globe-Horn Book Award y fue un libro notable de la ALA.</string>
     <string name="titulo">Un monstru viene a verme</string>
     <string name="autor">Patrick Ness</string>
+    <string name="Email">Ingrese su email</string>
+    <string name="Pass">Ingrese su contraseña</string>
+    <string name="Emailn">Ingresa tu correo</string>
+    <string name="Passn">Ingresa tu contraseña</string>
+    <string name="Regis">Registrarse</string>
+    <string name="Ingresar">Ingresar</string>
+    <string name="Codigo">Ingrese su codigo</string>
+
 
     <string name="busqueda">Busqueda de libro</string>
     <string name="genero">Genero</string>
@@ -27,6 +35,16 @@
     <string name="Buscadorgenero">Seleccione el genero</string>
     <string name="Buscadorautor">Ingrese el autor</string>
     <string name="Buscadortitulo">Ingrese el titulo</string>
+    <string name="Trabajador">Trabajador</string>
+
+    <string name="Registro">Registrate</string>
+    <string name="Nombre">Nombres</string>
+    <string name="Apellido">Apellidos</string>
+    <string name="Confcorr">Confirme su correo</string>
+    <string name="ConfPass">Confirme su contraseña</string>
+
+
+
     <string name="Bot_generateData" />
 
 </resources>

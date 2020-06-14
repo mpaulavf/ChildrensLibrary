@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "543841858700",
+    "firebase_url": "https://proyectbiblioteca-e405b.firebaseio.com",
+    "project_id": "proyectbiblioteca-e405b",
+    "storage_bucket": "proyectbiblioteca-e405b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543841858700:android:1170c0b3a701c3234037a9",
+        "android_client_info": {
+          "package_name": "com.example.childrenslibrayapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "543841858700-eisfrst5403v14t17shr59nlop7d4rb5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.childrenslibrayapp",
+            "certificate_hash": "4f67a3bf73653e1d4b2719469881e0002ed5ed04"
+          }
+        },
+        {
+          "client_id": "543841858700-9uaqa1i7g2v2qlfp4hbdiicehvapmepb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATzCoWJLKDTc8tWak3l68SmpItTj50O7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "543841858700-9uaqa1i7g2v2qlfp4hbdiicehvapmepb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
