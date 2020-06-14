@@ -28,5 +28,7 @@
     <string name="Buscadorautor">Ingrese el autor</string>
     <string name="Buscadortitulo">Ingrese el titulo</string>
     <string name="Bot_generateData" />
+    <string name="buscodExacta">Búsqueda exacta</string>
+    <string name="b_squeda_por_rango">Búsqueda por rango</string>
 
 </resources>

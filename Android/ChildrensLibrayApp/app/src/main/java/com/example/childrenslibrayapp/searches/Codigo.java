@@ -25,7 +25,7 @@ public class Codigo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_codigo);
 
-        bt_cod = (Button)findViewById(R.id.bt_buscod);
+        bt_cod = (Button)findViewById(R.id.bt_busCodExacto);
         codigo = (EditText)findViewById(R.id.et_buscod);
 
 
