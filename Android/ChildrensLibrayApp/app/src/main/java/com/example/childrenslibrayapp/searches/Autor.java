@@ -13,7 +13,10 @@ import android.widget.Toast;
 
 import com.example.childrenslibrayapp.Listado;
 import com.example.childrenslibrayapp.R;
+import com.example.childrenslibrayapp.mockdata.Datos;
+import com.example.childrenslibrayapp.objects.Book;
 import com.example.childrenslibrayapp.objects.Search;
+import com.example.childrenslibrayapp.structures.DynamicArray;
 
 public class Autor extends AppCompatActivity {
     public static final String EXTRA_SEARCH_TYPE = "com.example.childrenslibrayapp.SEARCH_TYPE";
@@ -23,6 +26,7 @@ public class Autor extends AppCompatActivity {
     EditText txt;
     Search au = new Search("", "Autor");
 
+    Datos datos = Datos.getInstance();
 
 
     @Override
@@ -36,6 +40,8 @@ public class Autor extends AppCompatActivity {
         extras.putString(EXTRA_SEARCH_TYPE,"Autor");
 
         listadoIntent.putExtras(extras);
+
+        datos.setByAuthorArray(new DynamicArray<Book>());
 
         txt = (EditText) findViewById(R.id.et_busaut);
 
@@ -67,4 +73,6 @@ public class Autor extends AppCompatActivity {
 
 
     }
+
+
 }
