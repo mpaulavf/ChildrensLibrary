@@ -130,4 +130,8 @@ public class ListBST<T> { //implementado para enteros
         n.height = 1 + Math.max(n.left.height, n.right.height);
     }
 
+    public boolean isEmpty(){
+       return root == null;
+    }
+
 }
