@@ -3,6 +3,7 @@ package com.example.childrenslibrayapp.structures;
 public class ListBSTNode{
 
     public int data;
+    public int i;
     public int height;
     public ListBSTNode left;
     public ListBSTNode right;

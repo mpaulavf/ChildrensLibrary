@@ -9,6 +9,7 @@ public class Book implements Comparable<Book> {
     private String authorName;
     private String genre;
     private int imgLibro;
+    private int calification;
 
     public Book(String title, String code, String authorName, String genre,
                 int imgLibro) {
@@ -81,6 +82,13 @@ public class Book implements Comparable<Book> {
     }
     public void setImgLibro(int imgLibro) {
         this.imgLibro = imgLibro;
+    }
+
+    public int getCalification() {
+        return calification;
+    }
+    public void setCalification(int calification) {
+        this.calification = calification;
     }
 
     @Override
