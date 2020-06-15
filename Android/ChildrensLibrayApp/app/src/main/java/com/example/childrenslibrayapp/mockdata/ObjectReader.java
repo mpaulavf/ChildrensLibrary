@@ -44,7 +44,7 @@ public class ObjectReader {
                 book.setCode(tokens[2]);
                 book.setGenre(tokens[3]);
 
-                libros.pushBack(book);
+                libros.pushBack(book); //genera null pointer
 
                 Log.d("ObjectGenerator", "Libro creado: " + book);
             }

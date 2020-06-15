@@ -13,20 +13,20 @@ public class Datos {
     }
     //datos es una singleton class que podemos utilizar para acceder a cualquier lsita o arreglo o futura estructura a nivel de aplicación
 
-    SinglyLinkedList <Book> allBooksList;
-    SinglyLinkedList <Book> byAuthorList;
-    SinglyLinkedList <Book> byTitleList;
-    SinglyLinkedList <Book> byGenreList;
-    SinglyLinkedList <Book> byCodeList;
+    SinglyLinkedList <Book> allBooksList = new SinglyLinkedList<>();
+    SinglyLinkedList <Book> byAuthorList = new SinglyLinkedList<>();
+    SinglyLinkedList <Book> byTitleList = new SinglyLinkedList<>();
+    SinglyLinkedList <Book> byGenreList = new SinglyLinkedList<>();
+    SinglyLinkedList <Book> byCodeList = new SinglyLinkedList<>();
 
-    DynamicArray <Book> allBooksArray;
-    DynamicArray <Book> byAuthorArray;
-    DynamicArray <Book> byTitleArray;
-    DynamicArray <Book> byGenreArray;
-    DynamicArray <Book> byCodeArray;
+    DynamicArray <Book> allBooksArray = new DynamicArray<>();
+    DynamicArray <Book> byAuthorArray  = new DynamicArray<>();
+    DynamicArray <Book> byTitleArray = new DynamicArray<>();
+    DynamicArray <Book> byGenreArray = new DynamicArray<>();
+    DynamicArray <Book> byCodeArray = new DynamicArray<>();
 
-    SinglyLinkedList <User> allUsersList;
-    DynamicArray<User> allUsersArray;
+    SinglyLinkedList <User> allUsersList = new SinglyLinkedList<>();
+    DynamicArray<User> allUsersArray = new DynamicArray<>();
 
     public static Datos getInstance() {
         if(instance == null) {
@@ -67,6 +67,38 @@ public class Datos {
 
     public DynamicArray<User> getAllUsersArray() {
         return allUsersArray;
+    }
+
+    public SinglyLinkedList<Book> getByAuthorList() {
+        return byAuthorList;
+    }
+
+    public SinglyLinkedList<Book> getByTitleList() {
+        return byTitleList;
+    }
+
+    public SinglyLinkedList<Book> getByGenreList() {
+        return byGenreList;
+    }
+
+    public SinglyLinkedList<Book> getByCodeList() {
+        return byCodeList;
+    }
+
+    public DynamicArray<Book> getByAuthorArray() {
+        return byAuthorArray;
+    }
+
+    public DynamicArray<Book> getByTitleArray() {
+        return byTitleArray;
+    }
+
+    public DynamicArray<Book> getByGenreArray() {
+        return byGenreArray;
+    }
+
+    public DynamicArray<Book> getByCodeArray() {
+        return byCodeArray;
     }
 
     public void setAllBooksList(SinglyLinkedList<Book> allBooksList) {
