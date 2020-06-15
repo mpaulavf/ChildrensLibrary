@@ -34,7 +34,6 @@ public class Datos {
 
     SinglyLinkedList <User> allUsersList = new SinglyLinkedList<>();
     DynamicArray<User> allUsersArray = new DynamicArray<>();
-    ListBST <User> allUsersBST = new ListBST<>();
 
     public static Datos getInstance() {
         if(instance == null) {
@@ -79,10 +78,6 @@ public class Datos {
 
     public DynamicArray<User> getAllUsersArray() {
         return allUsersArray;
-    }
-
-    public ListBST<User> getAllUsersBST() {
-        return allUsersBST;
     }
 
     public SinglyLinkedList<Book> getByAuthorList() {
@@ -151,10 +146,6 @@ public class Datos {
 
     public void setAllUsersArray(DynamicArray<User> allUsersArray) {
         this.allUsersArray = allUsersArray;
-    }
-
-    public void setAllUsersBST(ListBST<User> allUsersBST) {
-        this.allUsersBST = allUsersBST;
     }
 
     public void setByAuthorList(SinglyLinkedList<Book> byAuthorList) {

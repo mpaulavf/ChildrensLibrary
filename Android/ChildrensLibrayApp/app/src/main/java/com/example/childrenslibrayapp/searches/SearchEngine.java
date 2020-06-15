@@ -7,6 +7,7 @@ import com.example.childrenslibrayapp.objects.Book;
 import com.example.childrenslibrayapp.objects.Search;
 import com.example.childrenslibrayapp.structures.DynamicArray;
 import com.example.childrenslibrayapp.structures.ListBST;
+import com.example.childrenslibrayapp.structures.ListBSTNode;
 import com.example.childrenslibrayapp.structures.Node;
 import com.example.childrenslibrayapp.structures.SinglyLinkedList;
 
@@ -133,19 +134,19 @@ public class SearchEngine {
                 switch (category) {
                     case "Autor":
                         String authorName = aux.getAuthorName();
-                        if (tempSearch == authorName.toLowerCase() || tempSearch == authorName) booksByAuthorList.insertNodeAtTail(aux);
+                        if (tempSearch.equals(authorName.toLowerCase()) || tempSearch.equals(authorName)) booksByAuthorList.insertNodeAtTail(aux);
                         break;
                     case "Titulo":
                         String title = aux.getTitle();
-                        if (tempSearch == title.toLowerCase() || tempSearch == title) booksByTitleList.insertNodeAtTail(aux);
+                        if (tempSearch.equals(title.toLowerCase()) || tempSearch.equals(title)) booksByTitleList.insertNodeAtTail(aux);
                         break;
                     case "Genero":
                         String genre = aux.getGenre();
-                        if (tempSearch == genre.toLowerCase() || tempSearch == genre) booksByGenreList.insertNodeAtTail(aux);
+                        if (tempSearch.equals(genre.toLowerCase()) || tempSearch.equals(genre)) booksByGenreList.insertNodeAtTail(aux);
                         break;
                     case "Codigo":
                         String code = aux.getCode();
-                        if (tempSearch == code.toLowerCase() || tempSearch == code) booksByCodeList.insertNodeAtTail(aux);
+                        if (tempSearch.equals(code.toLowerCase()) || tempSearch.equals(code)) booksByCodeList.insertNodeAtTail(aux);
                         break;
                     default:
                         break;
@@ -169,6 +170,20 @@ public class SearchEngine {
         }
     }
 
+    public void BSTSearchBy(Search search) throws Exception {
 
+        datos.setByCodeBST(new ListBST<Book>());
+
+        String tempSearch = search.getTempSearch();
+
+        while(!allBooksBST.isEmpty()) {
+            ListBSTNode temp = allBooksBST.root;
+            String code = temp.data.getCode();
+            if (tempSearch.equals(code)) booksByCodeBST.insertBalance(temp, temp.data);
+            allBooksBST.removeRootAndBalance();
+        }
+        datos.setByCodeBST(booksByCodeBST);
+    }
 
 }
+

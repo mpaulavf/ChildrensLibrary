@@ -1,5 +1,7 @@
 package com.example.childrenslibrayapp.structures;
 
+import com.example.childrenslibrayapp.objects.Book;
+
 public class ListBST<T> { //implementado para enteros
 
     public ListBSTNode<T> root;
@@ -10,15 +12,15 @@ public class ListBST<T> { //implementado para enteros
 
     //Métodos: find || next || add || remove || search
 
-    public ListBSTNode<T> find (String data, ListBSTNode<T> root){
+    public ListBSTNode<T> find (Book data, ListBSTNode<T> root){
         if(root.data == data){
             return root;
-        }else if (data.compareTo(root.data) < 0){
+        }else if (data.getCode().compareTo(root.data.getCode()) < 0){
             if (root.left != null){
                 return find(data, root.left);
             }
             return root;
-        }else if (data.compareTo(root.data) > 0){
+        }else if (data.getCode().compareTo(root.data.getCode()) > 0){
             if (root.left != null){
                 return find(data, root.right);
             }
@@ -44,32 +46,22 @@ public class ListBST<T> { //implementado para enteros
     }
 
     private ListBSTNode<T> RightAncestor (ListBSTNode<T> n){
-        if (n.data.compareTo(n.parent.data) < 0){
+        if (n.data.getCode().compareTo(n.parent.data.getCode()) < 0){
             return n.parent;
         }else{
             return RightAncestor (n.parent);
         }
     }
 
-    public void insert(String k, ListBSTNode<T> root) {
+    public void insert(Book k, ListBSTNode<T> root) {
         ListBSTNode p = find(k, root);
         p.data = k;
     }
 
-    public void delete (ListBSTNode<T> n){
-        ListBSTNode temp = null;
-        if (n.right == null){
-            temp = n.left;
-            n = temp;
-            //quitar n, promover n.left;
-        }else{
-            ListBSTNode x = next(n);
-
-            //reemplazar N con X, promover X.right;
-        }
+    public void removeRootAndBalance(){
     }
 
-    public static ListBSTNode insertBalance(ListBSTNode root,String data){
+    public ListBSTNode insertBalance(ListBSTNode root,Book data){
 
         if(root==null){
             root = new ListBSTNode(data);
@@ -92,17 +84,17 @@ public class ListBST<T> { //implementado para enteros
 
     }
 
-    public static int rootHeight(ListBSTNode root){
+    public int rootHeight(ListBSTNode root){
         if(root==null) return -1;
         else return root.height;
     }
 
-    public static int adjustRootHeight(ListBSTNode root){
+    public int adjustRootHeight(ListBSTNode root){
         if(root==null) return -1;
         else return 1 + Math.max(rootHeight(root.left), rootHeight(root.right));
     }
 
-    public static ListBSTNode rightRotation(ListBSTNode root){
+    public ListBSTNode rightRotation(ListBSTNode root){
 
         ListBSTNode temp = root.left;
         root.left = temp.right;
@@ -114,7 +106,7 @@ public class ListBST<T> { //implementado para enteros
 
     }
 
-    public static ListBSTNode leftRotation(ListBSTNode root){
+    public ListBSTNode leftRotation(ListBSTNode root){
 
         ListBSTNode temp = root.right;
         root.right = temp.left;
