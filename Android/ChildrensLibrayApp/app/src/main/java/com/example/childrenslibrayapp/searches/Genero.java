@@ -48,7 +48,7 @@ public class Genero extends AppCompatActivity {
         spinner1=(Spinner)findViewById(R.id.spinner);
         bt_genero = (Button)findViewById(R.id.bt_busgenero);
 
-        String [] opciones = {"Comedia","Comic","Cuento", "Educacion","Fabula", "Ficcion", "Ilsutrado", "Romantico"};
+        String [] opciones = {"Comedia","Comic","Cuento", "Educacion","Fabula", "Ficcion", "Ilustrado", "Romantico"};
 
         ArrayAdapter <String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, opciones);
         spinner1.setAdapter(adapter);
