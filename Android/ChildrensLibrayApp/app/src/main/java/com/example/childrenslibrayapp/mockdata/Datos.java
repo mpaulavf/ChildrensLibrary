@@ -148,4 +148,12 @@ public class Datos {
     public void setByCodeArray(DynamicArray<Book> byCodeArray) {
         this.byCodeArray = byCodeArray;
     }
+
+
+    public void resetSearchArrays (){
+        byAuthorArray.clear();
+        byTitleArray.clear();
+        byGenreArray.clear();
+        byCodeArray.clear();
+    }
 }

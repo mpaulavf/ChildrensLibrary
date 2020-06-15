@@ -58,4 +58,12 @@ public class DynamicArray<T> {
         return size;
      }
 
+     public void clear() { // Basado en https://stackoverflow.com/questions/7032070/what-is-the-difference-between-arraylist-clear-and-arraylist-removeall
+
+         for (int i = 0; i < arr.length; i++)
+             arr[i] = null;
+         size = 0;
+     }
+
+
 }

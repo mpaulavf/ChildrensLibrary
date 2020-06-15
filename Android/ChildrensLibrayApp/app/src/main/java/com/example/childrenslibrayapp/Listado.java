@@ -45,6 +45,11 @@ public class Listado extends AppCompatActivity {
             Log.d(TAG, "onCreate: " + searchType);
         }
 
+        if(getIntent().hasExtra(Codigo.EXTRA_SEARCH_TYPE)) {
+            searchType = getIntent().getStringExtra(Autor.EXTRA_SEARCH_TYPE);
+            Log.d(TAG, "onCreate: " + searchType);
+        }
+
         DynamicArray <Book> listaLibros = datos.getAllBooksArray();
 
         super.onCreate(savedInstanceState);
@@ -82,12 +87,19 @@ public class Listado extends AppCompatActivity {
 
     }
 
-    /*@Override
+    @Override
     protected void onStop() {
         // call the superclass method first
         super.onStop();
 
+        Datos datos = Datos.getInstance();
 
-    }*/
+        datos.resetSearchArrays();
+//        datos.setByAuthorArray(new DynamicArray<Book>());
+//        datos.setByTitleArray(new DynamicArray<Book>());
+//        datos.setByGenreArray(new DynamicArray<Book>());
+//        datos.setByCodeArray(new DynamicArray<Book>());
+
+    }
 
 }
