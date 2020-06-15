@@ -20,7 +20,7 @@ import com.example.childrenslibrayapp.structures.DynamicArray;
 
 public class Codigo extends AppCompatActivity {
     public static final String EXTRA_SEARCH_TYPE = "com.example.childrenslibrayapp.SEARCH_TYPE";
-//    public static final String EXTRA_SEARCH_TYPE_2 = "com.example.childrenslibrayapp.SEARCH_TYPE_2";
+
 
     SearchEngine search = new SearchEngine(this);
     Button bt_codExacto, bt_codRango;
@@ -28,6 +28,8 @@ public class Codigo extends AppCompatActivity {
     Search dc;
 
     Datos datos = Datos.getInstance();
+
+    DynamicArray<Book> allBooksArray = datos.getAllBooksArray();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,7 @@ public class Codigo extends AppCompatActivity {
 
         Bundle extras = new Bundle();
         extras.putString(EXTRA_SEARCH_TYPE,"Codigo");
-//        extras.putString(EXTRA_SEARCH_TYPE_2,"CodigoRango");
+
 
         listadoIntent.putExtras(extras);
 
@@ -78,13 +80,15 @@ public class Codigo extends AppCompatActivity {
             public void onClick(View view) {
                 String from = codigoRango1.getText().toString();
                 String to = codigoRango2.getText().toString();
-                dc = new Search(from, "Codigo"); //volverRangeSearch
+//                dc = new Search(from, "Codigo"); //volverRangeSearch
                 if(!from.isEmpty()&&!to.isEmpty()){
-                    //dc.setTempSearch(cod);
+//                    dc.setTempSearch(cod);
                     Toast.makeText(getApplicationContext(), "de" + from + "a" + to, Toast.LENGTH_SHORT).show();
-                    //dc.setCategory("Codigo");
+//                    dc.setCategory("Codigo");
                     try {
-                        search.arraySearchBy(dc);
+                        arraySearchRange(Integer.parseInt(from), Integer.parseInt(to));
+                        startActivity(listadoIntent);
+//                        search.arraySearchBy(dc);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -96,7 +100,22 @@ public class Codigo extends AppCompatActivity {
             }
         });
 
+    }
 
+    private void arraySearchRange (int min, int max) throws Exception {
 
+        DynamicArray<Book> rangeResults = new DynamicArray<>();
+        for(int i =0; i<allBooksArray.getSize();i++){
+            String code = allBooksArray.getVal(i).getCode();
+            int intCode = Integer.parseInt(code);
+            if(allBooksArray.getVal(i + 1) != null){
+                if(intCode>=min && intCode<=max){
+                    rangeResults.pushBack(allBooksArray.getVal(i));
+                }
+            }
+
+        }
+
+        datos.setByCodeArray(rangeResults);
     }
 }
