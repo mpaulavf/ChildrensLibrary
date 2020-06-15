@@ -63,19 +63,19 @@ public class SearchEngine {
                 switch (category) {
                     case "Autor":
                         String authorName = allBooksArray.getVal(i).getAuthorName();
-                        if (tempSearch == authorName.toLowerCase() || tempSearch == authorName) booksByAuthorArray.pushBack(allBooksArray.getVal(i));
+                        if (tempSearch.toLowerCase().equals(authorName.toLowerCase())) booksByAuthorArray.pushBack(allBooksArray.getVal(i));
                         break;
                     case "Titulo":
                         String title = allBooksArray.getVal(i).getTitle();
-                        if (tempSearch == title.toLowerCase() || tempSearch == title) booksByTitleArray.pushBack(allBooksArray.getVal(i));
+                        if (tempSearch.toLowerCase().equals(title.toLowerCase())) booksByTitleArray.pushBack(allBooksArray.getVal(i));
                         break;
                     case "Genero":
                         String genre = allBooksArray.getVal(i).getGenre();
-                        if (tempSearch == genre.toLowerCase() || tempSearch == genre) booksByGenreArray.pushBack(allBooksArray.getVal(i));
+                        if (tempSearch.toLowerCase().equals(genre.toLowerCase())) booksByGenreArray.pushBack(allBooksArray.getVal(i));
                         break;
                     case "Codigo":
                         String code = allBooksArray.getVal(i).getCode();
-                        if (tempSearch == code.toLowerCase() || tempSearch == code) booksByCodeArray.pushBack(allBooksArray.getVal(i));
+                        if (tempSearch.equals(code)) booksByCodeArray.pushBack(allBooksArray.getVal(i));
                         break;
                     default:
                         break;
