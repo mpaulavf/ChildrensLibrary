@@ -6,6 +6,7 @@ import com.example.childrenslibrayapp.mockdata.Datos;
 import com.example.childrenslibrayapp.objects.Book;
 import com.example.childrenslibrayapp.objects.Search;
 import com.example.childrenslibrayapp.structures.DynamicArray;
+import com.example.childrenslibrayapp.structures.ListBST;
 import com.example.childrenslibrayapp.structures.Node;
 import com.example.childrenslibrayapp.structures.SinglyLinkedList;
 
@@ -21,19 +22,23 @@ public class SearchEngine {
 
     private DynamicArray <Book> allBooksArray = datos.getAllBooksArray();
     private SinglyLinkedList<Book> allBooksList = datos.getAllBooksList();
+    // ListBST<Book> allBooksBST = data.getAllBooksBST();
 
     private DynamicArray <Book> booksByAuthorArray = new DynamicArray <Book>();
     private SinglyLinkedList <Book> booksByAuthorList = new SinglyLinkedList <Book>();
+    private ListBST<Book> booksByAuthorBST = new ListBST<Book>();
 
     private DynamicArray <Book> booksByTitleArray = new DynamicArray <Book>();
     private SinglyLinkedList <Book> booksByTitleList = new SinglyLinkedList <Book>();
+    private ListBST<Book> booksByTitleBST = new ListBST<Book>();
 
     private DynamicArray <Book> booksByGenreArray = new DynamicArray <Book>();
     private SinglyLinkedList <Book> booksByGenreList = new SinglyLinkedList <Book>();
+    private ListBST<Book> booksByGenreBST = new ListBST<Book>();
 
     private DynamicArray <Book> booksByCodeArray = new DynamicArray <Book>();
     private SinglyLinkedList <Book> booksByCodeList = new SinglyLinkedList<Book>();
-
+    private ListBST<Book> booksByCodeBST = new ListBST<Book>();
 
 
 

@@ -1,21 +1,21 @@
 package com.example.childrenslibrayapp.structures;
 
-public class ListBSTNode{
+public class ListBSTNode<T>{
 
-    public int data;
+    public String data;
     public int i;
     public int height;
-    public ListBSTNode left;
-    public ListBSTNode right;
-    public ListBSTNode parent;
+    public ListBSTNode<T> left;
+    public ListBSTNode<T> right;
+    public ListBSTNode<T> parent;
 
-    public ListBSTNode(int data, ListBSTNode parent) {
+    public ListBSTNode(String data, ListBSTNode<T> parent) {
         this.data = data;
         this.left = null;
         this.right = null;
         this.parent = parent;
     }
-    public ListBSTNode(int data) { //genera raíz del arbol
+    public ListBSTNode(String data) { //genera raíz del arbol
         this.data = data;
         this.left = null;
         this.right = null;

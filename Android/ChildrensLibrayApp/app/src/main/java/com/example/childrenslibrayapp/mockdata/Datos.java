@@ -2,6 +2,7 @@ package com.example.childrenslibrayapp.mockdata;
 
 import com.example.childrenslibrayapp.objects.*;
 import com.example.childrenslibrayapp.structures.DynamicArray;
+import com.example.childrenslibrayapp.structures.ListBST;
 import com.example.childrenslibrayapp.structures.SinglyLinkedList;
 
 public class Datos {
@@ -25,8 +26,15 @@ public class Datos {
     DynamicArray <Book> byGenreArray = new DynamicArray<>();
     DynamicArray <Book> byCodeArray = new DynamicArray<>();
 
+    ListBST <Book> allBooksBST = new ListBST<>();
+    ListBST <Book> byAuthorBST  = new ListBST<>();
+    ListBST <Book> byTitleBST = new ListBST<>();
+    ListBST <Book> byGenreBST = new ListBST<>();
+    ListBST <Book> byCodeBST = new ListBST<>();
+
     SinglyLinkedList <User> allUsersList = new SinglyLinkedList<>();
     DynamicArray<User> allUsersArray = new DynamicArray<>();
+    ListBST <User> allUsersBST = new ListBST<>();
 
     public static Datos getInstance() {
         if(instance == null) {
@@ -61,12 +69,20 @@ public class Datos {
         return allBooksArray;
     }
 
+    public ListBST<Book> getAllBooksBST() {
+        return allBooksBST;
+    }
+
     public SinglyLinkedList<User> getAllUsersList() {
         return allUsersList;
     }
 
     public DynamicArray<User> getAllUsersArray() {
         return allUsersArray;
+    }
+
+    public ListBST<User> getAllUsersBST() {
+        return allUsersBST;
     }
 
     public SinglyLinkedList<Book> getByAuthorList() {
@@ -99,6 +115,22 @@ public class Datos {
 
     public DynamicArray<Book> getByCodeArray() {
         return byCodeArray;
+    }
+
+    public ListBST<Book> getByAuthorBST() {
+        return byAuthorBST;
+    }
+
+    public ListBST<Book> getByTitleBST() {
+        return byTitleBST;
+    }
+
+    public ListBST<Book> getByGenreBST() {
+        return byGenreBST;
+    }
+
+    public ListBST<Book> getByCodeBST() {
+        return byCodeBST;
     }
 
     public void setAllBooksList(SinglyLinkedList<Book> allBooksList) {

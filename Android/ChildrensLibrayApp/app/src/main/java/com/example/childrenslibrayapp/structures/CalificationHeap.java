@@ -121,11 +121,19 @@ public class CalificationHeap {
     }
 
     public void changeDefaultBooks(Book book){
+        int aux0 = book.getCalification();
+        boolean doit = false;
         for(int i=0; i<=size; i++){
-            if(items[i]==book) break;
+            int aux1 = items[i].getCalification();
+            if(aux0 > aux1) doit = true;
         }
-        removeLastLeaf();
-        insert(book);
+        if(doit){
+            for (int i = 0; i <= size; i++) {
+                if (items[i] == book) break;
+            }
+            removeLastLeaf();
+            insert(book);
+        }
     }
 
 }
