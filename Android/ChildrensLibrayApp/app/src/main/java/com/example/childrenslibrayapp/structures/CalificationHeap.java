@@ -28,7 +28,8 @@ public class CalificationHeap {
     }
 
     public int getParentIndex(int childIndex){
-        return (childIndex-1)/2;
+        if((childIndex-1)/2>=0) return (childIndex-1)/2;
+        return 0;
     }
 
     public boolean hasLeftChild(int index){
@@ -74,9 +75,15 @@ public class CalificationHeap {
     }
 
     public void insert(Book item){
-        items[size] = item;
-        size++;
-        siftUp();
+        if(size<10) {
+            items[size] = item;
+            size++;
+            siftUp();
+        }
+    }
+
+    public void removeLastLeaf(){
+        items[9]=null;
     }
 
     public void swap(int index1, int index2){
@@ -111,6 +118,14 @@ public class CalificationHeap {
             swap(getParentIndex(index), index);
             index = getParentIndex(index);
         }
+    }
+
+    public void changeDefaultBooks(Book book){
+        for(int i=0; i<=size; i++){
+            if(items[i]==book) break;
+        }
+        removeLastLeaf();
+        insert(book);
     }
 
 }
