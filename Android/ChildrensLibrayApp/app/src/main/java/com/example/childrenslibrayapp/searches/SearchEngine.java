@@ -22,7 +22,7 @@ public class SearchEngine {
 
     private DynamicArray <Book> allBooksArray = datos.getAllBooksArray();
     private SinglyLinkedList<Book> allBooksList = datos.getAllBooksList();
-    // ListBST<Book> allBooksBST = data.getAllBooksBST();
+    ListBST<Book> allBooksBST = datos.getAllBooksBST();
 
     private DynamicArray <Book> booksByAuthorArray = new DynamicArray <Book>();
     private SinglyLinkedList <Book> booksByAuthorList = new SinglyLinkedList <Book>();

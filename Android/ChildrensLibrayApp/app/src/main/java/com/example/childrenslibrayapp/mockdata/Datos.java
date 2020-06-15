@@ -141,12 +141,20 @@ public class Datos {
         this.allBooksArray = allBooksArray;
     }
 
+    public void setAllBooksBST(ListBST<Book> allBooksBST) {
+        this.allBooksBST = allBooksBST;
+    }
+
     public void setAllUsersList(SinglyLinkedList<User> allUsersList) {
         this.allUsersList = allUsersList;
     }
 
     public void setAllUsersArray(DynamicArray<User> allUsersArray) {
         this.allUsersArray = allUsersArray;
+    }
+
+    public void setAllUsersBST(ListBST<User> allUsersBST) {
+        this.allUsersBST = allUsersBST;
     }
 
     public void setByAuthorList(SinglyLinkedList<Book> byAuthorList) {
@@ -181,6 +189,21 @@ public class Datos {
         this.byCodeArray = byCodeArray;
     }
 
+    public void setByAuthorBST(ListBST<Book> byAuthorBST) {
+        this.byAuthorBST = byAuthorBST;
+    }
+
+    public void setByTitleBST(ListBST<Book> byTitleBST) {
+        this.byTitleBST = byTitleBST;
+    }
+
+    public void setByGenreBST(ListBST<Book> byGenreBST) {
+        this.byGenreBST = byGenreBST;
+    }
+
+    public void setByCodeBST(ListBST<Book> byCodeBST) {
+        this.byCodeBST = byCodeBST;
+    }
 
     public void resetSearchArrays (){
         byAuthorArray.clear();
