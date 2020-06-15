@@ -4,15 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.example.childrenslibrayapp.mockdata.Datos;
-import com.example.childrenslibrayapp.mockdata.ObjectReader;
 import com.example.childrenslibrayapp.objects.*;
-import com.example.childrenslibrayapp.searches.Autor;
+import com.example.childrenslibrayapp.searches.*;
 import com.example.childrenslibrayapp.structures.*;
 
 import java.util.ArrayList;
@@ -34,6 +31,11 @@ public class Listado extends AppCompatActivity {
         //Uri searchTypeUri = intent.getData();
 
         if(getIntent().hasExtra(Autor.EXTRA_SEARCH_TYPE)) {
+            searchType = getIntent().getStringExtra(Autor.EXTRA_SEARCH_TYPE);
+            Log.d(TAG, "onCreate: " + searchType);
+        }
+
+        if(getIntent().hasExtra(Titulo.EXTRA_SEARCH_TYPE)) {
             searchType = getIntent().getStringExtra(Autor.EXTRA_SEARCH_TYPE);
             Log.d(TAG, "onCreate: " + searchType);
         }

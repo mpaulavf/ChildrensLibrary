@@ -33,7 +33,7 @@
         android:importantForAutofill="no" />
 
     <Button
-        android:id="@+id/bt_busCodExacto"
+        android:id="@+id/bt_bustit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

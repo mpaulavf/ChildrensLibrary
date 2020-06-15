@@ -35,7 +35,7 @@ public class Autor extends AppCompatActivity {
         setContentView(R.layout.activity_autor);
 
         final Intent listadoIntent = new Intent(this, Listado.class);
-        //listadoIntent.setData(Uri.parse("Autor"));
+
         Bundle extras = new Bundle();
         extras.putString(EXTRA_SEARCH_TYPE,"Autor");
 
@@ -64,7 +64,7 @@ public class Autor extends AppCompatActivity {
                     }
 
 
-                    Toast.makeText(getApplicationContext(), "Se acciona el metodo buscar", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Se acciona el metodo buscar", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(getApplicationContext(), "Por favor introduzca su busqueda", Toast.LENGTH_SHORT).show();
                 }
