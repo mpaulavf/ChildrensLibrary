@@ -40,6 +40,11 @@ public class Listado extends AppCompatActivity {
             Log.d(TAG, "onCreate: " + searchType);
         }
 
+        if(getIntent().hasExtra(Genero.EXTRA_SEARCH_TYPE)) {
+            searchType = getIntent().getStringExtra(Autor.EXTRA_SEARCH_TYPE);
+            Log.d(TAG, "onCreate: " + searchType);
+        }
+
         DynamicArray <Book> listaLibros = datos.getAllBooksArray();
 
         super.onCreate(savedInstanceState);

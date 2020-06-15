@@ -54,8 +54,7 @@ public class Autor extends AppCompatActivity {
             public void onClick(View v) {
                 searchTerm = txt.getText().toString();
                 if(!searchTerm.isEmpty()){
-                    au.setTempSearch(searchTerm); // Generando Null pointer que crashea el app
-                    //Toast.makeText(getApplicationContext(), searchTerm, Toast.LENGTH_SHORT).show();
+                    au.setTempSearch(searchTerm);
                     try {
                         search.arraySearchBy(au);
                         startActivity(listadoIntent);

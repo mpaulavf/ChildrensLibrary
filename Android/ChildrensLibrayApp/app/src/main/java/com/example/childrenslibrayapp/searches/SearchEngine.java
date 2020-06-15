@@ -76,7 +76,7 @@ public class SearchEngine {
                         break;
                     case "Genero":
                         String genre = allBooksArray.getVal(i).getGenre();
-                        if (tempSearch.toLowerCase().equals(genre.toLowerCase()))
+                        if (tempSearch.equals(genre))
                             booksByGenreArray.pushBack(allBooksArray.getVal(i));
                         break;
                     case "Codigo":
