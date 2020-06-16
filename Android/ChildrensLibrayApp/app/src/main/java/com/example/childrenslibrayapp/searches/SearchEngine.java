@@ -180,7 +180,7 @@ public class SearchEngine {
             ListBSTNode temp = allBooksBST.root;
             String code = temp.data.getCode();
             if (tempSearch.equals(code)) booksByCodeBST.insertBalance(temp, temp.data);
-            allBooksBST.removeRootAndBalance();
+            allBooksBST.removeRootAndBalance(temp, temp.data);
         }
         datos.setByCodeBST(booksByCodeBST);
     }
