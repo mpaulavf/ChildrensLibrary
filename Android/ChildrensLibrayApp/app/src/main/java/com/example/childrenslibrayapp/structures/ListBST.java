@@ -58,7 +58,34 @@ public class ListBST<T> { //implementado para enteros
         p.data = k;
     }
 
-    public void removeRootAndBalance(){
+    public void removeRootAndBalance(ListBSTNode root, Book book){
+
+        ListBSTNode temp = null;
+        ListBSTNode aux = find(book, root);
+
+        if(aux != null) {
+            if ((aux.left == null) && (aux.right == null)) aux = null;
+            else if (aux.left != null && aux.right != null) {
+                if(aux.data.getCode().equals(this.root.data.getCode())){
+                    temp = aux.left;
+                    aux = aux.right;
+                    while(aux.left != null){
+                        aux = aux.left;
+                    }
+                    aux.left = temp;
+                } else {
+                    if(aux.data.getCode().equals(this.root.data.getCode())){
+                        if(aux.left != null){
+                            aux = aux.left;
+                        } else{
+                            aux = aux.right;
+                        }
+                    }
+                }
+                return;
+            }
+            return;
+        }
     }
 
     public ListBSTNode insertBalance(ListBSTNode root,Book data){
