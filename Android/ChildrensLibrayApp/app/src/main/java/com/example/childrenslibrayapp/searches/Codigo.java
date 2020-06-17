@@ -23,7 +23,7 @@ public class Codigo extends AppCompatActivity {
 
 
     SearchEngine search = new SearchEngine(this);
-    Button bt_codExacto, bt_codRango;
+    Button bt_codExactoArray, bt_codRangoArray, bt_codExactoBST, bt_codRangoBST, bt_codExactoList, bt_codRangoList;
     EditText codigoExacto, codigoRango1, codigoRango2;
     Search dc;
 
@@ -36,8 +36,15 @@ public class Codigo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_codigo);
 
-        bt_codExacto = (Button)findViewById(R.id.bt_busCodExacto);
-        bt_codRango = (Button)findViewById(R.id.bt_busCodRango);
+        bt_codExactoArray = (Button)findViewById(R.id.bt_busCodExactoArray);
+        bt_codRangoArray = (Button)findViewById(R.id.bt_busCodRangoArray);
+
+        bt_codExactoList = (Button)findViewById(R.id.bt_busCodExactoList);
+        bt_codRangoList = (Button)findViewById(R.id.bt_busCodRangoList);
+
+        bt_codExactoBST = (Button)findViewById(R.id.bt_busCodExactoBST);
+        bt_codRangoBST = (Button)findViewById(R.id.bt_busCodRangoBST);
+
         codigoExacto = (EditText)findViewById(R.id.et_busCodExacto);
         codigoRango1 = (EditText)findViewById(R.id.et_busCodRan1);
         codigoRango2 = (EditText)findViewById(R.id.et_busCodRan2);
@@ -54,7 +61,7 @@ public class Codigo extends AppCompatActivity {
 
 
 
-        bt_codExacto.setOnClickListener(new View.OnClickListener() {
+        bt_codExactoArray.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String cod = codigoExacto.getText().toString();
@@ -75,24 +82,61 @@ public class Codigo extends AppCompatActivity {
             }
         });
 
-        bt_codRango.setOnClickListener(new View.OnClickListener() {
+        bt_codExactoList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String from = codigoRango1.getText().toString();
-                String to = codigoRango2.getText().toString();
-//                dc = new Search(from, "Codigo"); //volverRangeSearch
-                if(!from.isEmpty()&&!to.isEmpty()){
-//                    dc.setTempSearch(cod);
-                    Toast.makeText(getApplicationContext(), "de" + from + "a" + to, Toast.LENGTH_SHORT).show();
-//                    dc.setCategory("Codigo");
+                String cod = codigoExacto.getText().toString();
+                dc = new Search("", "Codigo");
+                if(!cod.isEmpty()){
+                    dc.setTempSearch(cod);
+                    Toast.makeText(getApplicationContext(), cod, Toast.LENGTH_SHORT).show();
                     try {
-                        arraySearchRange(Integer.parseInt(from), Integer.parseInt(to));
+                        search.listSearchBy(dc); //queda colgada el app
                         startActivity(listadoIntent);
-//                        search.arraySearchBy(dc);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                     //Toast.makeText(getApplicationContext(), "Se acciona el metodo buscar", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(getApplicationContext(), "Por favor introduzca su actividad", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        bt_codExactoBST.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String cod = codigoExacto.getText().toString();
+                dc = new Search("", "Codigo");
+                if(!cod.isEmpty()){
+                    dc.setTempSearch(cod);
+                    Toast.makeText(getApplicationContext(), cod, Toast.LENGTH_SHORT).show();
+                    try {
+                        search.BSTSearchBy(dc); //no retorna nada :/
+                        startActivity(listadoIntent);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    //Toast.makeText(getApplicationContext(), "Se acciona el metodo buscar", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(getApplicationContext(), "Por favor introduzca su actividad", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        bt_codRangoArray.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String from = codigoRango1.getText().toString();
+                String to = codigoRango2.getText().toString();
+                if(!from.isEmpty()&&!to.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "de" + from + "a" + to, Toast.LENGTH_SHORT).show();
+                    try {
+                        arraySearchRange(Integer.parseInt(from), Integer.parseInt(to));
+                        startActivity(listadoIntent);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
 
                 }else{
                     Toast.makeText(getApplicationContext(), "Por favor introduzca su actividad", Toast.LENGTH_SHORT).show();
@@ -100,6 +144,25 @@ public class Codigo extends AppCompatActivity {
             }
         });
 
+
+        /*bt_codRangoBST.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String from = codigoRango1.getText().toString();
+                String to = codigoRango2.getText().toString();
+                if(!from.isEmpty()&&!to.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "de" + from + "a" + to, Toast.LENGTH_SHORT).show();
+                    try {
+                        arraySearchRange(Integer.parseInt(from), Integer.parseInt(to));
+                        startActivity(listadoIntent);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }else{
+                    Toast.makeText(getApplicationContext(), "Por favor introduzca su actividad", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });*/
     }
 
     private void arraySearchRange (int min, int max) throws Exception {
