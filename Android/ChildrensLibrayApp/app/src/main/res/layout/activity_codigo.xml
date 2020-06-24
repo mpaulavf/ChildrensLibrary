@@ -7,26 +7,12 @@
     tools:context=".searches.Codigo">
 
     <EditText
-        android:id="@+id/et_busCodRan2"
-        android:layout_width="115dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="215dp"
-        android:ems="10"
-        android:hint="@string/hasta"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/et_busCodRan1"
-        app:layout_constraintTop_toBottomOf="@+id/tv_codigo" />
-
-    <EditText
         android:id="@+id/et_busCodRan1"
         android:layout_width="115dp"
         android:layout_height="48dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="215dp"
+        android:layout_marginTop="268dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:ems="10"
@@ -37,27 +23,52 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_codigo" />
 
+    <Button
+        android:id="@+id/bt_busCodRangoBST"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:text="@string/bst"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_busCodRangoList" />
+
+    <Button
+        android:id="@+id/bt_busCodRangoArray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="268dp"
+        android:text="@string/array"
+        app:layout_constraintStart_toEndOf="@+id/et_busCodRan2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_codigo" />
+
+    <EditText
+        android:id="@+id/et_busCodRan2"
+        android:layout_width="115dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="268dp"
+        android:ems="10"
+        android:hint="@string/hasta"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/et_busCodRan1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_codigo" />
+
     <TextView
         android:id="@+id/tv_busCodRango"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/b_squeda_por_rango"
         app:layout_constraintBottom_toTopOf="@+id/et_busCodRan2"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/bt_busCodRango"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="215dp"
-        android:text="@string/Buscar"
-        app:layout_constraintStart_toEndOf="@+id/et_busCodRan2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_codigo" />
 
     <TextView
         android:id="@+id/tv_codigo"
@@ -86,13 +97,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_codigo" />
 
     <Button
-        android:id="@+id/bt_busCodExacto"
+        android:id="@+id/bt_busCodExactoArray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="72dp"
-        android:text="@string/Buscar"
+        android:text="Array"
         app:layout_constraintStart_toEndOf="@+id/et_busCodExacto"
         app:layout_constraintTop_toBottomOf="@+id/tv_codigo" />
 
@@ -106,4 +117,38 @@
         android:text="@string/buscodExacta"
         app:layout_constraintBottom_toTopOf="@+id/et_busCodExacto"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/bt_busCodExactoBST"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:text="BST"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_busCodExactoList" />
+
+    <Button
+        android:id="@+id/bt_busCodExactoList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:text="List"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_busCodExactoArray" />
+
+    <Button
+        android:id="@+id/bt_busCodRangoList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:text="List"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_busCodRangoArray" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

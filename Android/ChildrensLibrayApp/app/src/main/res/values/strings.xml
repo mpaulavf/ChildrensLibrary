@@ -30,7 +30,7 @@
     <string name="autor2">Autor</string>
     <string name="titulo2">Titulo</string>
     <string name="codigo">Código</string>
-    <string name="Buscar">Buscar</string>
+    <string name="Array">Buscar</string>
     <string name="Buscadorcodigo">Ingrese el codigo</string>
     <string name="Buscadorgenero">Seleccione el genero</string>
     <string name="Buscadorautor">Ingrese el autor</string>
@@ -50,5 +50,7 @@
     <string name="b_squeda_por_rango">Búsqueda por rango</string>
     <string name="desde">desde</string>
     <string name="hasta">hasta</string>
+    <string name="array">Array</string>
+    <string name="bst">BST</string>
 
 </resources>

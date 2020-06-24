@@ -6,6 +6,8 @@ import com.example.childrenslibrayapp.mockdata.Datos;
 import com.example.childrenslibrayapp.objects.Book;
 import com.example.childrenslibrayapp.objects.Search;
 import com.example.childrenslibrayapp.structures.DynamicArray;
+import com.example.childrenslibrayapp.structures.ListBST;
+import com.example.childrenslibrayapp.structures.ListBSTNode;
 import com.example.childrenslibrayapp.structures.Node;
 import com.example.childrenslibrayapp.structures.SinglyLinkedList;
 
@@ -17,22 +19,28 @@ public class SearchEngine {
         this.context = context;
     }
 
-    Datos datos = Datos.getInstance();
+    private Datos datos = Datos.getInstance();
 
-    public DynamicArray <Book> allBooksArray = datos.getAllBooksArray();
-    public SinglyLinkedList<Book> allBooksList = new SinglyLinkedList <Book> ();
+    private DynamicArray <Book> allBooksArray = datos.getAllBooksArray();
+    private SinglyLinkedList<Book> allBooksList = datos.getAllBooksList();
+    ListBST<Book> allBooksBST = datos.getAllBooksBST();
 
-    public DynamicArray <Book> booksByAuthorArray = new DynamicArray <Book>();
-    public SinglyLinkedList <Book> booksByAuthorList = new SinglyLinkedList <Book>();
+    private DynamicArray <Book> booksByAuthorArray = new DynamicArray <Book>();
+    private SinglyLinkedList <Book> booksByAuthorList = new SinglyLinkedList <Book>();
+    private ListBST<Book> booksByAuthorBST = new ListBST<Book>();
 
-    public DynamicArray <Book> booksByTitleArray = new DynamicArray <Book>();
-    public SinglyLinkedList <Book> booksByTitleList = new SinglyLinkedList <Book>();
+    private DynamicArray <Book> booksByTitleArray = new DynamicArray <Book>();
+    private SinglyLinkedList <Book> booksByTitleList = new SinglyLinkedList <Book>();
+    private ListBST<Book> booksByTitleBST = new ListBST<Book>();
 
-    public DynamicArray <Book> booksByGenreArray = new DynamicArray <Book>();
-    public SinglyLinkedList <Book> booksByGenreList = new SinglyLinkedList <Book>();
+    private DynamicArray <Book> booksByGenreArray = new DynamicArray <Book>();
+    private SinglyLinkedList <Book> booksByGenreList = new SinglyLinkedList <Book>();
+    private ListBST<Book> booksByGenreBST = new ListBST<Book>();
 
-    public DynamicArray <Book> booksByCodeArray = new DynamicArray <Book>();
-    public SinglyLinkedList <Book> booksByCodeList = new SinglyLinkedList<Book>();
+    private DynamicArray <Book> booksByCodeArray = new DynamicArray <Book>();
+    private SinglyLinkedList <Book> booksByCodeList = new SinglyLinkedList<Book>();
+    private ListBST<Book> booksByCodeBST = new ListBST<Book>();
+
 
 
     public SearchEngine(Search search) {
@@ -49,33 +57,38 @@ public class SearchEngine {
     public void setAllBooksList(DynamicArray <Book> allBooksList) { this.allBooksArray = allBooksList; }
 
     public void arraySearchBy(Search search) throws Exception {
-        //ObjectReader tempBooks = new ObjectReader(context);
-        //ObjectWriter ow = new ObjectWriter(context);
-        //tempBooks.readBooks(allBooks);
+
+        datos.setByAuthorArray(new DynamicArray<Book>());
+        datos.setByTitleArray(new DynamicArray<Book>());
+        datos.setByGenreArray(new DynamicArray<Book>());
+        datos.setByCodeArray(new DynamicArray<Book>());
+
         String tempSearch = search.getTempSearch();
         String category = search.getCategory();
-        //if (allBooksArray.getSize() == 0) return null;
-        //Node temp = allBooks.head;
-        //Book aux = (Book) temp.data;
 
-        for (int i = 0; i< allBooksArray.getSize(); i++){
-            if (allBooksArray.getVal(i+1) != null) {
+
+        for (int i = 0; i < allBooksArray.getSize(); i++) {
+            if (allBooksArray.getVal(i + 1) != null) {
                 switch (category) {
                     case "Autor":
                         String authorName = allBooksArray.getVal(i).getAuthorName();
-                        if (tempSearch == authorName.toLowerCase() || tempSearch == authorName) booksByAuthorArray.pushBack(allBooksArray.getVal(i));
+                        if (tempSearch.toLowerCase().equals(authorName.toLowerCase()))
+                            booksByAuthorArray.pushBack(allBooksArray.getVal(i));
                         break;
                     case "Titulo":
                         String title = allBooksArray.getVal(i).getTitle();
-                        if (tempSearch == title.toLowerCase() || tempSearch == title) booksByTitleArray.pushBack(allBooksArray.getVal(i));
+                        if (tempSearch.toLowerCase().equals(title.toLowerCase()))
+                            booksByTitleArray.pushBack(allBooksArray.getVal(i));
                         break;
                     case "Genero":
                         String genre = allBooksArray.getVal(i).getGenre();
-                        if (tempSearch == genre.toLowerCase() || tempSearch == genre) booksByGenreArray.pushBack(allBooksArray.getVal(i));
+                        if (tempSearch.equals(genre))
+                            booksByGenreArray.pushBack(allBooksArray.getVal(i));
                         break;
                     case "Codigo":
                         String code = allBooksArray.getVal(i).getCode();
-                        if (tempSearch == code.toLowerCase() || tempSearch == code) booksByCodeArray.pushBack(allBooksArray.getVal(i));
+                        if (tempSearch.equals(code))
+                            booksByCodeArray.pushBack(allBooksArray.getVal(i));
                         break;
                     default:
                         break;
@@ -100,49 +113,14 @@ public class SearchEngine {
             }
         }
 
-        /*
-        while(true) {
-            if (temp.next != null) {
-                switch (category) {
-                    case "Autor":
-                        String authorName = aux.getAuthorName();
-                        if (tempSearch == authorName.toLowerCase() || tempSearch == authorName) booksByAuthor.insertNodeAtTail(aux);
-                        break;
-                    case "Titulo":
-                        String title = aux.getTitle();
-                        if (tempSearch == title.toLowerCase() || tempSearch == title) booksByTitle.insertNodeAtTail(aux);
-                        break;
-                    case "Genero":
-                        String genre = aux.getGenre();
-                        if (tempSearch == genre.toLowerCase() || tempSearch == genre) booksByGenre.insertNodeAtTail(aux);
-                        break;
-                    case "Codigo":
-                        String code = aux.getCode();
-                        if (tempSearch == code.toLowerCase() || tempSearch == code) booksByCode.insertNodeAtTail(aux);
-                        break;
-                    default:
-                        break;
-                }
-                temp = temp.next;
-            } else {
-                switch (category) {
-                    case "Author":
-                        return booksByAuthor;
-                    case "Name":
-                        return booksByTitle;
-                    case "Genero":
-                        return booksByGenre;
-                    case "Code":
-                        return booksByCode;
-                    default:
-                        return null;
-                }
-            }
-            return null;
-        }*/
     }
 
-    public void listSearchBy(Search search){
+    public void listSearchBy (Search search){
+        datos.setByAuthorList(new SinglyLinkedList<Book>());
+        datos.setByTitleList(new SinglyLinkedList<Book>());
+        datos.setByGenreList(new SinglyLinkedList<Book>());
+        datos.setByCodeList(new SinglyLinkedList<Book>());
+
         String tempSearch = search.getTempSearch();
         String category = search.getCategory();
 
@@ -156,19 +134,19 @@ public class SearchEngine {
                 switch (category) {
                     case "Autor":
                         String authorName = aux.getAuthorName();
-                        if (tempSearch == authorName.toLowerCase() || tempSearch == authorName) booksByAuthorList.insertNodeAtTail(aux);
+                        if (tempSearch.equals(authorName.toLowerCase()) || tempSearch.equals(authorName)) booksByAuthorList.insertNodeAtTail(aux);
                         break;
                     case "Titulo":
                         String title = aux.getTitle();
-                        if (tempSearch == title.toLowerCase() || tempSearch == title) booksByTitleList.insertNodeAtTail(aux);
+                        if (tempSearch.equals(title.toLowerCase()) || tempSearch.equals(title)) booksByTitleList.insertNodeAtTail(aux);
                         break;
                     case "Genero":
                         String genre = aux.getGenre();
-                        if (tempSearch == genre.toLowerCase() || tempSearch == genre) booksByGenreList.insertNodeAtTail(aux);
+                        if (tempSearch.equals(genre.toLowerCase()) || tempSearch.equals(genre)) booksByGenreList.insertNodeAtTail(aux);
                         break;
                     case "Codigo":
                         String code = aux.getCode();
-                        if (tempSearch == code.toLowerCase() || tempSearch == code) booksByCodeList.insertNodeAtTail(aux);
+                        if (tempSearch.equals(code.toLowerCase()) || tempSearch.equals(code)) booksByCodeList.insertNodeAtTail(aux);
                         break;
                     default:
                         break;
@@ -177,21 +155,35 @@ public class SearchEngine {
             } else {
                 switch (category) {
                     case "Author":
-                        //return booksByAuthor;
-                    case "Name":
-                        //return booksByTitle;
+                        datos.setByAuthorList(booksByAuthorList);
+                    case "Titulo":
+                        datos.setByTitleList(booksByTitleList);
                     case "Genero":
-                        //return booksByGenre;
+                        datos.setByGenreList(booksByGenreList);
                     case "Code":
-                        //return booksByCode;
+                        datos.setByCodeList(booksByCodeList);
                     default:
-                        //return null;
+
                 }
             }
-            //return null;
+
         }
     }
 
+    public void BSTSearchBy(Search search) throws Exception {
 
+        datos.setByCodeBST(new ListBST<Book>());
+
+        String tempSearch = search.getTempSearch();
+
+        while(!allBooksBST.isEmpty()) {
+            ListBSTNode temp = allBooksBST.root;
+            String code = temp.data.getCode();
+            if (tempSearch.equals(code)) booksByCodeBST.insertBalance(temp, temp.data);
+            allBooksBST.removeRootAndBalance(temp, temp.data);
+        }
+        datos.setByCodeBST(booksByCodeBST);
+    }
 
 }
+

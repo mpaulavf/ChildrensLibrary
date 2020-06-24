@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //generateData();
+        generateData();
 
     }
 
@@ -102,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
 
         oG.readBooks(datos.getAllBooksArray());
         oG.readBooks(datos.getAllBooksList());
-        oG.readUsers(datos.getAllUsersArray());
-        oG.readUsers(datos.getAllUsersList());
+        //oG.readUsers(datos.getAllUsersArray());
+        //oG.readUsers(datos.getAllUsersList());
     }
 
 }

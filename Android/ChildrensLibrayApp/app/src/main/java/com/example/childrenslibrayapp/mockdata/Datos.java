@@ -2,6 +2,7 @@ package com.example.childrenslibrayapp.mockdata;
 
 import com.example.childrenslibrayapp.objects.*;
 import com.example.childrenslibrayapp.structures.DynamicArray;
+import com.example.childrenslibrayapp.structures.ListBST;
 import com.example.childrenslibrayapp.structures.SinglyLinkedList;
 
 public class Datos {
@@ -13,20 +14,26 @@ public class Datos {
     }
     //datos es una singleton class que podemos utilizar para acceder a cualquier lsita o arreglo o futura estructura a nivel de aplicación
 
-    SinglyLinkedList <Book> allBooksList;
-    SinglyLinkedList <Book> byAuthorList;
-    SinglyLinkedList <Book> byTitleList;
-    SinglyLinkedList <Book> byGenreList;
-    SinglyLinkedList <Book> byCodeList;
+    SinglyLinkedList <Book> allBooksList = new SinglyLinkedList<>();
+    SinglyLinkedList <Book> byAuthorList = new SinglyLinkedList<>();
+    SinglyLinkedList <Book> byTitleList = new SinglyLinkedList<>();
+    SinglyLinkedList <Book> byGenreList = new SinglyLinkedList<>();
+    SinglyLinkedList <Book> byCodeList = new SinglyLinkedList<>();
 
-    DynamicArray <Book> allBooksArray;
-    DynamicArray <Book> byAuthorArray;
-    DynamicArray <Book> byTitleArray;
-    DynamicArray <Book> byGenreArray;
-    DynamicArray <Book> byCodeArray;
+    DynamicArray <Book> allBooksArray = new DynamicArray<>();
+    DynamicArray <Book> byAuthorArray  = new DynamicArray<>();
+    DynamicArray <Book> byTitleArray = new DynamicArray<>();
+    DynamicArray <Book> byGenreArray = new DynamicArray<>();
+    DynamicArray <Book> byCodeArray = new DynamicArray<>();
 
-    SinglyLinkedList <User> allUsersList;
-    DynamicArray<User> allUsersArray;
+    ListBST <Book> allBooksBST = new ListBST<>();
+    ListBST <Book> byAuthorBST  = new ListBST<>();
+    ListBST <Book> byTitleBST = new ListBST<>();
+    ListBST <Book> byGenreBST = new ListBST<>();
+    ListBST <Book> byCodeBST = new ListBST<>();
+
+    SinglyLinkedList <User> allUsersList = new SinglyLinkedList<>();
+    DynamicArray<User> allUsersArray = new DynamicArray<>();
 
     public static Datos getInstance() {
         if(instance == null) {
@@ -61,6 +68,10 @@ public class Datos {
         return allBooksArray;
     }
 
+    public ListBST<Book> getAllBooksBST() {
+        return allBooksBST;
+    }
+
     public SinglyLinkedList<User> getAllUsersList() {
         return allUsersList;
     }
@@ -69,12 +80,64 @@ public class Datos {
         return allUsersArray;
     }
 
+    public SinglyLinkedList<Book> getByAuthorList() {
+        return byAuthorList;
+    }
+
+    public SinglyLinkedList<Book> getByTitleList() {
+        return byTitleList;
+    }
+
+    public SinglyLinkedList<Book> getByGenreList() {
+        return byGenreList;
+    }
+
+    public SinglyLinkedList<Book> getByCodeList() {
+        return byCodeList;
+    }
+
+    public DynamicArray<Book> getByAuthorArray() {
+        return byAuthorArray;
+    }
+
+    public DynamicArray<Book> getByTitleArray() {
+        return byTitleArray;
+    }
+
+    public DynamicArray<Book> getByGenreArray() {
+        return byGenreArray;
+    }
+
+    public DynamicArray<Book> getByCodeArray() {
+        return byCodeArray;
+    }
+
+    public ListBST<Book> getByAuthorBST() {
+        return byAuthorBST;
+    }
+
+    public ListBST<Book> getByTitleBST() {
+        return byTitleBST;
+    }
+
+    public ListBST<Book> getByGenreBST() {
+        return byGenreBST;
+    }
+
+    public ListBST<Book> getByCodeBST() {
+        return byCodeBST;
+    }
+
     public void setAllBooksList(SinglyLinkedList<Book> allBooksList) {
         this.allBooksList = allBooksList;
     }
 
     public void setAllBooksArray(DynamicArray<Book> allBooksArray) {
         this.allBooksArray = allBooksArray;
+    }
+
+    public void setAllBooksBST(ListBST<Book> allBooksBST) {
+        this.allBooksBST = allBooksBST;
     }
 
     public void setAllUsersList(SinglyLinkedList<User> allUsersList) {
@@ -115,5 +178,28 @@ public class Datos {
 
     public void setByCodeArray(DynamicArray<Book> byCodeArray) {
         this.byCodeArray = byCodeArray;
+    }
+
+    public void setByAuthorBST(ListBST<Book> byAuthorBST) {
+        this.byAuthorBST = byAuthorBST;
+    }
+
+    public void setByTitleBST(ListBST<Book> byTitleBST) {
+        this.byTitleBST = byTitleBST;
+    }
+
+    public void setByGenreBST(ListBST<Book> byGenreBST) {
+        this.byGenreBST = byGenreBST;
+    }
+
+    public void setByCodeBST(ListBST<Book> byCodeBST) {
+        this.byCodeBST = byCodeBST;
+    }
+
+    public void resetSearchArrays (){
+        byAuthorArray.clear();
+        byTitleArray.clear();
+        byGenreArray.clear();
+        byCodeArray.clear();
     }
 }

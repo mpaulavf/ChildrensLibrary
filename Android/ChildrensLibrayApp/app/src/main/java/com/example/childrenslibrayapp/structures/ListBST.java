@@ -1,24 +1,26 @@
 package com.example.childrenslibrayapp.structures;
 
+import com.example.childrenslibrayapp.objects.Book;
 
-public class ListBST { //implementado para enteros
-    public ListBSTNode root;
+public class ListBST<T> { //implementado para enteros
 
-    public ListBST () {
+    public ListBSTNode<T> root;
+
+    public ListBST() {
         root = null;
     }
 
     //Métodos: find || next || add || remove || search
 
-    public ListBSTNode find (int data, ListBSTNode root){
+    public ListBSTNode<T> find (Book data, ListBSTNode<T> root){
         if(root.data == data){
             return root;
-        }else if (data < root.data){
+        }else if (data.getCode().compareTo(root.data.getCode()) < 0){
             if (root.left != null){
                 return find(data, root.left);
             }
             return root;
-        }else if (data > root.data){
+        }else if (data.getCode().compareTo(root.data.getCode()) > 0){
             if (root.left != null){
                 return find(data, root.right);
             }
@@ -27,7 +29,7 @@ public class ListBST { //implementado para enteros
         return root;
     }
 
-    public ListBSTNode next (ListBSTNode n){
+    public ListBSTNode<T> next (ListBSTNode<T> n){
         if (n.right != null){
             return LeftDescendant(n.right);
         }else{
@@ -35,7 +37,7 @@ public class ListBST { //implementado para enteros
         }
     }
 
-    private ListBSTNode LeftDescendant (ListBSTNode n){
+    private ListBSTNode<T> LeftDescendant (ListBSTNode<T> n){
         if (n.left != null){
             return n;
         }else{
@@ -43,40 +45,57 @@ public class ListBST { //implementado para enteros
         }
     }
 
-    private ListBSTNode RightAncestor (ListBSTNode n){
-        if (n.data < n.parent.data){
+    private ListBSTNode<T> RightAncestor (ListBSTNode<T> n){
+        if (n.data.getCode().compareTo(n.parent.data.getCode()) < 0){
             return n.parent;
         }else{
             return RightAncestor (n.parent);
         }
     }
 
-    public void insert(int k, ListBSTNode root) {
+    public void insert(Book k, ListBSTNode<T> root) {
         ListBSTNode p = find(k, root);
         p.data = k;
     }
 
-    public void delete (ListBSTNode n){
-        ListBSTNode temp = null;
-        if (n.right == null){
-            temp = n.left;
-            n = temp;
-            //quitar n, promover n.left;
-        }else{
-            ListBSTNode x = next(n);
+    public void removeRootAndBalance(ListBSTNode root, Book book){
 
-            //reemplazar N con X, promover X.right;
+        ListBSTNode temp = null;
+        ListBSTNode aux = find(book, root);
+
+        if(aux != null) {
+            if ((aux.left == null) && (aux.right == null)) aux = null;
+            else if (aux.left != null && aux.right != null) {
+                if(aux.data.getCode().equals(this.root.data.getCode())){
+                    temp = aux.left;
+                    aux = aux.right;
+                    while(aux.left != null){
+                        aux = aux.left;
+                    }
+                    aux.left = temp;
+                } else {
+                    if(aux.data.getCode().equals(this.root.data.getCode())){
+                        if(aux.left != null){
+                            aux = aux.left;
+                        } else{
+                            aux = aux.right;
+                        }
+                    }
+                }
+                return;
+            }
+            return;
         }
     }
 
-    public static ListBSTNode insertBalance(ListBSTNode root,int data){
+    public ListBSTNode insertBalance(ListBSTNode root,Book data){
 
         if(root==null){
             root = new ListBSTNode(data);
             root.height = adjustRootHeight(root);
             return root;
-        } else if(data<=root.data) root.left = insertBalance(root.left, data);
-        else if(data>root.data) root.right = insertBalance(root.right, data);
+        } else if((data.compareTo(root.data) > 0) && data.equals(root.data)) root.left = insertBalance(root.left, data);
+        else if(data.compareTo(root.data) > 0) root.right = insertBalance(root.right, data);
 
         int balanceFactor = rootHeight(root.left) - rootHeight(root.right);
 
@@ -92,17 +111,17 @@ public class ListBST { //implementado para enteros
 
     }
 
-    public static int rootHeight(ListBSTNode root){
+    public int rootHeight(ListBSTNode root){
         if(root==null) return -1;
         else return root.height;
     }
 
-    public static int adjustRootHeight(ListBSTNode root){
+    public int adjustRootHeight(ListBSTNode root){
         if(root==null) return -1;
         else return 1 + Math.max(rootHeight(root.left), rootHeight(root.right));
     }
 
-    public static ListBSTNode rightRotation(ListBSTNode root){
+    public ListBSTNode rightRotation(ListBSTNode root){
 
         ListBSTNode temp = root.left;
         root.left = temp.right;
@@ -114,7 +133,7 @@ public class ListBST { //implementado para enteros
 
     }
 
-    public static ListBSTNode leftRotation(ListBSTNode root){
+    public ListBSTNode leftRotation(ListBSTNode root){
 
         ListBSTNode temp = root.right;
         root.right = temp.left;
@@ -128,6 +147,10 @@ public class ListBST { //implementado para enteros
 
     private void adjustHeight(ListBSTNode n) {
         n.height = 1 + Math.max(n.left.height, n.right.height);
+    }
+
+    public boolean isEmpty(){
+       return root == null;
     }
 
 }
