@@ -10,6 +10,7 @@ public class Book implements Comparable<Book> {
     private String genre;
     private int imgLibro;
     private int calification;
+    private BorrowState borrowState;
 
     public Book(String title, String code, String authorName, String genre,
                 int imgLibro) {
