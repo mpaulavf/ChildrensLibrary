@@ -10,7 +10,7 @@ public class Client extends User{
 
     private Calendar date;
     private SinglyLinkedList <String> search;
-    private boolean mark=false;
+    private boolean mark = false;
     private DynamicArray<Book> borrowBooks = new DynamicArray<Book>();
 
     public Client(String name, String surname, String nickname, String password, Boolean isWorker, Calendar date, SinglyLinkedList <String> search) {
@@ -31,6 +31,20 @@ public class Client extends User{
     }
     public void setSearch(SinglyLinkedList <String> search) {
         this.search = search;
+    }
+
+    public DynamicArray <Book> getBorrowBooks() {
+        return borrowBooks;
+    }
+    public void setSearch(DynamicArray <Book> borrowBooks) {
+        this.borrowBooks = borrowBooks;
+    }
+
+    public boolean getMark() {
+        return mark;
+    }
+    public void setMark(boolean mark) {
+        this.mark = mark;
     }
 
     public void giveItMark(boolean mark, DynamicArray borrowBooks) throws Exception {

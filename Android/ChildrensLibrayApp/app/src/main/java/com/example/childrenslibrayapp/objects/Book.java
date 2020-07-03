@@ -92,13 +92,16 @@ public class Book implements Comparable<Book> {
         this.calification = calification;
     }
 
+    public BorrowState getBorrowState() {
+        return borrowState;
+    }
+    public void setBorrowState(BorrowState borrowState) {
+        this.borrowState = borrowState;
+    }
+
     @Override
     public int compareTo(Book book) {
         return this.code.compareTo(book.getCode());
-    }
-
-    public BorrowState getBorrowState(){
-        return borrowState;
     }
 
 }

@@ -25,7 +25,9 @@ public class BorrowState {
         return calendar.getTime();
     }
 
-    public void nextInLine(){
+    public Client nextInLine(){
+        Client temp = null;
+        return temp;
     }
 
 }
