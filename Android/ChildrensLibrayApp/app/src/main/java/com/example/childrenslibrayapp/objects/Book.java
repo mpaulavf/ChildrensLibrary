@@ -97,4 +97,8 @@ public class Book implements Comparable<Book> {
         return this.code.compareTo(book.getCode());
     }
 
+    public BorrowState getBorrowState(){
+        return borrowState;
+    }
+
 }
