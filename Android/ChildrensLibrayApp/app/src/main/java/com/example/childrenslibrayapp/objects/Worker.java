@@ -1,7 +1,7 @@
 package com.example.childrenslibrayapp.objects;
 
 import com.example.childrenslibrayapp.structures.DynamicArray;
-import com.example.childrenslibrayapp.structures.HashTable;
+import com.example.childrenslibrayapp.structures.HashMap;
 
 import java.util.Date;
 
@@ -11,8 +11,8 @@ public class Worker extends User{
         super(name, surname, nickname, password, isWorker);
     }
 
-    HashTable<String, Client> borrowBooks = new HashTable<String, Client>();
-    HashTable<String, Client> markClients = new HashTable<String, Client>();
+    HashMap<String, Client> borrowBooks = new HashMap<String, Client>();
+    HashMap<String, Client> markClients = new HashMap<String, Client>();
 
     private DynamicArray<Client> allClients = new DynamicArray<Client>();
     private DynamicArray<Book> allBooks = new DynamicArray<Book>();
