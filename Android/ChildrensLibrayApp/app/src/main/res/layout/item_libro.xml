@@ -14,7 +14,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="160dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -64,6 +64,12 @@
                     android:paddingTop="5dp"
                     android:text="TextView"
                     android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/bt_pedirLibro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pedir" />
 
             </LinearLayout>
         </LinearLayout>
