@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/rosamundo"
     tools:context=".searches.Genero">
 
     <TextView
@@ -14,7 +15,9 @@
         android:layout_marginLeft="108dp"
         android:layout_marginTop="32dp"
         android:hint="@string/genero"
-        android:textSize="36sp"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

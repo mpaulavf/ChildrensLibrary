@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/inicio">
 
     <TextView
         android:id="@+id/text_home"
@@ -67,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="@string/titulo"
-                    android:textColorHint="@color/design_default_color_on_secondary"
+                    android:textColorHint="@color/design_default_color_background"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -77,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="@string/autor"
-                    android:textColorHint="@color/design_default_color_primary_dark"
+                    android:textColorHint="@color/design_default_color_secondary"
                     android:textSize="18sp" />
 
                 <RatingBar
@@ -87,7 +88,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:numStars="5"
-                    android:stepSize="1"/>
+                    android:stepSize="1" />
 
             </LinearLayout>
 
@@ -95,8 +96,6 @@
 
 
     </LinearLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

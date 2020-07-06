@@ -4,96 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/busc"
     tools:context=".searches.Busqueda">
 
 
-    <Button
-        android:id="@+id/but_verListado"
-        android:layout_width="238dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="112dp"
-        android:backgroundTint="@color/confe"
-        android:hint="@string/codigo"
-        android:onClick="Listado"
-        android:text="Listado"
-        android:textColorHint="@color/letra"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/butitle" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_busqueda"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
-        android:hint="@string/busqueda"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/botgenero"
-        android:layout_width="238dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/colorBoton1"
-        android:hint="@string/genero"
-        android:onClick="Genero"
-        android:textColorHint="@color/letra"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_busqueda" />
+            <TextView
+                android:id="@+id/tv_busqueda"
+                android:layout_width="280dp"
+                android:layout_height="69dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="30dp"
+                android:hint="@string/busqueda"
+                android:textColorHint="@color/common_google_signin_btn_text_dark_default"
+                android:textSize="36sp"
+                android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/butautor"
-        android:layout_width="238dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/crearActi"
-        android:hint="@string/autor2"
-        android:onClick="Autor"
-        android:textColorHint="@color/letra"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botgenero" />
+            <Button
+                android:id="@+id/botgenero"
+                android:layout_width="238dp"
+                android:layout_height="69dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/confe"
+                android:hint="@string/genero"
+                android:onClick="Genero"
+                android:textColorHint="@color/letra"
+                android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/butitle"
-        android:layout_width="238dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/estudio"
-        android:hint="@string/titulo2"
-        android:onClick="Titulo"
-        android:textColorHint="@color/letra"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/butautor" />
+            <Button
+                android:id="@+id/butautor"
+                android:layout_width="238dp"
+                android:layout_height="69dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/confe"
+                android:hint="@string/autor2"
+                android:onClick="Autor"
+                android:textColorHint="@color/letra"
+                android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/butcodigo"
-        android:layout_width="238dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/confe"
-        android:hint="@string/codigo"
-        android:onClick="Codigo"
-        android:textColorHint="@color/letra"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/butitle" />
+            <Button
+                android:id="@+id/butitle"
+                android:layout_width="238dp"
+                android:layout_height="69dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/confe"
+                android:hint="@string/titulo2"
+                android:onClick="Titulo"
+                android:textColorHint="@color/letra"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/butcodigo"
+                android:layout_width="238dp"
+                android:layout_height="69dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/confe"
+                android:hint="@string/codigo"
+                android:onClick="Codigo"
+                android:textColorHint="@color/letra"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/but_verListado"
+                android:layout_width="238dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/confe"
+                android:hint="@string/listado"
+                android:onClick="Listado"
+                android:textColorHint="@color/letra"
+                android:textSize="30sp" />
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

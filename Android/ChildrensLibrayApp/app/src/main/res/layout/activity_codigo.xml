@@ -4,81 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/rosamundo"
     tools:context=".searches.Codigo">
 
     <EditText
         android:id="@+id/et_busCodRan1"
         android:layout_width="115dp"
         android:layout_height="48dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="268dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="@string/desde"
         android:importantForAutofill="no"
         android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/et_busCodRan2"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_codigo" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_busCodRango" />
 
     <Button
         android:id="@+id/bt_busCodRangoBST"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="23dp"
         android:text="@string/bst"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_busCodRangoList" />
+        app:layout_constraintStart_toEndOf="@+id/bt_busCodRangoList"
+        app:layout_constraintTop_toBottomOf="@+id/et_busCodRan2" />
 
     <Button
         android:id="@+id/bt_busCodRangoArray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="268dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:text="@string/array"
-        app:layout_constraintStart_toEndOf="@+id/et_busCodRan2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_codigo" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_busCodRan1" />
 
     <EditText
         android:id="@+id/et_busCodRan2"
         android:layout_width="115dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="268dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="@string/hasta"
         android:importantForAutofill="no"
         android:inputType="number"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintStart_toEndOf="@+id/et_busCodRan1"
-        app:layout_constraintTop_toBottomOf="@+id/tv_codigo" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_busCodRango" />
 
     <TextView
         android:id="@+id/tv_busCodRango"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/b_squeda_por_rango"
-        app:layout_constraintBottom_toTopOf="@+id/et_busCodRan2"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="28dp"
+        android:hint="@string/b_squeda_por_rango"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_busCodExactoArray" />
 
     <TextView
         android:id="@+id/tv_codigo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginLeft="132dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
         android:layout_marginTop="44dp"
-        android:text="@string/codigo"
-        android:textSize="36sp"
+        android:hint="@string/codigo"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,13 +92,15 @@
         android:id="@+id/et_busCodExacto"
         android:layout_width="230dp"
         android:layout_height="48dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="72dp"
         android:ems="10"
         android:hint="@string/Buscadorcodigo"
         android:importantForAutofill="no"
         android:inputType="number"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_codigo" />
 
@@ -100,21 +108,23 @@
         android:id="@+id/bt_busCodExactoArray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="26dp"
         android:text="Array"
-        app:layout_constraintStart_toEndOf="@+id/et_busCodExacto"
-        app:layout_constraintTop_toBottomOf="@+id/tv_codigo" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_busCodExacto" />
 
     <TextView
         android:id="@+id/tv_busCodExacta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginBottom="10dp"
-        android:text="@string/buscodExacta"
+        android:hint="@string/buscodExacta"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/et_busCodExacto"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -122,33 +132,33 @@
         android:id="@+id/bt_busCodExactoBST"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="24dp"
         android:text="BST"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_busCodExactoList" />
+        app:layout_constraintStart_toEndOf="@+id/bt_busCodExactoList"
+        app:layout_constraintTop_toBottomOf="@+id/et_busCodExacto" />
 
     <Button
         android:id="@+id/bt_busCodExactoList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="26dp"
         android:text="List"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_busCodExactoArray" />
+        app:layout_constraintStart_toEndOf="@+id/bt_busCodExactoArray"
+        app:layout_constraintTop_toBottomOf="@+id/et_busCodExacto" />
 
     <Button
         android:id="@+id/bt_busCodRangoList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="24dp"
         android:text="List"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_busCodRangoArray" />
+        app:layout_constraintStart_toEndOf="@+id/bt_busCodRangoArray"
+        app:layout_constraintTop_toBottomOf="@+id/et_busCodRan2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
