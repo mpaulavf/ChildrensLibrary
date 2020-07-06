@@ -10,6 +10,7 @@ public class Book implements Comparable<Book> {
     private String genre;
     private int imgLibro;
     private int calification;
+    private BorrowState borrowState;
 
     public Book(String title, String code, String authorName, String genre,
                 int imgLibro) {
@@ -89,6 +90,13 @@ public class Book implements Comparable<Book> {
     }
     public void setCalification(int calification) {
         this.calification = calification;
+    }
+
+    public BorrowState getBorrowState() {
+        return borrowState;
+    }
+    public void setBorrowState(BorrowState borrowState) {
+        this.borrowState = borrowState;
     }
 
     @Override
