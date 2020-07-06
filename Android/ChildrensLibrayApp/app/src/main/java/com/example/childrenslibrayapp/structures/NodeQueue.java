@@ -10,17 +10,17 @@ public class NodeQueue<T> {
         last=null;
     }
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         if (front == null && last == null) return true;
         else return false;
     }
 
-    boolean isFull() {
+    public boolean isFull() {
         if (size == 4) return true;
         else return false;
     }
 
-    void push(T info) {
+    public void push(T info) {
         Node<T> nodex = new Node<T>(null);
         nodex.data = info;
         nodex.next = null;
@@ -34,7 +34,7 @@ public class NodeQueue<T> {
         }
     }
 
-    T pop() {
+    public T pop() {
         size--;
         if (!isEmpty()){
             T n = front.data;

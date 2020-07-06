@@ -1,11 +1,13 @@
 package com.example.childrenslibrayapp.objects;
 import com.example.childrenslibrayapp.structures.DynamicArray;
+import com.example.childrenslibrayapp.structures.NodeQueue;
+
 import java.util.Calendar;
 import java.util.Date;
 
 public class BorrowState {
 
-    private DynamicArray listOfWait;
+    private NodeQueue<Client> listOfWait;
     public boolean borrow;
     public boolean inLibrary;
     protected Date startDate;
@@ -25,9 +27,12 @@ public class BorrowState {
         return calendar.getTime();
     }
 
+    public void addToQueue(Client client){
+        listOfWait.push(client);
+    }
+
     public Client nextInLine(){
-        Client temp = null;
-        return temp;
+        return listOfWait.pop();
     }
 
 }
