@@ -28,6 +28,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.Button;
+import android.widget.RatingBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -74,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         generateData();
+
+        final RatingBar rb= (RatingBar) findViewById(R.id.ratingBar2);
 
     }
 
