@@ -6,11 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.childrenslibrayapp.searches.Autor;
-import com.example.childrenslibrayapp.searches.Codigo;
-import com.example.childrenslibrayapp.searches.Genero;
-import com.example.childrenslibrayapp.searches.Titulo;
-import com.example.childrenslibrayapp.workerCommands.agregarLibro;
+import com.example.childrenslibrayapp.workerCommands.*;
 
 public class Trabajador extends AppCompatActivity {
 
