@@ -11,11 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".workerCommands.quitarMora"></activity>
-        <activity android:name=".workerCommands.devolverLibro" />
-        <activity android:name=".workerCommands.prestarLibro" />
-        <activity android:name=".workerCommands.quitarLibro" />
-        <activity android:name=".workerCommands.agregarLibro" />
+        <activity android:name=".quitarMora"></activity>
+        <activity android:name=".devolverLibro" />
+        <activity android:name=".prestarLibro" />
+        <activity android:name=".quitarLibro" />
+        <activity android:name=".agregarLibro" />
         <activity android:name=".Registro" />
         <activity android:name=".IngresoTrab" />
         <activity android:name=".Trabajador" />
