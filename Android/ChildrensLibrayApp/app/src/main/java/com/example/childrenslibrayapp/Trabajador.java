@@ -22,7 +22,7 @@ public class Trabajador extends AppCompatActivity {
     }
 
     public void AgregarLibro(View view) {
-        Intent agregarLibro = new Intent(this, agregarLibro.class);
+        Intent agregarLibro = new Intent(this, );
         startActivity(agregarLibro);
     }
 
