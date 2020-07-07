@@ -23,7 +23,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_busCodRango" />
 
-    <Button
+    <!--<Button
         android:id="@+id/bt_busCodRangoBST"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
         android:layout_marginTop="23dp"
         android:text="@string/bst"
         app:layout_constraintStart_toEndOf="@+id/bt_busCodRangoList"
-        app:layout_constraintTop_toBottomOf="@+id/et_busCodRan2" />
+        app:layout_constraintTop_toBottomOf="@+id/et_busCodRan2" />-->
 
     <Button
         android:id="@+id/bt_busCodRangoArray"
@@ -41,7 +41,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:text="@string/array"
+        android:text="Buscar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_busCodRan1" />
 
@@ -111,7 +111,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="26dp"
-        android:text="Array"
+        android:text="Buscar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_busCodExacto" />
 
@@ -128,7 +128,7 @@
         app:layout_constraintBottom_toTopOf="@+id/et_busCodExacto"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <!--<Button
         android:id="@+id/bt_busCodExactoBST"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -137,9 +137,9 @@
         android:layout_marginTop="24dp"
         android:text="BST"
         app:layout_constraintStart_toEndOf="@+id/bt_busCodExactoList"
-        app:layout_constraintTop_toBottomOf="@+id/et_busCodExacto" />
+        app:layout_constraintTop_toBottomOf="@+id/et_busCodExacto" />-->
 
-    <Button
+    <!--<Button
         android:id="@+id/bt_busCodExactoList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -148,9 +148,9 @@
         android:layout_marginTop="26dp"
         android:text="List"
         app:layout_constraintStart_toEndOf="@+id/bt_busCodExactoArray"
-        app:layout_constraintTop_toBottomOf="@+id/et_busCodExacto" />
+        app:layout_constraintTop_toBottomOf="@+id/et_busCodExacto" />-->
 
-    <Button
+    <!--<Button
         android:id="@+id/bt_busCodRangoList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -159,6 +159,6 @@
         android:layout_marginTop="24dp"
         android:text="List"
         app:layout_constraintStart_toEndOf="@+id/bt_busCodRangoArray"
-        app:layout_constraintTop_toBottomOf="@+id/et_busCodRan2" />
+        app:layout_constraintTop_toBottomOf="@+id/et_busCodRan2" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

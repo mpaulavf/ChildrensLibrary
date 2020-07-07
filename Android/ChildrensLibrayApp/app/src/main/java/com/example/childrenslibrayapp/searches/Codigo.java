@@ -39,11 +39,11 @@ public class Codigo extends AppCompatActivity {
         bt_codExactoArray = (Button)findViewById(R.id.bt_busCodExactoArray);
         bt_codRangoArray = (Button)findViewById(R.id.bt_busCodRangoArray);
 
-        bt_codExactoList = (Button)findViewById(R.id.bt_busCodExactoList);
-        bt_codRangoList = (Button)findViewById(R.id.bt_busCodRangoList);
+//        bt_codExactoList = (Button)findViewById(R.id.bt_busCodExactoList);
+//        bt_codRangoList = (Button)findViewById(R.id.bt_busCodRangoList);
 
-        bt_codExactoBST = (Button)findViewById(R.id.bt_busCodExactoBST);
-        bt_codRangoBST = (Button)findViewById(R.id.bt_busCodRangoBST);
+//        bt_codExactoBST = (Button)findViewById(R.id.bt_busCodExactoBST);
+//        bt_codRangoBST = (Button)findViewById(R.id.bt_busCodRangoBST);
 
         codigoExacto = (EditText)findViewById(R.id.et_busCodExacto);
         codigoRango1 = (EditText)findViewById(R.id.et_busCodRan1);
@@ -82,7 +82,7 @@ public class Codigo extends AppCompatActivity {
             }
         });
 
-        bt_codExactoList.setOnClickListener(new View.OnClickListener() {
+        /*bt_codExactoList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String cod = codigoExacto.getText().toString();
@@ -101,9 +101,9 @@ public class Codigo extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Por favor introduzca su actividad", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
 
-        bt_codExactoBST.setOnClickListener(new View.OnClickListener() {
+        /*bt_codExactoBST.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String cod = codigoExacto.getText().toString();
@@ -122,7 +122,7 @@ public class Codigo extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Por favor introduzca su actividad", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
 
         bt_codRangoArray.setOnClickListener(new View.OnClickListener() {
             @Override
